@@ -37,4 +37,3 @@ const UserSchema = mongoose.Schema({
 const User = mongoose.model('user',UserSchema)
 
 export default User;
-i
