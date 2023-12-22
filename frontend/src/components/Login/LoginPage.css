@@ -52,7 +52,9 @@
     margin-bottom: 2vh;
     width: 70%;
     border: none;
+    outline: none;
     border-bottom: 2px solid black;
+    font-size: 2vh;
 }
 .signupbtn:hover{
     cursor: pointer;
@@ -68,5 +70,10 @@
     height: 8%;
 }
 .loginform label{
+    font-size: larger;
+}
+.lockicon{
+    color: #00BFFF;
+    cursor: pointer;
     font-size: larger;
 }
