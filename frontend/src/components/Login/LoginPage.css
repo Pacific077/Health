@@ -1,0 +1,72 @@
+.loginPagebg{
+    background-image: url("../../images/loginbg.jpg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginpage{
+    height: 80%;
+    width: 70%;
+    border: 1px solid white;
+    background-color: #00BFFF;
+    border-radius: 100px;
+    display: flex;
+    overflow: hidden;
+}
+.loginpgleft,.loginpgright{
+    width: 50%;
+    height: 100%;
+}
+.loginpgleft{
+    background-image: url('../../images/lindr.jpg');
+    background-size: cover;
+    border-top-right-radius: 70px;
+    border-bottom-right-radius: 70px;
+}
+.loginpgright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#00BFFF ;
+}
+.loginform{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: transparent;
+    opacity: 0.9;
+    height: 80%;
+    width: 80%;
+    background-color: white;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 10vh;
+    padding-bottom: 4vh;
+    padding-top: 4vh;
+    box-shadow: 10px 10px 10px grey;
+    /* border:  1px solid white; */
+}
+.loginform input{
+    margin-bottom: 2vh;
+    width: 70%;
+    border: none;
+    border-bottom: 2px solid black;
+}
+.signupbtn:hover{
+    cursor: pointer;
+    background-color: #06d006;
+}
+.signupbtn{
+    font-size: large;
+    background-color:#00ff00;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px grey;
+    margin-top: 5vh;
+    width: 50%;
+    height: 8%;
+}
+.loginform label{
+    font-size: larger;
+}
