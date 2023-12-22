@@ -1,0 +1,33 @@
+@media screen and (max-width:1024px) {
+    .faqsec{
+        padding-left: 10vh;
+        padding-right: 10vh;
+    }
+}
+@media screen and (max-width:768px) {
+    .faqsec{
+        padding-left: 1vh;
+        padding-right: 1vh;
+    }
+}
+@media screen and (max-width:663px) {
+    .faqsec {
+        margin-bottom:0px;
+        padding-bottom: 4vh;
+    }
+}
+@media screen and (max-width:426px) {
+    .footersec{
+        flex-direction: column;
+        height: fit-content !important;
+    }
+    .foot1,.foot2,.foot3,.foot4 {
+        width: 100% !important;
+    }
+    .foot2,.foot3,.foot4{
+        text-align: center;
+    }
+    .footerbrnds{
+        justify-content: space-evenly;
+    }
+}

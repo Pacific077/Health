@@ -1,0 +1,83 @@
+@media screen and (max-width: 1024px) {
+  .sec1{
+    padding-left: 10vh;
+    padding-right: 10vh;
+  }
+  .sec1phn {
+    height: 73%;
+    width: 71%;
+}
+.sec1img {
+
+  height: 39%;
+  width: 74%;
+
+}
+}
+@media screen and (max-width: 768px) {
+  .sec1{
+    padding-left: 1vh;
+    padding-right: 1vh;
+  }
+  .bigPara{
+    font-size: 4vh;
+  }
+  .bigHead{
+    font-size: 6vh;
+  }
+  .sec1phn {
+    height: 100%;
+    
+}
+}
+@media screen and (max-width:663px) {
+  .bigHead {
+      font-size: 5vh;
+  }
+  .bigPara {
+      font-size: 3vh;
+  }
+  .sec1phn {
+      height: 89%;
+  }
+}
+@media only screen and (max-width: 426px) {
+  .sec1{
+    padding-top: 0;
+    flex-direction: column;
+    top: 12vh;
+  }
+  .sec1para {
+    width: 100%;
+  }
+  .bigPara{
+    text-align: justify;
+  }
+  .bigPara{
+    font-size: 2.5vh;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .bigHead{
+    font-size: 3.5vh;
+    margin-bottom: 0;
+  }
+  .sec1phn{
+    width: 66%;
+  }
+  .secBtnCont{
+    justify-content: space-evenly;
+    margin:0;
+  }
+  .sec1img {
+    top:12vh;
+    height: 36%;
+    width: 69%;
+  }
+  .sec1phoneCont{
+    
+    justify-content: center;
+    width: 65%;
+    margin-right: 0vh;
+  }
+}

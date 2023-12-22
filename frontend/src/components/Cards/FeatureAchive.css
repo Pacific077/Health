@@ -1,0 +1,93 @@
+.AchivCardCont{
+    margin-top: 10vh;
+    display: flex;
+    width: 25%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.achivcarddesc{
+    margin: 0;
+}
+.achivcardimg{
+    height: 28vh;
+    width: 90%;
+}
+
+.featureCardCont{
+    height: 39vh;
+    width: 28%;
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    align-items: center;
+    padding: 2vh;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.featureCardCont:hover{
+    box-shadow: 10px 10px 10px rgb(146, 146, 146);
+    transition: 0.4s ease;
+}
+.featurecardimg{
+    height: 12vh;
+    width: 12vh;
+}
+.featurecardhead{
+    margin: 0%;
+}
+.featureCardDesc{
+    margin: 0;
+    text-align: center;
+}
+
+@media screen and (max-width:1024px){
+    .sec25{
+        padding-left: 10vh;
+        padding-right: 10vh;
+    }
+}
+@media screen and (max-width:768px){
+    .sec25{
+        padding-left: 1vh;
+        padding-right: 1vh;
+    }
+}
+@media screen and (max-width:663px){
+    .featureCardCont{
+        height: 32vh;
+        width: 32%;
+    }
+    .featurecardhead{
+        font-size: 2.5vh;
+    }
+    .featureCardDesc{
+        font-size: 2vh;
+    }
+    .achivcardimg {
+        height: 24vh;
+        width: 86%;
+    }
+    .achivcarddesc {
+        font-size: 2.3vh;
+        
+    }
+}
+@media screen and (max-width:426px){
+    .featurecardsHolder{
+        flex-direction: column;
+        gap: 4vh;
+        align-items: center;
+    }
+    .featureCardCont{
+        width: 100%;
+    }
+    .achivementcardsholder{
+        flex-direction: column;
+        align-items: center;
+    }
+    .AchivCardCont{
+        width: 50%;
+    }
+}

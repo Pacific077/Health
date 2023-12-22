@@ -5,6 +5,10 @@ const NotficationSchema = mongoose.Schema({
         type:String,
         required:true,
     },
+    notificationType:{
+        type:String,
+        enum:['request','approval']
+    },
     userId:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'User'

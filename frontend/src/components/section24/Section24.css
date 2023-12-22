@@ -1,0 +1,8 @@
+.sec24{
+    padding-left: 25vh;
+    padding-right: 25vh;
+    margin-bottom: 20vh;
+    height: 20vh;
+    display: flex;
+    justify-content: space-evenly;
+}

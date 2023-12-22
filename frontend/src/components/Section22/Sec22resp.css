@@ -1,0 +1,50 @@
+@media screen and (max-width: 1024px) {
+    .section22{
+        padding-left: 10vh;
+        padding-right: 10vh;
+    }
+}
+@media screen and (max-width: 768px) {
+    .section22{
+        padding-left: 1vh;
+        padding-right: 1vh;
+    }
+}
+@media screen and (max-width: 768px) {
+    .phn2 {
+        height: 95%;
+    }
+    .adharc {
+        height: 39%;
+        top: 26%;
+    }
+    .section22 {
+        height: 76vh;
+    }
+    .infohead {
+        font-size: 3vh;
+    }
+}
+@media only screen and (max-width: 426px) {
+   
+    .section22{
+        flex-direction: column;
+        height: fit-content;
+        padding: 0;
+    }
+    .sec22left{
+        align-items: center;
+        width: 100%;
+    }
+    .sec22right{
+        width: 100%;
+        align-items: center;
+    }
+    .phn2{
+        height: 400px;
+        justify-content: flex-start;
+    }
+    .adharc{
+        height: 190px;
+    }
+}

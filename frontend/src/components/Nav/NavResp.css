@@ -1,0 +1,36 @@
+@media only screen and (max-width: 1024px) {
+    .navbar {
+        padding-left: 0;
+        padding-right: 0;   
+    }
+}
+@media only screen and (max-width: 768px) {
+    .opaczero  {
+     opacity: 0;
+    }
+    .hamburger{
+        visibility: visible;
+    }
+    .navBtn {
+        width: 25vh;
+        margin-right: 7vh;
+    }
+}
+@media only screen and (max-width: 663px) {
+
+    .navBtn {
+        height: 6vh;
+    }
+    .logo{
+        width: 96%;
+    }
+}
+@media only screen and (max-width: 426px) {
+    .hamburger {
+        right: 3%;
+        top: 22%;
+    }
+    .navBtn{
+        margin-right: 16vh;
+    }
+}

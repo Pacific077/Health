@@ -1,0 +1,23 @@
+.sect21cont2{
+    padding-left: 25vh;
+    padding-right: 25vh;
+    margin-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media screen and (max-width:1024px) {
+    .sect21cont2{
+        padding-left: 10vh;
+        padding-right: 10vh;
+    } 
+}
+@media screen and (max-width:768px) {
+    .sect21cont2{
+        padding-left: 1vh;
+        padding-right: 1vh;
+    } 
+}

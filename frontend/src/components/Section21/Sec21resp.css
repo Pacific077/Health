@@ -1,0 +1,39 @@
+@media screen and (max-width: 1024px) {
+    .section21,.sect21cont{
+        padding-left: 10vh;
+        padding-right: 10vh;
+      }
+   
+  }
+  
+@media screen and (max-width: 768px) {
+    .section21,.sect21cont{
+        padding-left: 1vh;
+        padding-right: 1vh;
+      }
+   
+  }
+@media screen and (max-width:663px) {
+    .bgPara {
+      font-size: 2.8vh;
+  }
+  .bigHead {
+    font-size: 4vh;
+}
+}
+@media screen and (max-width:663px) {
+  .sect21cont2{
+    margin-bottom: 5vh;
+  }
+  .sect21cont{
+    margin-top: 6vh;
+  }
+}
+@media screen and (max-width:426px) {
+  .banner2{
+    flex-direction: column;
+  }
+  .blueimg,.yeloimg{
+    width: 100%;
+  }
+}

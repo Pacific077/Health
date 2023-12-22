@@ -1,0 +1,15 @@
+.achivementcardsholder{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sec25{
+    padding-left: 25vh;
+    padding-right: 25vh;
+    margin-bottom: 12vh;
+}
+.featurecardsHolder{
+    display: flex;
+    justify-content: space-evenly;
+
+}

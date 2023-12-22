@@ -1,0 +1,14 @@
+@media screen and (max-width:1024px) {
+    .section23{
+        padding-left: 10vh;
+        padding-right: 10vh;
+    }
+    
+}
+@media screen and (max-width:768px) {
+    .section23{
+        padding-left: 1vh;
+        padding-right: 1vh;
+    }
+    
+}

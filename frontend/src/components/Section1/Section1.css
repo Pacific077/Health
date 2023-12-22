@@ -1,0 +1,94 @@
+.aplleicon{
+    font-size: 5vh;
+}
+.AppStorebtn{
+    cursor: pointer;
+    background-color: white;
+    height: 6vh;
+    width: 23vh;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    border: 1px solid grey;
+
+}
+
+.bigHead{
+    font-size: 7vh;
+    font-family: 'Ubuntu', sans-serif;
+}
+.bigPara{
+    font-size: 4.5vh;
+    line-height: 1.5em;
+
+}
+.btnicon{
+    font-size: 25px;
+    color: white;
+}
+.playStorebtn{
+    cursor: pointer;
+    background-color: #4D31D7;
+    height: 6vh;
+    width: 23vh;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+.sec1{
+    position: sticky;
+    top: 11vh;
+    display: flex;
+    padding-top: 8vh;
+    padding-left: 25vh;
+    padding-right: 20vh;
+    justify-content: space-between;
+}
+.secBtnCont{
+    display: flex;
+    gap: 2vh;
+}
+.sec1img{
+    position: relative;
+    height: 50%;
+    width: 55%;
+    top: 18vh;
+    left: 10vh;
+    animation: translateRight 10s infinite alternate;
+}
+.sec1para{
+    width: 58%  ;
+}
+.sec1phn{
+    height: 83%;
+    width: 65%;
+}
+.sec1phoneCont{
+    display: flex;
+    justify-content: flex-end;
+    width: 45%;
+    margin-right: 2vh;
+}
+.textblue{
+    color: #4D31D7;
+
+}
+
+@keyframes translateRight {
+    0% {
+      left: 10vh; 
+    }
+    100% {
+      left: calc(10vh + 100px);
+    }
+  }

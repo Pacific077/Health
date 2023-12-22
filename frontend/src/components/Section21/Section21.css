@@ -1,0 +1,70 @@
+.banner2{
+    display: flex;
+    gap:4vh;
+    
+}
+.bannerbtn{
+    cursor: pointer;
+    height: 6vh;
+    width:25vh;
+    margin-top: 12vh;
+    margin-left: 6vh;
+    animation: zoomAnimation 2s infinite;
+}
+.bgPara{
+    font-size: 3.8vh;
+}
+.blueimg{
+    display: flex;
+    align-items: center;
+    height: 35vh;
+    width: 50%;
+    background-image: url("../../images/blueimg.png");
+    background-size: cover;
+    border-radius: 40px;
+    overflow: hidden;
+    
+}
+.greembg{
+    padding: 1.4vh;
+    background-color: #dffaf5;
+    color: rgb(27, 156, 125);
+    font-weight: 600;
+}
+.section21{
+    padding: 8vh;
+    padding-left: 25vh;
+    padding-right:25vh;
+}
+.sec21btncont{
+    margin-top: 3vh;
+    display: flex;
+    gap: 2vh;
+}
+.sect21cont{
+    padding-left: 25vh;
+    padding-right: 25vh;
+    margin-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tealc{
+    text-align: center;
+}
+.yeloimg{
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-image: url("../../images/yellowimg.png");
+    height: 35vh;
+    width: 50%;
+    border-radius: 40px;
+    overflow: hidden;
+}
+@keyframes zoomAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}

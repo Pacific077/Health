@@ -1,0 +1,46 @@
+
+.downarrow{
+    cursor: pointer;
+}
+.faqsec{
+    padding-left: 25vh;
+    padding-right: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 10vh;
+    margin-bottom: 5vh;
+    border-bottom: 1px solid rgb(218, 216, 216);
+}
+.marBot{
+    margin-bottom: 6vh;
+}
+.quesCont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6vh;
+}
+.QuesCardCont{
+    width: 90%;
+    height: inherit;
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 10px;
+    padding: 4.5vh;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 4px gray;
+    cursor: pointer;
+  
+}
+.ques{
+    margin: 0;
+}
+.quesarrowcont{
+    display: flex;
+    justify-content: space-between;
+}
+.viewmore{
+    margin-top: 8vh;
+}

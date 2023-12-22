@@ -1,0 +1,19 @@
+.infocardcont{
+    display: flex;
+    padding-left: 3vh;
+    gap: 4vh;
+    width: 80%;
+    border: 0.5px solid rgb(226, 215, 215);
+    border-radius:10px ;
+    height: 10vh;
+    background-color: white;
+    box-shadow: 8px 8px 4px grey;
+}
+.infohead{
+    margin: 1vh;
+    padding: 0;
+}
+.infoicon{
+    height: 8vh;
+    width: 8vh;
+}

@@ -1,0 +1,29 @@
+
+.propcardcont{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    height:80%;
+    box-sizing: border-box;
+    align-items: center;
+    border: 1px solid #4D31D7;
+    padding: 1vh;
+    border-radius: 20px;
+}
+.propcardhead{
+    font-size: 5vh;
+}
+.propcardimg{
+    height: 10vh;
+    width: 10vh;
+    border-radius: 100%;
+    border: 5px solid transparent; 
+    box-shadow: 0 0 10px 5px rgba(128, 128, 128, 0.5);
+}
+@media screen and (max-width:663px) {
+    .propcardcont{
+        width: 29%;
+        height: 60%;
+    }
+    
+}

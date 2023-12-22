@@ -1,0 +1,47 @@
+@media only screen and (max-width: 1024px) {
+    .propcardhead{
+        font-size: 4vh;
+    }
+    .propcardimg{
+        height: 9vh;
+    }
+    .sec24{
+        padding-left: 10vh;
+        padding-right: 10vh;
+    }
+
+}
+@media only screen and (max-width: 768px) {
+ 
+    .sec24{
+        padding-left: 1vh;
+        padding-right: 1vh;
+    }
+
+}
+@media screen and (max-width:663px) {
+    .propcardimg {
+        height: 8vh;
+        width: 8vh;
+    }
+    .propcardhead {
+        font-size: 3vh;
+    }
+    .sec24{
+        margin-bottom: 0;
+    }
+}
+@media screen and (max-width:426px) {
+    .sec24{
+        gap: 3vh;
+        flex-direction: column;
+    }
+    .propcardcont{
+        width: 95%;
+    }
+    .sec24{
+        align-items: center;
+        height: fit-content;
+        margin-top: 10vh;
+    }
+}

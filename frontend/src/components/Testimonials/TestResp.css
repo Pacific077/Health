@@ -1,0 +1,36 @@
+@media screen and (max-width: 1024px) {
+  .testsec {
+    padding-left: 10vh;
+    padding-right: 10vh;
+  }
+}
+@media screen and (max-width: 768px) {
+  .testsec {
+    padding-left: 1vh;
+    padding-right: 1vh;
+  }
+  .testcardCont {
+    padding: 1vh;
+    gap: 1vh;
+    padding-top: 2vh;
+  }
+}
+@media screen and (max-width: 663px) {
+  .testsec{
+    margin-top: -2vh;
+  }
+  .testcardname,.review{
+
+    font-size: 2.2vh;
+  }
+}
+@media screen and (max-width: 426px) {
+  .testcardholder {
+    flex-direction: column;
+    align-items: center;
+    gap: 4vh;
+  }
+  .testcardCont{
+    width: 94%;
+  }
+}
