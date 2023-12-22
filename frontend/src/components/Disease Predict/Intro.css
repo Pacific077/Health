@@ -1,0 +1,118 @@
+.Intro{
+    background-image: url("../../images/Introbg.jpg");
+    background-size: cover;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.introScreen{
+    display: flex;
+    height: 90%;
+    width: 60%;
+}
+.introPage{
+    border: 1px solid green;
+    height: 100%;
+    background-color: white;
+    width: 85%;
+}
+.introCont{
+    width: 100%;
+    display: flex;
+}
+.diseasePredicProgress{
+    width: 15%;
+}
+.intro1,.intro2,.intro3,.intro4,.intro5{
+    font-weight:100 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    border-right: 4px solid rgb(211, 161, 161);
+}
+.intro1{
+    font-weight: 900;
+    border-right: 4px solid red;
+}
+.leftintro{
+    padding-left: 4vh;
+    width: 55%;
+    height: 80%;
+    box-sizing: border-box;
+    padding-top: 10vh;
+}
+.rightintro{
+    box-sizing: border-box;
+margin: auto;
+    width: 45%;
+    height: 80%;
+    
+}
+.rightintro img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 70%;
+    width: 95%;
+    border-radius: 100%;
+}
+
+.introdesc{
+
+    margin: auto;
+    width: 80%;
+}
+.aboutTool{
+    font-family:Arial, Helvetica, sans-serif;
+    margin: auto;
+    margin-top: 6vh;
+    width: 80%;
+
+}
+.aboutTool h2{
+    color: blue;
+}
+.nostyle{
+    list-style: none;
+}
+.introdesc p{
+    font-family:Arial, Helvetica, sans-serif;
+    line-height: 2.4vh;
+    font-size: 16px;
+    margin-bottom: 5vh;
+}
+.introdesc h1{
+    font-family:Arial, Helvetica, sans-serif;
+    margin-bottom: 3vh;
+    color: blue;
+    
+}
+.introbullet{
+    margin-top: 1vh;
+    font-family:Arial, Helvetica, sans-serif;
+    
+}
+.introicons{
+    margin-right: 2vh;
+}
+.introbtncnt{
+    margin-top: 4vh;
+    display: flex;
+    box-sizing: border-box;
+    padding-right: 10vh;
+    justify-content: flex-end;
+}
+.introbtn{
+    height: 6vh;
+    width: 20vh;
+    background-color: rgb(0, 255, 0);
+    border-radius: 10px;
+    font-size: x-large;
+}
+.introbtn:hover{
+    background-color: rgb(1, 225, 1);
+    cursor: pointer;
+}

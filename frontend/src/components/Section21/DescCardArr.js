@@ -1,10 +1,9 @@
 const DescCardArr = [
     {
-    greentext:"ABHA ID YOUR UNIQUE & TRUSTABLE HEALTH ID",
-    head:"Unlock India's Digital Health Ecosystem with Seamless Access",
-    desc:"Create your ABHA ID on the YORE Care app and manage your health anytime, anywhere in India.",
-    btn1:"CREATE ABHA",
-    btn2:"Know More"
+    greentext:"YOUR UNIQUE & TRUSTABLE HEALTH ACCOUNT",
+    head:"Meet Our Dedicated Team of Expert Healthcare Professionals",
+    desc:"Discover our doctors, choose your ideal healthcare provider, and book appointments effortlessly for personalized and attentive medical care.",
+    btn1:"Book Appointment"
 },
     {
     greentext:"STREAMLINED HEALTH RECORD MANAGEMENT MADE EFFORTLESS",

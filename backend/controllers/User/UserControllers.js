@@ -1,6 +1,9 @@
 import User from "../../models/User/UserModel.js"
+import Notification from "../../models/notifications/NotficationModel.js"
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
+
+//register user
 const RegisterUser = async(req,res)=>{
     //all feilds req
   const { name, email, password } = req.body;
@@ -33,7 +36,7 @@ const RegisterUser = async(req,res)=>{
   });
 }
 
-//login
+//login user
 const LoginUser = async (req, res) => {
     const { email, password } = req.body;
     if (!email || !password) {
@@ -85,4 +88,24 @@ const UserProfile = async (req, res) => {
     throw new Error("User not found");
   }
 };
-export {RegisterUser,LoginUser,UserProfile}
+
+//send Doctor req
+const SendDoctorReq =async (req,res)=>{
+  const {name,email,password,Speciality,Fees}= req.body
+  const admin =await User.findById(process.env.ADMIN_ID);
+  const data = {
+    name,email,password,Speciality,Fees
+  }
+  const notification = await Notification.create({
+    message:`${name} requested for doctor acceptance`,
+    notificationType: 'adminApproval',
+    userId:process.env.ADMIN_ID
+  })
+ await admin.newNotifiaction.push(notification)
+ await admin.save()
+  res.status(200).json({
+    message:"request sent success",
+    data
+  })
+}
+export {RegisterUser,LoginUser,UserProfile,SendDoctorReq}

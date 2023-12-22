@@ -7,13 +7,12 @@ const NotficationSchema = mongoose.Schema({
     },
     notificationType:{
         type:String,
-        enum:['request','approval']
+        enum:['request','approval','adminApproval','rejected']
     },
     userId:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'User'
-
-    }
+    },
 },{
 timestamps:true
 }

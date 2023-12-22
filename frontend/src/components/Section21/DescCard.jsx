@@ -14,7 +14,6 @@ const DescCard = (props) => {
     </p>
     <div className="sec21btncont">
         <button className='playStorebtn'>{props.btn1} <AiOutlineArrowRight/></button>
-        <button className='AppStorebtn'>{props.btn2}</button>
     </div>
 </div>
   )

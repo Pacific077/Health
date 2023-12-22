@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { faHouseUser ,faBell,faUser} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
+import {
+  faHouseUser,
+  faBell,
+  faUser,
+  faRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
+import { useNavigate  } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Nav.css";
 import "./NavResp.css";
 import logo from "../../images/logo.png";
 import SideNav from "./SideNav";
 const Nav = () => {
+  const navigate = useNavigate();
   const [isactiv1, setactiv1] = useState(true);
   const [isactiv2, setactiv2] = useState(false);
   const [isactiv3, setactiv3] = useState(false);
+  const [isactiv4, setactiv4] = useState(false);
   const [isScrolled, setScrolled] = useState(false);
   const [sideNav, setsideNav] = useState(false);
   useEffect(() => {
@@ -24,20 +32,33 @@ const Nav = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const handleLogOutClick = ()=>{
+    setactiv4(true)
+    setactiv3(false)
+    setactiv2(false)
+    setactiv1(false)
+  }
   const handleHomeclick = () => {
     setactiv1(true);
     setactiv2(false);
+    setactiv4(false);
     setactiv3(false);
+    navigate('/home');
   };
-  const handleApiclick = () => {
+  const handleNotificationclick = () => {
     setactiv1(false);
     setactiv2(true);
+    setactiv4(false);
     setactiv3(false);
+    navigate("/notifications");
   };
   const handleAboutclick = () => {
+
     setactiv1(false);
     setactiv2(false);
     setactiv3(true);
+    setactiv4(false);
+
   };
   const handlesidenav = () => {
     setsideNav(!sideNav);
@@ -56,7 +77,7 @@ const Nav = () => {
             <FontAwesomeIcon className="navicons" icon={faHouseUser} />
           </li>
           <li
-            onClick={handleApiclick}
+            onClick={handleNotificationclick}
             className={isactiv2 ? "activ opaczero" : "opaczero"}
           >
             <FontAwesomeIcon className="navicons" icon={faBell} />
@@ -67,7 +88,12 @@ const Nav = () => {
           >
             <FontAwesomeIcon className="navicons" icon={faUser} />
           </li>
-          <button className="navBtn">Download Now</button>
+          <li
+            onClick={handleLogOutClick}
+            className={isactiv4 ? "activ opaczero" : "opaczero"}
+          >
+            <FontAwesomeIcon className="navicons" icon={faRightFromBracket} />
+          </li>
           <div className="hamburger" onClick={handlesidenav}>
             <div className="line1"></div>
             <div className="line1"></div>

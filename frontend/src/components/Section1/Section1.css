@@ -19,6 +19,7 @@
 }
 
 .bigHead{
+    margin-top: 0;
     font-size: 7vh;
     font-family: 'Ubuntu', sans-serif;
 }
@@ -34,16 +35,20 @@
 .playStorebtn{
     cursor: pointer;
     background-color: #4D31D7;
-    height: 6vh;
-    width: 23vh;
+    height: 7vh;
+    width: 30vh;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2vh;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 200;
     color: white;
+}
+
+.playStorebtn:hover{
+    background-color: #2a00fd;
 }
 .sec1{
     position: sticky;
@@ -83,6 +88,25 @@
     color: #4D31D7;
 
 }
+.interview{
+    cursor: pointer;
+    background-color: #2b00ff;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3vh;
+    height: 7vh;
+    width: 30vh;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+    /* font-size: 16px; */
+    font-weight: 200;
+    color: white;
+}
+.interview:hover{
+    background-color: #3518c2;
+}
 
 @keyframes translateRight {
     0% {
@@ -92,3 +116,4 @@
       left: calc(10vh + 100px);
     }
   }
+  
