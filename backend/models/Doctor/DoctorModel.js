@@ -2,6 +2,10 @@ import mongoose from "mongoose";
 
 const DoctorSchema = mongoose.Schema(
   {
+    userId:{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
     name: {
       type: String,
       required: true,
@@ -22,6 +26,12 @@ const DoctorSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
+    appointments: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Appointment",
+      },
+    ],
     SeenNotification: [
       {
         type: mongoose.Schema.Types.ObjectId,

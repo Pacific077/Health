@@ -2,6 +2,7 @@
 import jwt from "jsonwebtoken"
 import User from "../models/User/UserModel.js";
 const IsAuthenticated = async (req,res,next)=>{
+    console.log("okok")
     if(req.cookies.token){
 //verify the token
         const decoded = jwt.verify(req.cookies.token,process.env.JWT_SECRET);
@@ -14,4 +15,4 @@ const IsAuthenticated = async (req,res,next)=>{
     }
 }
 
-export default IsAuthenticated
+export default IsAuthenticated;

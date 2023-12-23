@@ -3,25 +3,17 @@ import User from "../../models/User/UserModel.js";
 import Notification from "../../models/notifications/NotficationModel.js";
 
 const AccptDoctorReq = async (req,res)=>{
-    console.log("statrt")
-    const {name,email,password,Speciality,Fees}= req.body
     const userId = req.params.id;
     const user = await User.findById(userId);
     const notification = await Notification.create({
         message:`Your request got approved for doctor `,
         notificationType: 'approval',
-        userId
+        senderId:process.env.ADMIN_ID,
+        reciverId:userId
       })
-    user.newNotifiaction.push(notification);
+    user.NewNotification.push(notification);
     user.role='Doctor';
     user.save();
-    await Doctor.create({
-        name,
-        email,
-        password,
-        Speciality,
-        Fees,
-    })
     res.status(200).json({
         message:"accepted doctors approval"
     })
@@ -34,7 +26,8 @@ const RejectDrRqst = async (req,res)=>{
         notificationType: 'rejected',
         userId
       })
-    user.newNotifiaction.push(notification);
+    user.NewNotification.push(notification);
+    await Doctor.deleteOne({userId:userId});
     user.save();
     res.status(200).json({
         message:"rjected doctors approval"

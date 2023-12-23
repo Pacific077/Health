@@ -1,5 +1,5 @@
 import express from 'express';
-import { LoginUser, RegisterUser, SendDoctorReq, UserProfile } from '../controllers/User/UserControllers.js';
+import { Appointmentreq, LoginUser, RegisterUser, SendDoctorReq, UserProfile } from '../controllers/User/UserControllers.js';
 import IsAuthenticated from '../Middlewares/Isauthenticated.js';
 
 
@@ -9,5 +9,6 @@ UserRoute.post('/register',RegisterUser);
 UserRoute.post('/login',LoginUser);
 UserRoute.get('/profile',IsAuthenticated,UserProfile);
 UserRoute.post('/sendreq',IsAuthenticated,SendDoctorReq);
+UserRoute.post('/appointmentReq/:id',IsAuthenticated,Appointmentreq);
 
 export default UserRoute;

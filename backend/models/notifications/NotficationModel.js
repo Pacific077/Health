@@ -9,7 +9,11 @@ const NotficationSchema = mongoose.Schema({
         type:String,
         enum:['request','approval','adminApproval','rejected']
     },
-    userId:{
+    senderId:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'User'
+    },
+    reciverId:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'User'
     },

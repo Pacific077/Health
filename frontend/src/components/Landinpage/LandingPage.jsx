@@ -1,7 +1,16 @@
 import React from "react";
 import "./LandingPage.css";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
+  const nanvigate = useNavigate()
+   const handleLoginCLick = ()=>{
+    nanvigate('/login')
+   }
+   const handleRegisterClick = ()=>{
+    console.log("Register btn clickedd");
+    //to be implemneted
+   }
   return (
     <div className="landingpage">
       <div className="landnav">
@@ -23,8 +32,8 @@ const LandingPage = () => {
             sequi ipsa aliquam molestias facilis.
           </p>
           <div className="landbtncont">
-            <button className="login">Login</button>
-            <button className="register">Register</button>
+            <button className="login" onClick={handleLoginCLick}>Login</button>
+            <button className="register" onClick={handleRegisterClick} >Register</button>
           </div>
         </div>
         <div className="rightland">

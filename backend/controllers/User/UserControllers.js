@@ -1,3 +1,5 @@
+import Appointment from "../../models/Appointments/Appointment.js"
+import Doctor from "../../models/Doctor/DoctorModel.js"
 import User from "../../models/User/UserModel.js"
 import Notification from "../../models/notifications/NotficationModel.js"
 import bcrypt from "bcrypt"
@@ -88,24 +90,70 @@ const UserProfile = async (req, res) => {
     throw new Error("User not found");
   }
 };
+//send Appointmetn req
+const Appointmentreq = async (req,res)=>{
+  const doctorid =  req.params.id;
+  const {date,time} =  req.body;
+  const doctor = await Doctor.findById(doctorid);
+  if(!doctor){
+    return res.send(401).json({
+      message:"Nodoctor found",
+    })
+  }
+  const user = req.user;
+  const notification = await Notification.create({
+    message:`${user.name} requested for your appointment on ${date} at ${time}`,
+    notificationType: 'request',
+    senderId:user._id,
+    reciverId:doctorid
+  })
+  const appointment = await Appointment.create({
+    UserId:user._id,
+    DoctorId:doctorid,
+    status:"pending"
+  })
+  await doctor.NewNotification.push(notification)
+  await doctor.appointments.push(appointment);
+  await doctor.save();
+  res.status(200).json({
+    message:"Appointment reqquest sent",
+    data:doctor
+  })
+
+
+}
+
 
 //send Doctor req
+//accppt do nothing in dr database just change the role
+//reject delete dr from database
+
 const SendDoctorReq =async (req,res)=>{
   const {name,email,password,Speciality,Fees}= req.body
   const admin =await User.findById(process.env.ADMIN_ID);
   const data = {
     name,email,password,Speciality,Fees
   }
+  await Doctor.create({
+    userId:req.user._id,
+    name,
+    email,
+    password,
+    Speciality,
+    Fees,
+})
   const notification = await Notification.create({
     message:`${name} requested for doctor acceptance`,
     notificationType: 'adminApproval',
-    userId:process.env.ADMIN_ID
+    senderId:req.user._id,
+    reciverId:process.env.ADMIN_ID,
+
   })
- await admin.newNotifiaction.push(notification)
+ await admin.NewNotification.push(notification)
  await admin.save()
   res.status(200).json({
     message:"request sent success",
     data
   })
 }
-export {RegisterUser,LoginUser,UserProfile,SendDoctorReq}
+export {RegisterUser,LoginUser,UserProfile,SendDoctorReq,Appointmentreq}

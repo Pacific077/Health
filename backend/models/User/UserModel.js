@@ -33,7 +33,7 @@ const UserSchema = mongoose.Schema(
         ref: "Appointment",
       },
     ],
-    newNotifiaction: [
+    NewNotification: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Notification",

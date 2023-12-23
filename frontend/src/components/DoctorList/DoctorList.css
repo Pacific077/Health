@@ -1,0 +1,75 @@
+.docListPage{
+    background-color:  rgb(205, 231, 254);
+    min-height: 90vh;
+    padding-left: 20vh;
+    padding-right: 20vh;
+    padding-top: 2vh;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+.dotorListHead{
+    color: rgb(9, 9, 160);
+    font-size: 4.4vh;
+}
+.doctorcard{
+
+    height: 40vh;
+    width: 21%;
+    box-sizing: border-box;
+    margin-bottom: 5vh;
+    background-color: white;
+    box-shadow: 10px 10px 4px gray;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.doctCardContainer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.docCardImg{
+    height: 30%;
+    width: 33%;
+    border-radius: 100%;
+    margin: auto;
+    margin-top: 4vh;
+    margin-bottom: 3vh;
+    box-shadow: 10px 10px 4px gray;
+    border:  2px solid green;
+}
+.docCardName h3{
+    text-align: center;
+    color: rgb(110, 0, 213);
+    margin-bottom: 1vh;
+}
+.docCardName p{
+    text-align: center;
+    color: rgb(110, 0, 213);
+    margin-top: 0;
+}
+.DocCardFeeDetails{
+    text-align: center;
+
+}
+.DocCardBtnCont{
+    text-align: center;
+}
+.DocCardBtnCont button{
+    font-family:cursive;
+    color: red;
+    height: 4vh;
+    width: 12vh;
+    background-color: rgb(0, 255, 0);
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 10px 10px 4px gray;
+}
+.docCardImg img{
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+}
+.DocCardBtnCont button:hover{
+    cursor: pointer;
+    background-color: rgb(0, 229, 0);
+}
