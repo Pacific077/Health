@@ -22,6 +22,7 @@ const Section2 = () => {
         desc={DescCardArr[0].desc}
         btn1={DescCardArr[0].btn1}
         btn2={DescCardArr[0].btn2}
+        navigate={DescCardArr[0].navigate}
       />
       <Section22 arr={Sec22Arr[0]}/>
       <Section23 />

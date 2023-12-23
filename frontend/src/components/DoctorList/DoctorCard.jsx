@@ -1,17 +1,17 @@
 import React from 'react'
 import dp from '../../images/dp.jpg'
-const DoctorCard = () => {
+const DoctorCard = ({name,Fee ,Speciality}) => {
   return (
     <div className="doctorcard">
     <div className="docCardImg">
         <img src={dp} alt="" srcset="" />
     </div>
     <div className="docCardName">
-        <h3>Dr Sudhanshu Sinha</h3>
-        <p>Gynecologist</p>
+        <h3>Dr {name}</h3>
+        <p>{Speciality}</p>
     </div>
     <div className="DocCardFeeDetails">
-        <p>Fee : 500</p>
+        <p>Fee : {Fee}</p>
     </div>
     <div className="DocCardBtnCont">
         <button>Book Now</button>
