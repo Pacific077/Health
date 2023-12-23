@@ -12,6 +12,14 @@ const AppointmentSchema =  mongoose.Schema({
     status:{
         type:String,
         enum:['approved','pending','requested']
+    },
+    date:{
+        type:String,
+        required:true
+    },
+    time:{
+        type:String,
+        required:true
     }
 
 },{

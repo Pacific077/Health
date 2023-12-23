@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import dp from '../../images/dp.jpg'
-const DoctorCard = ({name,Fee ,Speciality}) => {
+import FormContext from "../../context/Forms/FormsContext";
+const DoctorCard = ({name,Fee ,Speciality,DrId}) => {
+    const formcontext = useContext(FormContext);
+    const {setVisiblity,setDoctorID} = formcontext;
+    const handleCLick = ()=>{
+        console.log("drid",DrId)
+        setDoctorID(DrId)
+        setVisiblity()
+    }
   return (
     <div className="doctorcard">
     <div className="docCardImg">
@@ -14,7 +22,7 @@ const DoctorCard = ({name,Fee ,Speciality}) => {
         <p>Fee : {Fee}</p>
     </div>
     <div className="DocCardBtnCont">
-        <button>Book Now</button>
+        <button onClick={handleCLick}>Book Now</button>
     </div>
 </div>
   )

@@ -13,3 +13,17 @@ export const LoginApi = async (userData) => {
     );
     return response.data;
   };
+
+  export const SendAppReqApi = async ({id,date,time}) => {
+    const response = await axios.post(
+      `http://localhost:4501/api/v1/user/appointmentReq/${id}`,
+      {
+       date,
+       time
+      },
+      {
+        withCredentials: true,
+      }
+    );
+    return response;
+  };

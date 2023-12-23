@@ -97,7 +97,7 @@ const Appointmentreq = async (req,res)=>{
   const doctor = await Doctor.findById(doctorid);
   if(!doctor){
     return res.send(401).json({
-      message:"Nodoctor found",
+      message:"No doctor found",
     })
   }
   const user = req.user;
@@ -110,7 +110,9 @@ const Appointmentreq = async (req,res)=>{
   const appointment = await Appointment.create({
     UserId:user._id,
     DoctorId:doctorid,
-    status:"pending"
+    status:"pending",
+    date,
+    time
   })
   await doctor.NewNotification.push(notification)
   await doctor.appointments.push(appointment);
@@ -119,8 +121,6 @@ const Appointmentreq = async (req,res)=>{
     message:"Appointment reqquest sent",
     data:doctor
   })
-
-
 }
 
 

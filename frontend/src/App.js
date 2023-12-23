@@ -24,6 +24,7 @@ const App = () => {
           <Route path="/notifications" element={<Notification />} />
           <Route path="/intro" element={<Introduction />} />
         </Routes>
+
       </BrowserRouter>
     </>
   );

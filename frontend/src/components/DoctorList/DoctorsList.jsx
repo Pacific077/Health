@@ -1,9 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./DoctorList.css";
 import DoctorCard from "./DoctorCard";
 import { GetAllDoctor } from "../../Apis/DoctorAPis";
+import SendAppointmentForm from "./SendAppointmentForm";
+import FormContext from "../../context/Forms/FormsContext";
+
 const DoctorsList = () => {
   const [doctorList, setDoctorList] = useState(null);
+  const formcontext = useContext(FormContext);
+  const {AppointmentReqFromVis} = formcontext;
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,12 +24,16 @@ const DoctorsList = () => {
   }, []);
   return (
     <div className="docListPage">
+
+     {AppointmentReqFromVis && <SendAppointmentForm />}
       <h1 className="dotorListHead">Doctors Lists :</h1>
       <div className="doctCardContainer">
         {doctorList ? (
           doctorList.map((doctor) => {
             return (
               <DoctorCard
+              key={doctor._id}
+                DrId={doctor._id}
                 name={doctor.name}
                 Fee={doctor.Fees}
                 Speciality={doctor.Speciality}
