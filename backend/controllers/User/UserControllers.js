@@ -86,7 +86,7 @@ const UserProfile = async (req, res) => {
       data: user,
     });
   } else {
-    res.status(404);
+    res.status(400);
     throw new Error("User not found");
   }
 };

@@ -27,3 +27,12 @@ export const LoginApi = async (userData) => {
     );
     return response;
   };
+  export const ProfileApi = async () => {
+    const response = await axios.post(
+      "http://localhost:4501/api/v1/user/profile",
+      {
+        withCredentials: true,
+      }
+    );
+    return response;
+  };

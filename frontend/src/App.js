@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LandinPage from "./components/Landinpage/LandingPage";
 import LoginPage from "./components/Login/LoginPage";
@@ -7,16 +7,21 @@ import Notification from "./components/Notifications Page/Notification";
 import Nav from "./components/Nav/Nav";
 import Introduction from "./components/Disease Predict/Introduction";
 import DoctorsList from "./components/DoctorList/DoctorsList";
+import UserState from "./context/users/UserState";
+import AuthContext from "./context/Auth/AuthContext";
+
 
 const App = () => {
-  const navRoutes = ["/home", "/notifications", "/intro","/list"];
-
-  const shouldDisplayNav = navRoutes.includes(window.location.pathname);
+  const authcontext = useContext(AuthContext)
+  const{isAuthenticated} = authcontext
   return (
     <>
       <BrowserRouter>
-        {shouldDisplayNav && <Nav />}
+        { isAuthenticated&&<Nav />}
+
+          <UserState>
         <Routes>
+
           <Route path="/" element={<LandinPage />} />
           <Route path="/list" element={<DoctorsList />} />
           <Route path="/login" element={<LoginPage />} />
@@ -24,6 +29,7 @@ const App = () => {
           <Route path="/notifications" element={<Notification />} />
           <Route path="/intro" element={<Introduction />} />
         </Routes>
+          </UserState>
 
       </BrowserRouter>
     </>

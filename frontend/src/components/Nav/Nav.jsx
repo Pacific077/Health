@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useContext} from "react";
+import UserContext from "../../context/users/UserContext";
 import {
   faHouseUser,
   faBell,
@@ -21,6 +22,8 @@ const Nav = () => {
   const [isactiv5, setactiv5] = useState(false);
   const [isScrolled, setScrolled] = useState(false);
   const [sideNav, setsideNav] = useState(false);
+
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {

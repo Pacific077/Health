@@ -9,7 +9,7 @@ const IsAuthenticated = async (req,res,next)=>{
         req.user =await User.findById(decoded.id).select("-password")
         return next();
     }else{
-        return res.status(401).json({
+        return res.status(400).json({
             message:"Inavlid User!! please login" 
         })
     }

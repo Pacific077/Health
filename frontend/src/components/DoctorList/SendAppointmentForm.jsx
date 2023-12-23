@@ -17,13 +17,13 @@ const SendAppointmentForm = () => {
       date:"12/21/12",
       time:"12:12:12"})
       if(resp.status===200){
-       toast.success("Appointment request sent !!");
-        
+       toast.success("Appointment request sent !!"); 
       }else{
         //may not be crct
         //check after hndling errors in backend
         toast.error(resp.message)
       }
+      UnsetVisiblity()
   };
   return (
     <div className="sendAppointReqForm">
