@@ -1,11 +1,12 @@
-import React, { useEffect, useState ,useContext} from "react";
-import UserContext from "../../context/users/UserContext";
+import React, { useEffect, useState } from "react";
+
 import {
   faHouseUser,
   faBell,
   faUser,
   faRightFromBracket,
   faUserDoctor,
+  faCalendarCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate  } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,6 +21,7 @@ const Nav = () => {
   const [isactiv3, setactiv3] = useState(false);
   const [isactiv4, setactiv4] = useState(false);
   const [isactiv5, setactiv5] = useState(false);
+  const [isactiv6, setactiv6] = useState(false);
   const [isScrolled, setScrolled] = useState(false);
   const [sideNav, setsideNav] = useState(false);
 
@@ -43,6 +45,7 @@ const Nav = () => {
     setactiv2(false)
     setactiv5(false);
     setactiv1(false)
+    setactiv6(false)
   }
   const handleHomeclick = () => {
     setactiv1(true);
@@ -50,6 +53,7 @@ const Nav = () => {
     setactiv4(false);
     setactiv3(false);
     setactiv5(false);
+    setactiv6(false)
     navigate('/home');
   };
   const handleNotificationclick = () => {
@@ -58,6 +62,7 @@ const Nav = () => {
     setactiv4(false);
     setactiv3(false);
     setactiv5(false);
+    setactiv6(false)
     navigate("/notifications");
   };
   const handleAboutclick = () => {
@@ -67,6 +72,7 @@ const Nav = () => {
     setactiv3(true);
     setactiv4(false);
     setactiv5(false);
+    setactiv6(false)
 
   };
   const handleDoctorCLick = () => {
@@ -76,9 +82,19 @@ const Nav = () => {
     setactiv3(false);
     setactiv4(false);
     setactiv5(true);
+    setactiv6(false)
     navigate('/list')
 
   };
+  const handleCalendarClick = () =>{
+    setactiv1(false)
+    setactiv2(false)
+    setactiv3(false)
+    setactiv4(false)
+    setactiv5(false)
+    setactiv6(true)
+    navigate('/appointments')
+  }
   const handlesidenav = () => {
     setsideNav(!sideNav);
   };
@@ -100,6 +116,12 @@ const Nav = () => {
             className={isactiv2 ? "activ opaczero" : "opaczero"}
           >
             <FontAwesomeIcon className="navicons" icon={faBell} />
+          </li>
+          <li
+            onClick={handleCalendarClick}
+            className={isactiv6 ? "activ opaczero" : "opaczero"}
+          >
+            <FontAwesomeIcon className="navicons" icon={faCalendarCheck}/>
           </li>
           <li onClick={handleDoctorCLick}
             className={isactiv5 ? "activ opaczero" : "opaczero"}>

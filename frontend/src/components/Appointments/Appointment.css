@@ -1,0 +1,87 @@
+.appointmentPage{
+    height: 90vh;
+    width: 100%;
+    background-image: url('../../images/appointbg.jpg');
+    background-size:cover ;
+    background-repeat: repeat-y;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notificationScreen{
+    height: 90%;
+    width: 60%;
+    border-radius: 50px;
+    background-color: white;
+    overflow: scroll;
+}
+
+.notifhead{
+    position: sticky;
+    top: 0;
+    background-color:  rgb(205, 231, 254);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left:9vh ;
+    padding-right:9vh ;
+    height: 10vh;
+}
+.notifhead h3{
+    font-size: larger;
+    font-family: 'Ubuntu', sans-serif;
+    color:#4D31D7;;
+}
+.redtext{
+    color: red;
+}
+.appointmentcont{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2vh;
+    flex-wrap: wrap;
+}
+.appointmentCard{
+    margin-bottom: 2vh;
+    font-family: 'Ubuntu', sans-serif;
+    width: 30%;
+    /* border: 2px solid red; */
+    border-radius: 20px;
+    height: 20vh;
+    box-shadow: 10px 10px 4px gray;
+    background-color: aliceblue;
+}
+.upperAppointcard{
+    display: flex;
+    gap: 2vh;
+    padding: 1vh;
+    box-sizing: border-box;
+}
+.upperAppointcard img{
+    box-shadow: 10px 10px 4px gray;
+    width: 25%;
+    border-radius: 100%;
+    border: 4px solid blueviolet;
+}
+.appointdetails{
+    width: 70%;
+}
+.appointmetwith{
+    font-size: x-large;
+    font-weight: 100;
+    margin: 0;
+    margin-top: 1vh;
+}
+.appointmentDate{
+    margin: 0;
+}
+.appointmenttime{
+    margin: 0;
+    font-weight: 600;
+}
+.appointStatus{
+    text-align: center;
+    color: green;
+    font-weight: 700;
+    font-size: large;
+}

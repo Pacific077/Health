@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LandinPage from "./components/Landinpage/LandingPage";
 import LoginPage from "./components/Login/LoginPage";
@@ -8,21 +8,24 @@ import Nav from "./components/Nav/Nav";
 import Introduction from "./components/Disease Predict/Introduction";
 import DoctorsList from "./components/DoctorList/DoctorsList";
 import UserState from "./context/users/UserState";
-import AuthContext from "./context/Auth/AuthContext";
+import AppointmentPage from "./components/Appointments/AppointmentPage";
+
 
 
 const App = () => {
-  const authcontext = useContext(AuthContext)
-  const{isAuthenticated} = authcontext
+  const pathsWithoutNav = ["/login", "/"];
+  const shouldDisplayNav = () => {
+    return !pathsWithoutNav.includes(window.location.pathname);
+  };
   return (
     <>
-      <BrowserRouter>
-        { isAuthenticated&&<Nav />}
-
+      <BrowserRouter> 
+        { shouldDisplayNav() && <Nav />}
           <UserState>
         <Routes>
 
           <Route path="/" element={<LandinPage />} />
+          <Route path="/appointments" element={<AppointmentPage />} />
           <Route path="/list" element={<DoctorsList />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/home" element={<Home />} />

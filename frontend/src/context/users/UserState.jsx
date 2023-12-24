@@ -17,6 +17,7 @@ const UserState = ({ children }) => {
             if (axios.isAxiosError(error) && error.response.status === 400) {
                 toast.error("Please Login Before Continue");
                 navigate('/login')
+                window.location.reload();
               }else{
                 toast.error("abcd")
               }

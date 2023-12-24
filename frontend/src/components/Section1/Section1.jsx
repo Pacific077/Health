@@ -1,12 +1,16 @@
 import React from "react";
 import phone from "../../images/phone.png";
 import sec1img from "../../images/sec1img.png";
-
+import { useNavigate  } from "react-router-dom";
 import "./Section1.css";
 import "./sec1resp.css";
 import  Typed  from "react-typed";
 
 const Section1 = () => {
+  const navigate = useNavigate();
+  const handleClick =() =>{
+    navigate('/intro')
+  }
   return (
     <div className="sec1">
       <div className="sec1para">
@@ -28,7 +32,7 @@ const Section1 = () => {
           ecosystem.
         </p>
         <div className="secBtnCont">
-          <button className="interview">
+          <button className="interview" onClick={handleClick}>
             Start Interview
           </button>
         </div>
