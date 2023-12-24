@@ -8,14 +8,17 @@ import {
   faUserDoctor,
   faCalendarCheck,
 } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate  } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Nav.css";
 import "./NavResp.css";
 import logo from "../../images/logo.png";
 import SideNav from "./SideNav";
+import { ProfileApi } from "../../Apis/UserApi";
 const Nav = () => {
   const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+  const [newNotification, setNewNotification] = useState([]);
   const [isactiv1, setactiv1] = useState(true);
   const [isactiv2, setactiv2] = useState(false);
   const [isactiv3, setactiv3] = useState(false);
@@ -25,6 +28,14 @@ const Nav = () => {
   const [isScrolled, setScrolled] = useState(false);
   const [sideNav, setsideNav] = useState(false);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const resp = await ProfileApi();
+      await setUser(resp.data);
+      await setNewNotification(resp.data.data.NewNotification);
+    };
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,22 +50,22 @@ const Nav = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const handleLogOutClick = ()=>{
-    setactiv4(true)
-    setactiv3(false)
-    setactiv2(false)
+  const handleLogOutClick = () => {
+    setactiv4(true);
+    setactiv3(false);
+    setactiv2(false);
     setactiv5(false);
-    setactiv1(false)
-    setactiv6(false)
-  }
+    setactiv1(false);
+    setactiv6(false);
+  };
   const handleHomeclick = () => {
     setactiv1(true);
     setactiv2(false);
     setactiv4(false);
     setactiv3(false);
     setactiv5(false);
-    setactiv6(false)
-    navigate('/home');
+    setactiv6(false);
+    navigate("/home");
   };
   const handleNotificationclick = () => {
     setactiv1(false);
@@ -62,39 +73,35 @@ const Nav = () => {
     setactiv4(false);
     setactiv3(false);
     setactiv5(false);
-    setactiv6(false)
+    setactiv6(false);
     navigate("/notifications");
   };
   const handleAboutclick = () => {
-
     setactiv1(false);
     setactiv2(false);
     setactiv3(true);
     setactiv4(false);
     setactiv5(false);
-    setactiv6(false)
-
+    setactiv6(false);
   };
   const handleDoctorCLick = () => {
-
     setactiv1(false);
     setactiv2(false);
     setactiv3(false);
     setactiv4(false);
     setactiv5(true);
-    setactiv6(false)
-    navigate('/list')
-
+    setactiv6(false);
+    navigate("/list");
   };
-  const handleCalendarClick = () =>{
-    setactiv1(false)
-    setactiv2(false)
-    setactiv3(false)
-    setactiv4(false)
-    setactiv5(false)
-    setactiv6(true)
-    navigate('/appointments')
-  }
+  const handleCalendarClick = () => {
+    setactiv1(false);
+    setactiv2(false);
+    setactiv3(false);
+    setactiv4(false);
+    setactiv5(false);
+    setactiv6(true);
+    navigate("/appointments");
+  };
   const handlesidenav = () => {
     setsideNav(!sideNav);
   };
@@ -116,16 +123,25 @@ const Nav = () => {
             className={isactiv2 ? "activ opaczero" : "opaczero"}
           >
             <FontAwesomeIcon className="navicons" icon={faBell} />
+            <div
+              className={
+                newNotification.length > 0
+                  ? "notificationmark"
+                  : "notificationmark notifmarkvisiblity"
+              }
+            ></div>
           </li>
           <li
             onClick={handleCalendarClick}
             className={isactiv6 ? "activ opaczero" : "opaczero"}
           >
-            <FontAwesomeIcon className="navicons" icon={faCalendarCheck}/>
+            <FontAwesomeIcon className="navicons" icon={faCalendarCheck} />
           </li>
-          <li onClick={handleDoctorCLick}
-            className={isactiv5 ? "activ opaczero" : "opaczero"}>
-          <FontAwesomeIcon className="navicons" icon={faUserDoctor} />
+          <li
+            onClick={handleDoctorCLick}
+            className={isactiv5 ? "activ opaczero" : "opaczero"}
+          >
+            <FontAwesomeIcon className="navicons" icon={faUserDoctor} />
           </li>
           <li
             onClick={handleAboutclick}

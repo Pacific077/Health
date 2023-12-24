@@ -123,3 +123,15 @@ body{
     font-size: xx-large;
     padding-bottom: 1vh;
 }
+.notificationmark{
+    position: absolute;
+    height: 2vh;
+    width: 2vh;
+    border-radius: 100%;
+    background-color: red;
+    margin-bottom: 3vh;
+    margin-left: 3vh;
+}
+.notifmarkvisiblity{
+    visibility: hidden;
+}

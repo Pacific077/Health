@@ -28,8 +28,19 @@ export const LoginApi = async (userData) => {
     return response;
   };
   export const ProfileApi = async () => {
-    const response = await axios.post(
+    const response = await axios.get(
       "http://localhost:4501/api/v1/user/profile",
+      {
+        withCredentials: true,
+      }
+    );
+    return response;
+  };
+
+  
+  export const GetAllNotifiactions = async () => {
+    const response = await axios.get(
+      "http://localhost:4501/api/v1/user/notification",
       {
         withCredentials: true,
       }

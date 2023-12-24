@@ -79,7 +79,7 @@ const LoginUser = async (req, res) => {
 //profile
 const UserProfile = async (req, res) => {
   const id = req.user._id;
-  const user = await User.findById(id);
+  const user = await User.findById(id).populate('appointments');
   if (user) {
     res.status(200).json({
       message: "user profile success",
@@ -95,28 +95,32 @@ const Appointmentreq = async (req,res)=>{
   const doctorid =  req.params.id;
   const {date,time} =  req.body;
   const doctor = await Doctor.findById(doctorid);
+  console.log("doc",doctor)
   if(!doctor){
-    return res.send(401).json({
+    return res.status(401).json({
       message:"No doctor found",
     })
   }
-  const user = req.user;
+  const userId = req.user._id;
+  const user = await User.findById(userId);
   const notification = await Notification.create({
     message:`${user.name} requested for your appointment on ${date} at ${time}`,
     notificationType: 'request',
-    senderId:user._id,
+    senderId:userId,
     reciverId:doctorid
   })
   const appointment = await Appointment.create({
-    UserId:user._id,
+    UserId:userId,
     DoctorId:doctorid,
     status:"pending",
     date,
     time
   })
-  await doctor.NewNotification.push(notification)
-  await doctor.appointments.push(appointment);
+  await doctor.NewNotification.push(notification._id)
+  await user.appointments.push(appointment._id);
+  await doctor.appointments.push(appointment._id);
   await doctor.save();
+  await user.save()
   res.status(200).json({
     message:"Appointment reqquest sent",
     data:doctor
@@ -156,4 +160,24 @@ const SendDoctorReq =async (req,res)=>{
     data
   })
 }
-export {RegisterUser,LoginUser,UserProfile,SendDoctorReq,Appointmentreq}
+
+
+//get all notifcation
+const GetAllNotifiaction = async (req,res,next)=>{
+  const userId = req.user._id;
+  const user = await User.findById(userId).populate("NewNotification").populate("seenNotification");
+  if(!user){
+    res.status(401).json({
+      message:"Inavlid User"
+    })
+  }
+  const newNotifications = user.NewNotification;
+  const oldnotifcation  = user.seenNotification;
+  res.status(200).json({
+    message:"All NOtifcations",
+    oldnotifcation ,
+    newNotifications,
+
+  })
+}
+export {RegisterUser,LoginUser,UserProfile,SendDoctorReq,Appointmentreq,GetAllNotifiaction}
