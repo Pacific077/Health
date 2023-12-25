@@ -10,6 +10,7 @@ import DoctorsList from "./components/DoctorList/DoctorsList";
 import UserState from "./context/users/UserState";
 import AppointmentPage from "./components/Appointments/AppointmentPage";
 import ApplyDoctor from "./components/ApplyDoctor/ApplyDoctor";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 
 
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/home" element={<Home />} />
           <Route path="/apply" element={<ApplyDoctor />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/notifications" element={<Notification />} />
           <Route path="/intro" element={<Introduction />} />
         </Routes>

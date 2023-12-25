@@ -83,6 +83,7 @@ const Nav = () => {
     setactiv4(false);
     setactiv5(false);
     setactiv6(false);
+    navigate('/dashboard')
   };
   const handleDoctorCLick = () => {
     setactiv1(false);

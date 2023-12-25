@@ -1,0 +1,78 @@
+.dashboardPage{
+    height: 90vh;
+    padding-left: 20vh;
+    padding-right: 20vh;
+    padding-top: 7vh;
+background-color: aliceblue;
+box-sizing: border-box;
+}
+.greetUserContainer{
+    /* border: 2px solid black; */
+    height: 39%;
+    width: 50%;
+    background-color: white;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 4px grey;
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    background-image: url("../../images/Introbg.jpg");
+    background-size: cover;
+    color:#333333;
+    
+}
+.greet{
+    box-sizing: border-box;
+    padding-left: 7vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    align-items: center;
+    justify-content: center;
+}
+.greet h1{
+    font-size: 4vh;
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+    text-shadow: 4px 3px 1px white;
+
+}
+
+.greetimgcont{
+    width: 50%;
+}
+.greetImg{
+    /* border: 2px solid red; */
+    height: 120%;
+    width: 32vh;
+    margin-top: -7vh;
+}
+.Dashupper{
+    margin-bottom: 5vh;
+}
+.DashLower{
+    border-radius: 20px;
+    box-shadow: 10px 10px 4px grey;
+    background-color: white;
+    background-image: url("../../images/Introbg.jpg");
+    background-size: cover;
+    /* border: 2px solid black; */
+    width: 50%;
+    height: 50%;
+    display: flex;
+
+}
+.userinfoLeft,.userinfoRight{
+    width: 50%;
+    padding-left: 5vh;
+    padding-top: 2.5vh;
+}
+.userinfoLeft p,.userinfoRight p {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: larger;
+}
+.bolderfont{
+    font-weight: 600;
+    margin-right: 2vh;
+}
