@@ -13,7 +13,9 @@ const ApplyDoctor = () => {
         email:"abcd@email.com",
         password:"random",
         Speciality:"sb kch",
-        Fees:45678
+        Fees:45678,
+        date:"21:12:12",
+        time:"12:34"
       });
       console.log("result after applying for dotor form",result);
       if(result.status===200){

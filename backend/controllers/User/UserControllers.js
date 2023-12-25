@@ -1,25 +1,24 @@
-import Appointment from "../../models/Appointments/Appointment.js"
-import Doctor from "../../models/Doctor/DoctorModel.js"
-import User from "../../models/User/UserModel.js"
-import Notification from "../../models/notifications/NotficationModel.js"
-import bcrypt from "bcrypt"
-import jwt from "jsonwebtoken"
+import Appointment from "../../models/Appointments/Appointment.js";
+import Doctor from "../../models/Doctor/DoctorModel.js";
+import User from "../../models/User/UserModel.js";
+import Notification from "../../models/notifications/NotficationModel.js";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 //register user
-const RegisterUser = async(req,res)=>{
-    //all feilds req
+const RegisterUser = async (req, res) => {
+  //all feilds req
   const { name, email, password } = req.body;
   if (!name || !email || !password) {
-
-   return res.status(400).json({
-        message:"All details required"
+    return res.status(400).json({
+      message: "All details required",
     });
   }
   //if already registerd
   const UserExists = await User.findOne({ email });
   if (UserExists) {
     return res.status(400).json({
-        message:"User already Exists"
+      message: "User already Exists",
     });
   }
   //hashing the password
@@ -36,50 +35,50 @@ const RegisterUser = async(req,res)=>{
     message: "user registerd",
     data: newUser,
   });
-}
+};
 
 //login user
 const LoginUser = async (req, res) => {
-    const { email, password } = req.body;
-    if (!email || !password) {
-        return res.status(400).json({
-            message:"All details required"
-        });
-    }
-    const user = await User.findOne({ email });
-    if (!user) {
-        return res.status(401).json({
-            message:"Invalid User"
-        });
-    }
-    //check valid password
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-        return res.status(401).json({
-            message:"Invalid Pass"
-        });
-    }
-    //genarate jwt
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "7d",
+  const { email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).json({
+      message: "All details required",
     });
-    //send token to cookie (http only:deny user to acces cookie from client side : it can only be accesed via http)
-    res.cookie("token", token, {
-      httpOnly: true,
-      maxAge: 24 * 60 * 60 * 1000,
+  }
+  const user = await User.findOne({ email });
+  if (!user) {
+    return res.status(401).json({
+      message: "Invalid User",
     });
-    //send the response
-    res.json({
-      status: "success",
-      message: "logged in",
-      data: user,
+  }
+  //check valid password
+  const isMatch = await bcrypt.compare(password, user.password);
+  if (!isMatch) {
+    return res.status(401).json({
+      message: "Invalid Pass",
     });
+  }
+  //genarate jwt
+  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+    expiresIn: "7d",
+  });
+  //send token to cookie (http only:deny user to acces cookie from client side : it can only be accesed via http)
+  res.cookie("token", token, {
+    httpOnly: true,
+    maxAge: 24 * 60 * 60 * 1000,
+  });
+  //send the response
+  res.json({
+    status: "success",
+    message: "logged in",
+    data: user,
+  });
 };
 
 //profile
 const UserProfile = async (req, res) => {
   const id = req.user._id;
-  const user = await User.findById(id).populate('appointments');
+  const user = await User.findById(id).populate("appointments");
   if (user) {
     res.status(200).json({
       message: "user profile success",
@@ -91,118 +90,162 @@ const UserProfile = async (req, res) => {
   }
 };
 //send Appointmetn req
-const Appointmentreq = async (req,res)=>{
-  const doctorid =  req.params.id;
-  const {date,time} =  req.body;
+const Appointmentreq = async (req, res) => {
+  const doctorid = req.params.id;
+  const { date, time } = req.body;
 
   const doctor = await User.findById(doctorid);
 
-  if(!doctor){
+  if (!doctor) {
     return res.status(401).json({
-      message:"No doctor found",
-    })
+      message: "No doctor found",
+    });
   }
   const userId = req.user._id;
   const user = await User.findById(userId);
   const notification = await Notification.create({
-    message:`${user.name} requested for your appointment on ${date} at ${time}`,
-    notificationType: 'request',
-    senderId:userId,
-    reciverId:doctorid
-  })
+    message: `${user.name} requested for your appointment on ${date} at ${time}`,
+    notificationType: "request",
+    senderId: userId,
+    reciverId: doctorid,
+  });
   const appointment = await Appointment.create({
-    UserId:userId,
-    DoctorId:doctorid,
-    status:"pending",
+    UserId: userId,
+    DoctorId: doctorid,
+    status: "pending",
     date,
-    time
-  })
-  await doctor.NewNotification.push(notification._id)
+    time,
+  });
+  await doctor.NewNotification.push(notification._id);
   await user.appointments.push(appointment._id);
   await doctor.appointments.push(appointment._id);
   await doctor.save();
-  await user.save()
+  await user.save();
   res.status(200).json({
-    message:"Appointment reqquest sent",
-    data:doctor
-  })
-}
-
+    message: "Appointment reqquest sent",
+    data: doctor,
+  });
+};
 
 //send Doctor req
 //accppt do nothing in dr database just change the role
 //reject delete dr from database
 
-const SendDoctorReq =async (req,res)=>{
-  const {name,email,password,Speciality,Fees}= req.body
-  const admin =await User.findById(process.env.ADMIN_ID);
+const SendDoctorReq = async (req, res) => {
+  const { name, email, password, Speciality, Fees, date, time } = req.body;
+
+  const admin = await User.findById(process.env.ADMIN_ID);
   const data = {
-    name,email,password,Speciality,Fees
-  }
-  await Doctor.create({
-    userId:req.user._id,
     name,
     email,
     password,
     Speciality,
     Fees,
-})
+    date,
+    time,
+  };
+
+  await Doctor.create({
+    userId: req.user._id,
+    name,
+    email,
+    password,
+    Speciality,
+    Fees,
+  });
+  const appointment = await Appointment.create({
+    UserId: req.user._id,
+    DoctorId: process.env.ADMIN_ID,
+    status: "pending",
+    date,
+    time,
+  });
   const notification = await Notification.create({
-    message:`${name} requested for doctor acceptance`,
-    notificationType: 'adminApproval',
-    senderId:req.user._id,
-    reciverId:process.env.ADMIN_ID,
-
-  })
- await admin.NewNotification.push(notification)
- await admin.save()
+    message: `${name} requested for doctor acceptance`,
+    notificationType: "adminApproval",
+    senderId: req.user._id,
+    reciverId: process.env.ADMIN_ID,
+  });
+  await admin.NewNotification.push(notification);
+  await admin.appointments.push(appointment);
+  await admin.save();
   res.status(200).json({
-    message:"request sent success",
-    data
-  })
-}
-
+    message: "request sent success",
+    data,
+  });
+};
 
 //get all notifcation
-const GetAllNotifiaction = async (req,res)=>{
+const GetAllNotifiaction = async (req, res) => {
   const userId = req.user._id;
-  const user = await User.findById(userId).populate("NewNotification").populate("seenNotification");
-  if(!user){
+  const user = await User.findById(userId)
+    .populate("NewNotification")
+    .populate("seenNotification");
+  if (!user) {
     res.status(401).json({
-      message:"Inavlid User"
-    })
+      message: "Inavlid User",
+    });
   }
-  const newNotifications =await user.NewNotification;
-  const oldnotifcation  =await user.seenNotification;
+  const newNotifications = await user.NewNotification;
+  const oldnotifcation = await user.seenNotification;
   res.status(200).json({
-    message:"All NOtifcations",
-    oldnotifcation ,
+    message: "All NOtifcations",
+    oldnotifcation,
     newNotifications,
-
-  })
-}
-
+  });
+};
 
 //mark all notifcation as read
-const MarkAllread = async (req,res)=>{
+const MarkAllread = async (req, res) => {
   const userId = req.user._id;
   const user = await User.findById(userId);
-  if(!user){
+  if (!user) {
     res.status(401).json({
-      message:"Inavlid User"
-    })
+      message: "Inavlid User",
+    });
   }
-  const newNotifications =await user.NewNotification;
+  const newNotifications = await user.NewNotification;
 
-  newNotifications.map(async (notif)=>{
+  newNotifications.map(async (notif) => {
     await user.seenNotification.push(notif);
   });
-  console.log("here")
-  user.NewNotification = [] ;
+  console.log("here");
+  user.NewNotification = [];
   await user.save();
   res.status(200).json({
-    message:"all read",
-    user
-  })
-}
-export {RegisterUser,LoginUser,UserProfile,SendDoctorReq,MarkAllread,Appointmentreq,GetAllNotifiaction}
+    message: "all read",
+    user,
+  });
+};
+
+//(reciverid === currentuser ) array in appointments array
+const getMatchedAppointments = async (req, res) => {
+  const userid = req.user._id;
+  const user = await User.findById(userid).populate('appointments');
+  const appointments = await user.appointments;
+  const matchedAppointemnts = [];
+  const uid = userid.toString()
+  // console.log(uid)
+  await appointments.forEach(async(appointment) => {
+    const Drid =await appointment.DoctorId.toString();
+    // console.log("drid",Drid)
+    if (Drid === uid) {
+      // console.log("hel")
+      matchedAppointemnts.push(appointment);
+    }
+  });
+  res.status(200).json({
+    message: "fetched matched array",
+    matchedAppointemnts,
+  });
+};
+export {
+  RegisterUser,
+  LoginUser,
+  UserProfile,
+  SendDoctorReq,
+  getMatchedAppointments,
+  MarkAllread,
+  Appointmentreq,
+  GetAllNotifiaction,
+};

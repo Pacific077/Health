@@ -53,14 +53,15 @@ export const LoginApi = async (userData) => {
   };
 
 
-  export const SendDoctorReqApi = async ({name,email,password,Speciality,Fees}) => {
+  export const SendDoctorReqApi = async ({name,email,password,Speciality,Fees,date,time}) => {
+    console.log("insidi",date,time)
     const response = await axios.post(
       "http://localhost:4501/api/v1/user/sendreq",
       {
         name,
         email,
         password,
-        Speciality,Fees
+        Speciality,Fees,date,time
       },
       {
         withCredentials: true,
@@ -73,6 +74,17 @@ export const LoginApi = async (userData) => {
   export const MarkAllNotificationRead = async () => {
     const response = await axios.get(
       "http://localhost:4501/api/v1/user/allRead",
+      {
+        withCredentials: true,
+      }
+    );
+    return response;
+  };
+
+
+  export const matchedAppointmensApi = async () => {
+    const response = await axios.get(
+      "http://localhost:4501/api/v1/user/matched",
       {
         withCredentials: true,
       }

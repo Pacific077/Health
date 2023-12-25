@@ -11,6 +11,7 @@ import UserState from "./context/users/UserState";
 import AppointmentPage from "./components/Appointments/AppointmentPage";
 import ApplyDoctor from "./components/ApplyDoctor/ApplyDoctor";
 import Dashboard from "./components/Dashboard/Dashboard";
+import RequestPage from "./components/Request/RequestPage";
 
 
 
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/apply" element={<ApplyDoctor />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/request" element={<RequestPage />} />
           <Route path="/notifications" element={<Notification />} />
           <Route path="/intro" element={<Introduction />} />
         </Routes>

@@ -1,0 +1,89 @@
+.requestPage{
+    min-height: 90vh;
+    background-color: aliceblue;
+    padding-left: 20vh;
+    padding-right: 20vh;
+    padding-top: 2vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.requestCard{
+    background-color: white;
+    height: 30vh;
+    width: 30%;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 5vh;
+    box-shadow: 10px 10px 4px gray;
+}
+.requestcardhead{
+    background-color: #39259b;
+    color: white;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    text-align: center;
+    margin-bottom: 0;
+}
+.botreqcard{
+    display: flex;
+    height: 68%;
+}
+.reqImg{
+    width: 35%;
+    /* border: 2px solid pink; */
+    height: 100%;
+    padding: 2vh;
+    text-align: center;
+    box-sizing: border-box;
+}
+.reqImg img{
+
+    height: 80%;
+    width: 80%;
+    border: 5px solid green;
+}
+.reqinfo{
+    box-sizing: border-box;
+    padding-top: 1vh;
+    width: 65%;
+    /* border: 2px solid green; */
+    height: 100%;
+
+}
+.reqinfo p{
+    margin-bottom: 0px;
+    margin-top: 8px;
+}
+.reqBtnCont{
+    margin-top: 2vh;
+    padding-left: 2vh;
+}
+.reqAccpt{
+    background-color: green;
+    color: white;
+    height: 3vh;
+    margin-right: 2vh;
+}
+.reqReject{
+    height: 3vh;
+    background-color: red;
+    color: white;
+}
+.reqAccpt:hover{
+    cursor: pointer;
+    background-color: rgb(1, 186, 1);
+}
+.reqReject:hover{
+    cursor: pointer;
+    background-color: rgb(214, 3, 3);
+
+}
+.repage{
+    background-color: aliceblue;
+}
+.repage h1{
+    text-align: center;
+    margin-top: 0;
+}

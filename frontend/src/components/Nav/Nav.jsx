@@ -122,6 +122,7 @@ const Nav = () => {
     setactiv5(false);
     setactiv6(false);
     setactiv7(true);
+    navigate('/request')
   }
   const handlesidenav = () => {
     setsideNav(!sideNav);
@@ -139,7 +140,6 @@ const Nav = () => {
           >
             <FontAwesomeIcon className="navicons" icon={faHouseUser} />
           </li>
-          {console.log("ajfd",role)}
           {role === "admin" || role === "doctor" ? (
             <li
               onClick={handleUserPlusClick}
@@ -163,12 +163,13 @@ const Nav = () => {
               }
             ></div>
           </li>
-          <li
+          {role!=='admin' ? <li
             onClick={handleCalendarClick}
             className={isactiv6 ? "activ opaczero" : "opaczero"}
           >
             <FontAwesomeIcon className="navicons" icon={faCalendarCheck} />
-          </li>
+          </li> : ""}
+         
           <li
             onClick={handleDoctorCLick}
             className={isactiv5 ? "activ opaczero" : "opaczero"}
