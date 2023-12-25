@@ -68,3 +68,14 @@ export const LoginApi = async (userData) => {
     );
     return response;
   };
+
+  
+  export const MarkAllNotificationRead = async () => {
+    const response = await axios.get(
+      "http://localhost:4501/api/v1/user/allRead",
+      {
+        withCredentials: true,
+      }
+    );
+    return response;
+  };

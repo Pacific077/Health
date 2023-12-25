@@ -164,7 +164,7 @@ const SendDoctorReq =async (req,res)=>{
 
 
 //get all notifcation
-const GetAllNotifiaction = async (req,res,next)=>{
+const GetAllNotifiaction = async (req,res)=>{
   const userId = req.user._id;
   const user = await User.findById(userId).populate("NewNotification").populate("seenNotification");
   if(!user){
@@ -172,8 +172,8 @@ const GetAllNotifiaction = async (req,res,next)=>{
       message:"Inavlid User"
     })
   }
-  const newNotifications = user.NewNotification;
-  const oldnotifcation  = user.seenNotification;
+  const newNotifications =await user.NewNotification;
+  const oldnotifcation  =await user.seenNotification;
   res.status(200).json({
     message:"All NOtifcations",
     oldnotifcation ,
@@ -181,4 +181,28 @@ const GetAllNotifiaction = async (req,res,next)=>{
 
   })
 }
-export {RegisterUser,LoginUser,UserProfile,SendDoctorReq,Appointmentreq,GetAllNotifiaction}
+
+
+//mark all notifcation as read
+const MarkAllread = async (req,res)=>{
+  const userId = req.user._id;
+  const user = await User.findById(userId);
+  if(!user){
+    res.status(401).json({
+      message:"Inavlid User"
+    })
+  }
+  const newNotifications =await user.NewNotification;
+
+  newNotifications.map(async (notif)=>{
+    await user.seenNotification.push(notif);
+  });
+  console.log("here")
+  user.NewNotification = [] ;
+  await user.save();
+  res.status(200).json({
+    message:"all read",
+    user
+  })
+}
+export {RegisterUser,LoginUser,UserProfile,SendDoctorReq,MarkAllread,Appointmentreq,GetAllNotifiaction}
