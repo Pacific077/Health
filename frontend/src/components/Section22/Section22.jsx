@@ -5,7 +5,7 @@ import phn2 from "../../images/phone2.png"
 import adharc from "../../images/aadharcard.png"
 import "./Sec22resp.css"
 const Section22 = ({arr}) => {
-  console.log("arr",arr)
+
   return (
     <div  className='section22'>
         <div className="sec22left">

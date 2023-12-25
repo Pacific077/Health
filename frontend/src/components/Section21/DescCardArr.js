@@ -8,10 +8,10 @@ const DescCardArr = [
 },
     {
     greentext:"STREAMLINED HEALTH RECORD MANAGEMENT MADE EFFORTLESS",
-    head:"NOW Link Your Health Records with ABHA ID",
-    desc:"Experience a cutting-edge solution for effortless management of your health records. Gain secure and convenient digital access.",
-    btn1:"Upload Now",
-    btn2:"Know More",navigate:"list"
+    head:"Transforming Healthcare: Join Our Remote Telemedicine Revolution Today!",
+    desc:"Revolutionize patient care. Join our telemedicine platform, connecting doctors and patients seamlessly for efficient and accessible remote healthcare",
+    btn1:"Apply Now",
+    navigate:"apply"
 },
     {
     greentext:"SYNC, TRANSFORM, GET FIT WITH SMART HEALTH",

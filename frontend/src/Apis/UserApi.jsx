@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+
 export const LoginApi = async (userData) => {
     const response = await axios.post(
       "http://localhost:4501/api/v1/user/login",
@@ -14,6 +15,7 @@ export const LoginApi = async (userData) => {
     return response;
   };
 
+
   export const SendAppReqApi = async ({id,date,time}) => {
     const response = await axios.post(
       `http://localhost:4501/api/v1/user/appointmentReq/${id}`,
@@ -27,6 +29,8 @@ export const LoginApi = async (userData) => {
     );
     return response;
   };
+
+
   export const ProfileApi = async () => {
     const response = await axios.get(
       "http://localhost:4501/api/v1/user/profile",
@@ -41,6 +45,23 @@ export const LoginApi = async (userData) => {
   export const GetAllNotifiactions = async () => {
     const response = await axios.get(
       "http://localhost:4501/api/v1/user/notification",
+      {
+        withCredentials: true,
+      }
+    );
+    return response;
+  };
+
+
+  export const SendDoctorReqApi = async ({name,email,password,Speciality,Fees}) => {
+    const response = await axios.post(
+      "http://localhost:4501/api/v1/user/sendreq",
+      {
+        name,
+        email,
+        password,
+        Speciality,Fees
+      },
       {
         withCredentials: true,
       }

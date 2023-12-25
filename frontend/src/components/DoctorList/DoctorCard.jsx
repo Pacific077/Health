@@ -5,8 +5,9 @@ const DoctorCard = ({name,Fee ,Speciality,DrId}) => {
     const formcontext = useContext(FormContext);
     const {setVisiblity,setDoctorID} = formcontext;
     const handleCLick = ()=>{
-        console.log("drid",DrId)
+        console.log("drrr",DrId,name,Fee)
         setDoctorID(DrId)
+        console.log("drid",DrId)
         setVisiblity()
     }
   return (

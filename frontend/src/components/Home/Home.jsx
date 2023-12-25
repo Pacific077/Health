@@ -20,3 +20,6 @@ export default Home;
 //activity tracker
 //water tracker
 //sleep tracker
+
+//appointmetns 
+//if doctor id === user id then show accept reject button

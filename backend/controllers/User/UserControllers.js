@@ -94,8 +94,9 @@ const UserProfile = async (req, res) => {
 const Appointmentreq = async (req,res)=>{
   const doctorid =  req.params.id;
   const {date,time} =  req.body;
-  const doctor = await Doctor.findById(doctorid);
-  console.log("doc",doctor)
+
+  const doctor = await User.findById(doctorid);
+
   if(!doctor){
     return res.status(401).json({
       message:"No doctor found",

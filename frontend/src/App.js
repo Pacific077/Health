@@ -9,6 +9,7 @@ import Introduction from "./components/Disease Predict/Introduction";
 import DoctorsList from "./components/DoctorList/DoctorsList";
 import UserState from "./context/users/UserState";
 import AppointmentPage from "./components/Appointments/AppointmentPage";
+import ApplyDoctor from "./components/ApplyDoctor/ApplyDoctor";
 
 
 
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/list" element={<DoctorsList />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/apply" element={<ApplyDoctor />} />
           <Route path="/notifications" element={<Notification />} />
           <Route path="/intro" element={<Introduction />} />
         </Routes>

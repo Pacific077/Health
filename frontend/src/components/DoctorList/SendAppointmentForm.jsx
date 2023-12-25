@@ -13,7 +13,7 @@ const SendAppointmentForm = () => {
     UnsetVisiblity();
   };
   const handleSendReq = async () => {
-    const resp = await SendAppReqApi({id:DoctorId,
+    const resp = await SendAppReqApi({id:DoctorId,//will work in future
       date:"12/21/12",
       time:"12:12:12"})
       if(resp.status===200){

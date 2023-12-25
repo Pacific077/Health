@@ -33,7 +33,7 @@ const DoctorsList = () => {
             return (
               <DoctorCard
               key={doctor._id}
-                DrId={doctor._id}
+                DrId={doctor.userId}
                 name={doctor.name}
                 Fee={doctor.Fees}
                 Speciality={doctor.Speciality}

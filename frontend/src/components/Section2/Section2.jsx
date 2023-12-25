@@ -31,7 +31,7 @@ const Section2 = () => {
       head={DescCardArr[1].head}
       desc={DescCardArr[1].desc}
       btn1={DescCardArr[1].btn1}
-      btn2={DescCardArr[1].btn2} />
+      navigate={DescCardArr[1].navigate} />
       <Section22 arr={Sec22Arr[1]} />
       <Section24 />
       <DescCard
