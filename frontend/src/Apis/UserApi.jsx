@@ -54,7 +54,7 @@ export const LoginApi = async (userData) => {
 
 
   export const SendDoctorReqApi = async ({name,email,password,Speciality,Fees,date,time}) => {
-    console.log("insidi",date,time)
+
     const response = await axios.post(
       "http://localhost:4501/api/v1/user/sendreq",
       {

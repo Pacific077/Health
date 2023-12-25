@@ -65,8 +65,10 @@
     color: white;
     height: 3vh;
     margin-right: 2vh;
+    border-radius: 5px;
 }
 .reqReject{
+    border-radius: 5px;
     height: 3vh;
     background-color: red;
     color: white;
