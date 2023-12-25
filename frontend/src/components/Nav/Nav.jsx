@@ -8,7 +8,7 @@ import {
   faUserDoctor,
   faCalendarCheck,
 } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Nav.css";
 import "./NavResp.css";
@@ -16,6 +16,7 @@ import logo from "../../images/logo.png";
 import SideNav from "./SideNav";
 import { ProfileApi } from "../../Apis/UserApi";
 const Nav = () => {
+  const location   =  useLocation()
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [newNotification, setNewNotification] = useState([]);
@@ -31,11 +32,11 @@ const Nav = () => {
   useEffect(() => {
     const fetchData = async () => {
       const resp = await ProfileApi();
-      await setUser(resp.data);
-      await setNewNotification(resp.data.data.NewNotification);
+      setUser(resp.data);
+      setNewNotification(resp.data.data.NewNotification);
     };
     fetchData();
-  }, []);
+  }, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
