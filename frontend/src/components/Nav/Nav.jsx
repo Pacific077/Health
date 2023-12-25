@@ -7,6 +7,7 @@ import {
   faRightFromBracket,
   faUserDoctor,
   faCalendarCheck,
+  faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,9 +17,10 @@ import logo from "../../images/logo.png";
 import SideNav from "./SideNav";
 import { ProfileApi } from "../../Apis/UserApi";
 const Nav = () => {
-  const location   =  useLocation()
+  const location = useLocation();
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
+  const [role,setrole] = useState("")
   const [newNotification, setNewNotification] = useState([]);
   const [isactiv1, setactiv1] = useState(true);
   const [isactiv2, setactiv2] = useState(false);
@@ -26,6 +28,7 @@ const Nav = () => {
   const [isactiv4, setactiv4] = useState(false);
   const [isactiv5, setactiv5] = useState(false);
   const [isactiv6, setactiv6] = useState(false);
+  const [isactiv7, setactiv7] = useState(false);
   const [isScrolled, setScrolled] = useState(false);
   const [sideNav, setsideNav] = useState(false);
 
@@ -33,6 +36,7 @@ const Nav = () => {
     const fetchData = async () => {
       const resp = await ProfileApi();
       setUser(resp.data);
+      setrole(resp.data.data.role)
       setNewNotification(resp.data.data.NewNotification);
     };
     fetchData();
@@ -56,6 +60,7 @@ const Nav = () => {
     setactiv3(false);
     setactiv2(false);
     setactiv5(false);
+    setactiv7(false);
     setactiv1(false);
     setactiv6(false);
   };
@@ -65,6 +70,7 @@ const Nav = () => {
     setactiv4(false);
     setactiv3(false);
     setactiv5(false);
+    setactiv7(false);
     setactiv6(false);
     navigate("/home");
   };
@@ -75,6 +81,7 @@ const Nav = () => {
     setactiv3(false);
     setactiv5(false);
     setactiv6(false);
+    setactiv7(false);
     navigate("/notifications");
   };
   const handleAboutclick = () => {
@@ -83,8 +90,9 @@ const Nav = () => {
     setactiv3(true);
     setactiv4(false);
     setactiv5(false);
+    setactiv7(false);
     setactiv6(false);
-    navigate('/dashboard')
+    navigate("/dashboard");
   };
   const handleDoctorCLick = () => {
     setactiv1(false);
@@ -92,6 +100,7 @@ const Nav = () => {
     setactiv3(false);
     setactiv4(false);
     setactiv5(true);
+    setactiv7(false);
     setactiv6(false);
     navigate("/list");
   };
@@ -102,8 +111,18 @@ const Nav = () => {
     setactiv4(false);
     setactiv5(false);
     setactiv6(true);
+    setactiv7(false);
     navigate("/appointments");
   };
+  const handleUserPlusClick = () =>{
+    setactiv1(false);
+    setactiv2(false);
+    setactiv3(false);
+    setactiv4(false);
+    setactiv5(false);
+    setactiv6(false);
+    setactiv7(true);
+  }
   const handlesidenav = () => {
     setsideNav(!sideNav);
   };
@@ -120,6 +139,17 @@ const Nav = () => {
           >
             <FontAwesomeIcon className="navicons" icon={faHouseUser} />
           </li>
+          {console.log("ajfd",role)}
+          {role === "admin" || role === "doctor" ? (
+            <li
+              onClick={handleUserPlusClick}
+              className={isactiv7 ? "activ opaczero" : "opaczero"}
+            >
+              <FontAwesomeIcon className="navicons" icon={faUserPlus} />
+            </li>
+          ) : (
+            ""
+          )}
           <li
             onClick={handleNotificationclick}
             className={isactiv2 ? "activ opaczero" : "opaczero"}
