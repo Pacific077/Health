@@ -67,3 +67,6 @@
     transition: 0.3s ease;
     border-bottom: 2px solid #4d31d7;
 }
+.newNotifbg{
+  background-color: rgb(128, 189, 243);
+}

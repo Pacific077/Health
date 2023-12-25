@@ -15,7 +15,7 @@ const LoginPage = () => {
   const handleClick = async () => {
     console.log("is got clicked");
     try {
-      const resp = await LoginApi({ email: "pat@123.com", password: "pass" });
+      const resp = await LoginApi({ email: "admin@123.com", password: "pass" });
       if (resp.status === 200) {
         toast.success("Logged in !!");
   
