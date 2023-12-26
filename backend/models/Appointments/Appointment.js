@@ -11,7 +11,7 @@ const AppointmentSchema =  mongoose.Schema({
     },
     status:{
         type:String,
-        enum:['approved','pending','requested']
+        enum:['approved','pending','rejected']
     },
     date:{
         type:String,

@@ -23,9 +23,9 @@ const AccptDoctorReq = async (req, res) => {
     senderId: process.env.ADMIN_ID,
     reciverId: userId,
   });
-  user.NewNotification.push(notification);
-  user.role = "Doctor";
-  user.save();
+  await user.NewNotification.push(notification);
+   user.role = "Doctor";
+  await user.save();
   res.status(200).json({
     message: "accepted doctors approval",
   });

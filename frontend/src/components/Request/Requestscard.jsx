@@ -2,7 +2,7 @@ import React from "react";
 import img from "../../images/dp.jpg";
 import { AcceptDrReqApi, RejectDrReqApi } from "../../Apis/AdminApis";
 import { toast } from "react-toastify";
-
+import { AcceptAppointmentReq, RejectAppointmentReq } from "../../Apis/DoctorAPis";
 const Requestscard = ({ doctorid, appntID, role }) => {
   const handleAccpetClick = async () => {
     console.log("i got clicked");
@@ -11,6 +11,7 @@ const Requestscard = ({ doctorid, appntID, role }) => {
     console.log("status", resp.status);
     toast.success("Doctor Request Accpeted");
   };
+
   const handleDrRejectClick = async () => {
     console.log("i got Clicked");
     const resp = await RejectDrReqApi({ appointID: appntID, userId: doctorid });
@@ -18,14 +19,27 @@ const Requestscard = ({ doctorid, appntID, role }) => {
     console.log("status", resp.status);
     toast.success("Doctor Request rejected");
   };
-  const handleAppRejection = () => {
+  const handleAppRejection = async () => {
     console.log("rejction got clicke");
-    console.log(doctorid,appntID)
+    console.log(doctorid, appntID);
+    const resp = await RejectAppointmentReq({ appointID: appntID, userId: doctorid });
+    console.log("resp",resp);
+    if(resp.status===200){
+      toast.success("Rejected Appoinment Request")
+    }
   };
-  const handleAppAcceptance= ()=>{
-    console.log("Accpetance got clicked")
-    console.log(doctorid,appntID)
-  }
+  const handleAppAcceptance = async () => {
+    console.log("Accpetance got clicked");
+    console.log(doctorid, appntID);
+    const response = await AcceptAppointmentReq({
+      appointID: appntID,
+      userId: doctorid,
+    });
+    if(response.status===200){
+      toast.success("Accepted appointment Request");
+    }
+ 
+  };
   return (
     <div className="requestCard">
       <h1 className="requestcardhead">We Care</h1>

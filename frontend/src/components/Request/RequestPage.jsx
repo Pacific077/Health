@@ -45,9 +45,12 @@ const RequestPage = () => {
       <div className="requestPage">
         {appointemnt.length > 0
           ? appointemnt.map((appoint) => {
+            console.log("stat",appoint.status)
+            if(appoint.status==='pending'){
               return (
                 <Requestscard doctorid={appoint.UserId} appntID={appoint._id} role={role}/>
               );
+            }
             })
           : "No request to show"}
       </div>
