@@ -140,7 +140,7 @@ const Nav = () => {
           >
             <FontAwesomeIcon className="navicons" icon={faHouseUser} />
           </li>
-          {role === "admin" || role === "doctor" ? (
+          {role === "admin" || role === "Doctor" ? (
             <li
               onClick={handleUserPlusClick}
               className={isactiv7 ? "activ opaczero" : "opaczero"}

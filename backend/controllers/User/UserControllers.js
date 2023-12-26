@@ -196,6 +196,8 @@ const GetAllNotifiaction = async (req, res) => {
 };
 
 //mark all notifcation as read
+//minor bug 
+//reverse the array and then push it into the readNotification
 const MarkAllread = async (req, res) => {
   const userId = req.user._id;
   const user = await User.findById(userId);

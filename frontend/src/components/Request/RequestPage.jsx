@@ -36,13 +36,17 @@ const RequestPage = () => {
   }, [role]);
   return (
     <div className="repage">
-      <h1>Pending Doctor Requests</h1>
+      {role === "admin" ? (
+        <h1>Pending Doctor Requests</h1>
+      ) : (
+        <h1>Pending Appointment Requests</h1>
+      )}
 
       <div className="requestPage">
         {appointemnt.length > 0
           ? appointemnt.map((appoint) => {
               return (
-                <Requestscard doctorid={appoint.UserId} appntID={appoint._id} />
+                <Requestscard doctorid={appoint.UserId} appntID={appoint._id} role={role}/>
               );
             })
           : "No request to show"}
