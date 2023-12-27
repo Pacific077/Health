@@ -1,18 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./LandingPage.css";
 import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
-  const nanvigate = useNavigate()
-   const handleLoginCLick = ()=>{
-    nanvigate('/login')
-   }
-   const handleRegisterClick = ()=>{
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const nanvigate = useNavigate();
+  
+  useEffect(() => {
+    const updateCursorPosition = (e) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener("mousemove", updateCursorPosition);
+
+    return () => {
+      window.removeEventListener("mousemove", updateCursorPosition);
+    };
+  }, []);
+  const handleLoginCLick = () => {
+    nanvigate("/login");
+  };
+  const handleRegisterClick = () => {
     console.log("Register btn clickedd");
     //to be implemneted
-   }
+  };
   return (
     <div className="landingpage">
+      <div
+        className="cursor"
+        style={{ left: position.x, top: position.y }}
+      ></div>
       <div className="landnav">
         <div className="landlogo"></div>
         <button className="register">Free consult</button>
@@ -32,14 +49,16 @@ const LandingPage = () => {
             sequi ipsa aliquam molestias facilis.
           </p>
           <div className="landbtncont">
-            <button className="login" onClick={handleLoginCLick}>Login</button>
-            <button className="register" onClick={handleRegisterClick} >Register</button>
+            <button className="login" onClick={handleLoginCLick}>
+              Login
+            </button>
+            <button className="register" onClick={handleRegisterClick}>
+              Register
+            </button>
           </div>
         </div>
         <div className="rightland">
-          <div className="landimage">
-            
-          </div>
+          <div className="landimage"></div>
         </div>
       </div>
     </div>

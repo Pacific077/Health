@@ -1,0 +1,44 @@
+.registerPage{
+    height: 90%;
+    width: 80%;
+    /* border: 1px solid white; */
+    background-color: #00BFFF;
+    border-radius: 100px;
+    display: flex;
+    overflow: hidden;
+}
+.lft,.loginpgright{
+    width: 50%;
+    height: 100%;
+}
+.lft{
+    background-image: url('../../images/Introbg.jpg');
+    background-size: cover;
+    /* background-color: black; */
+    border-top-right-radius: 70px;
+
+    border-bottom-right-radius: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginpage{
+    height: 80%;
+    width: 70%;
+    border: 1px solid white;
+    background-color: #00BFFF;
+    border-radius: 100px;
+    display: flex;
+    overflow: hidden;
+}
+.LoginHere{
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+    margin-left: 2vh;
+    font-size: 2.5vh;
+}
+.alreadySigned{
+    font-size: 2.5vh;
+
+}

@@ -4,23 +4,26 @@ import User from "../../models/User/UserModel.js";
 import Notification from "../../models/notifications/NotficationModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { validationResult } from "express-validator";
 
 //register user
 const RegisterUser = async (req, res) => {
   //all feilds req
+  const errs = validationResult(req);
+  if(!errs.isEmpty()){
+    let arr = [];
+    errs.array().forEach((error) => {
+      arr.push(error.msg);
+    });
+    return res.status(400).json({
+      message:"Somethin went wrong",
+      err:arr
+    })
+  }
+  
   const { name, email, password } = req.body;
-  if (!name || !email || !password) {
-    return res.status(400).json({
-      message: "All details required",
-    });
-  }
-  //if already registerd
-  const UserExists = await User.findOne({ email });
-  if (UserExists) {
-    return res.status(400).json({
-      message: "User already Exists",
-    });
-  }
+  
+
   //hashing the password
   const salt = await bcrypt.genSalt(10);
   const hashedPass = await bcrypt.hash(password, salt);

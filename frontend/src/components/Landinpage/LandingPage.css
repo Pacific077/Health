@@ -83,9 +83,7 @@ body{
 .register{
     background-color: #00FF00;
 }
-.login:hover,.register:hover{
-    cursor: pointer;
-}
+
 .login:hover{
     background-color: #02aae2;
 }
@@ -114,4 +112,14 @@ body{
     100% {
         transform: perspective(400px) rotateY(360deg); /* Final state (complete rotation) */
     }
+}
+
+.cursor{
+    position: absolute;
+    pointer-events: none;
+    background-image: url('../../images/cursor.png');
+    background-size: cover;
+    height: 100px;
+    width: 95px;
+    z-index: 100;
 }

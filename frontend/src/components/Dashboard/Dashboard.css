@@ -1,15 +1,70 @@
 .dashboardPage{
+    /* ab */
     height: 90vh;
     padding-left: 20vh;
     padding-right: 20vh;
     padding-top: 7vh;
+    display: flex;
+    justify-content: space-evenly;
 background-color: aliceblue;
 box-sizing: border-box;
 }
-.greetUserContainer{
+.dashLeft{
+    /* border: 1px solid red; */
+    width: 30%;
+    height: 95%;
+    border-radius: 10px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 10px 10px 4px grey;
+
+    background-image: url("../../images/Introbg.jpg");
+    background-size: cover;
+}
+.dashright{
+    border-radius:10px ;
+    /* border: 1px solid red; */
+    width: 60%;
+    height:95%;
+
+}
+.dashrightUpper{
+    width: 100%;
+    height: 50%;
+    /* overflow: hidden; */
+}
+.dashrightLower{
+    margin-top: 3.5vh;
+    height: 45%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     /* border: 2px solid black; */
-    height: 39%;
-    width: 50%;
+}
+.uplaodProfilePic{
+    height: 100%;
+    background-image: url("../../images/Introbg.jpg");
+    background-size: cover;
+    width: 44%;
+    border-radius: 20px;
+    box-shadow: 10px 10px 4px gray;
+    text-align: center;
+    /* border: 1px solid black; */
+}
+.updateuserName{
+    border-radius: 20px;
+    box-shadow: 10px 10px 4px gray;
+    height: 100%;
+    width: 44%;
+    background-image: url("../../images/Introbg.jpg");
+    background-size: cover;
+    /* border: 1px solid black; */
+    
+}
+.greetUserContainer{    /* ab */
+    /* border: 2px solid black; */
+    height: 100%;
+    width: 100%;
     background-color: white;
     border-radius: 20px;
     box-sizing: border-box;
@@ -19,9 +74,9 @@ box-sizing: border-box;
     background-image: url("../../images/Introbg.jpg");
     background-size: cover;
     color:#333333;
-    
+
 }
-.greet{
+.greet{    /* ab */
     box-sizing: border-box;
     padding-left: 7vh;
     width: 50%;
@@ -31,7 +86,7 @@ box-sizing: border-box;
     align-items: center;
     justify-content: center;
 }
-.greet h1{
+.greet h1{    /* ab */
     font-size: 4vh;
     margin-top: 0vh;
     margin-bottom: 0vh;
@@ -39,18 +94,18 @@ box-sizing: border-box;
 
 }
 
-.greetimgcont{
+.greetimgcont{    /* ab */
     width: 50%;
 }
-.greetImg{
+.greetImg{    /* ab */
     /* border: 2px solid red; */
+    margin-left: 5vh;
     height: 120%;
-    width: 32vh;
+    width: 37vh;
     margin-top: -7vh;
+    margin-bottom: 1vh;
 }
-.Dashupper{
-    margin-bottom: 5vh;
-}
+
 .DashLower{
     border-radius: 20px;
     box-shadow: 10px 10px 4px grey;
@@ -63,16 +118,66 @@ box-sizing: border-box;
     display: flex;
 
 }
-.userinfoLeft,.userinfoRight{
-    width: 50%;
-    padding-left: 5vh;
-    padding-top: 2.5vh;
+
+
+.dashLeft img{
+    height: 45%;
+    border: 5px solid green;
+    width: 80%;
+    border-radius: 100%;
+    box-shadow: 10px 10px 4px gray;
+    margin-top: 2vh;
 }
-.userinfoLeft p,.userinfoRight p {
+.dashinfo{
+    margin-top: 6vh;
+    height: 48%;
+    text-align: left;
+    box-sizing: border-box;
+    padding-left: 7vh;
+}
+.dashinfo p{
+    font-size: x-large;
+    font-weight: 700;
+    color: rgb(105, 13, 191);
     font-family: 'Ubuntu', sans-serif;
-    font-size: larger;
+    text-shadow: 2px 2px 1px white;
 }
-.bolderfont{
-    font-weight: 600;
-    margin-right: 2vh;
+.uplaodProfilePic img{
+    height: 50%;
+    width: 50%;
+    margin-top: 2vh;
+    border-radius: 100%;
+    box-sizing: border-box;
+    border: 5px solid black;
+    padding: 5px;
+
+}
+.uplaodProfilePic h3{
+    color: rgb(105, 13, 191);
+    font-family: 'Ubuntu', sans-serif;
+    text-shadow: 2px 2px 1px white;
+    font-size: 2.5vh;
+}
+.DashChangeBtn{
+    height: 4.5vh;
+    color: white;
+    background-color: green;
+    border-radius: 10px;
+    font-size: 2vh;
+    margin-right:4vh ;
+}
+.DashRemoveBtn{
+    height: 4.5vh;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    font-size: 2vh;
+}
+.DashRemoveBtn:hover{
+    background-color: rgb(210, 1, 1);
+    cursor: pointer;
+}
+.DashChangeBtn:hover{
+    background-color: rgb(1, 174, 1);
+    cursor: pointer;
 }

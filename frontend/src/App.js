@@ -12,11 +12,12 @@ import AppointmentPage from "./components/Appointments/AppointmentPage";
 import ApplyDoctor from "./components/ApplyDoctor/ApplyDoctor";
 import Dashboard from "./components/Dashboard/Dashboard";
 import RequestPage from "./components/Request/RequestPage";
+import Register from "./components/Register/Register";
 
 
 
 const App = () => {
-  const pathsWithoutNav = ["/login", "/"];
+  const pathsWithoutNav = ["/login", "/","/register"];
   const shouldDisplayNav = () => {
     return !pathsWithoutNav.includes(window.location.pathname);
   };
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/request" element={<RequestPage />} />
           <Route path="/notifications" element={<Notification />} />
           <Route path="/intro" element={<Introduction />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
           </UserState>
 
