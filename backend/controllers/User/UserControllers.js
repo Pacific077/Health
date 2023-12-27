@@ -8,7 +8,7 @@ import { validationResult } from "express-validator";
 
 //register user
 const RegisterUser = async (req, res) => {
-  //all feilds req
+try {
   const errs = validationResult(req);
   if(!errs.isEmpty()){
     let arr = [];
@@ -20,10 +20,7 @@ const RegisterUser = async (req, res) => {
       err:arr
     })
   }
-  
   const { name, email, password } = req.body;
-  
-
   //hashing the password
   const salt = await bcrypt.genSalt(10);
   const hashedPass = await bcrypt.hash(password, salt);
@@ -38,16 +35,30 @@ const RegisterUser = async (req, res) => {
     message: "user registerd",
     data: newUser,
   });
+} catch (error) {
+  res.status(500).json({
+    message:error.message
+  })
+}
+
 };
 
 //login user
 const LoginUser = async (req, res) => {
-  const { email, password } = req.body;
-  if (!email || !password) {
-    return res.status(400).json({
-      message: "All details required",
+
+  try {
+  const errs = validationResult(req);
+  if(!errs.isEmpty()){
+    let arr = [];
+    errs.array().forEach((error) => {
+      arr.push(error.msg);
     });
+    return res.status(400).json({
+      message:"Somethin went wrong",
+      err:arr
+    })
   }
+  const { email, password } = req.body;
   const user = await User.findOne({ email });
   if (!user) {
     return res.status(401).json({
@@ -76,6 +87,14 @@ const LoginUser = async (req, res) => {
     message: "logged in",
     data: user,
   });
+    
+  } catch (error) {
+    res.status(500).json({
+      message:error.message
+    })
+  }
+
+
 };
 
 //profile
