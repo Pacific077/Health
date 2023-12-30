@@ -12,7 +12,6 @@
     font-size: 4.4vh;
 }
 .doctorcard{
-
     height: 40vh;
     width: 21%;
     box-sizing: border-box;
@@ -72,4 +71,52 @@
 .DocCardBtnCont button:hover{
     cursor: pointer;
     background-color: rgb(0, 229, 0);
+}
+
+@media screen and (max-width: 1025px) {
+    .doctorcard {
+        height: 38vh;
+        width: 31%;
+        
+    }
+}
+@media screen and (max-width: 769px) {
+    .docListPage {
+       padding-left: 0;
+       padding-right: 0;
+        
+    }
+    .doctorcard {
+        height: 47vh;
+        width: 31%;
+        
+    }
+    .DocCardBtnCont button {
+     
+        height: 5vh;
+        width: 14vh;
+       
+    }
+}
+@media screen and (max-width: 481px) {
+    .docListPage {
+       padding-left: 0;
+       padding-right: 0;
+        
+    }
+}
+@media screen and (max-width: 427px) {
+    .doctorcard {
+        width: 47%;
+        height: 46vh;
+    }
+    .DocCardBtnCont button {
+        height: 5vh;
+        width: 18vh;
+    }
+}
+@media screen and (max-width: 376px) {
+    .doctorcard {
+        width: 49%;
+    }
 }

@@ -7,7 +7,7 @@ const AppointmentSchema =  mongoose.Schema({
     },
     DoctorId:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'Docotor'
+        ref:'User'
     },
     status:{
         type:String,

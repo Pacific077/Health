@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes} from "react-router-dom";
 import LandinPage from "./components/Landinpage/LandingPage";
 import LoginPage from "./components/Login/LoginPage";
 import Home from "./components/Home/Home";
@@ -13,21 +13,25 @@ import ApplyDoctor from "./components/ApplyDoctor/ApplyDoctor";
 import Dashboard from "./components/Dashboard/Dashboard";
 import RequestPage from "./components/Request/RequestPage";
 import Register from "./components/Register/Register";
+import NotAvailablePage from "./components/NotAvailable/NotAvailable";
 
 
 
 const App = () => {
+
   const pathsWithoutNav = ["/login", "/","/register"];
+
   const shouldDisplayNav = () => {
-    return !pathsWithoutNav.includes(window.location.pathname);
-  };
+      return !pathsWithoutNav.includes(window.location.pathname);
+    };
+
+
   return (
     <>
       <BrowserRouter> 
-        { shouldDisplayNav() && <Nav />}
           <UserState>
+        { shouldDisplayNav() && <Nav />}
         <Routes>
-
           <Route path="/" element={<LandinPage />} />
           <Route path="/appointments" element={<AppointmentPage />} />
           <Route path="/list" element={<DoctorsList />} />
@@ -39,6 +43,7 @@ const App = () => {
           <Route path="/notifications" element={<Notification />} />
           <Route path="/intro" element={<Introduction />} />
           <Route path="/register" element={<Register />} />
+          <Route path="*" element={<NotAvailablePage />} />
         </Routes>
           </UserState>
 

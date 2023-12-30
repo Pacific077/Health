@@ -6,6 +6,12 @@ import Notification from "../../models/notifications/NotficationModel.js";
 const AccptDoctorReq = async (req, res) => {
   const { appointID } = req.body;
   const userId = req.params.id;
+  //const 
+   await Doctor.findOneAndUpdate(
+    { userId: userId },
+    { $set: { status: "approved" } }
+  );
+    
   const user = await User.findById(userId);
   const adminID = process.env.ADMIN_ID;
   // delete appointment from admin Array
@@ -23,6 +29,7 @@ const AccptDoctorReq = async (req, res) => {
     senderId: process.env.ADMIN_ID,
     reciverId: userId,
   });
+  
   await user.NewNotification.push(notification);
    user.role = "Doctor";
   await user.save();

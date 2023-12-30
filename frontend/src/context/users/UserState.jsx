@@ -1,10 +1,11 @@
 import React from "react";
-import { useNavigate  } from "react-router-dom";
+
 import UserContext from "./UserContext";
 import { toast } from "react-toastify";
 import axios from "axios";
 const UserState = ({ children }) => {
-    const navigate = useNavigate()
+
+
     const GetProfile =async ()=>{
         try{
              await axios.get(
@@ -15,14 +16,17 @@ const UserState = ({ children }) => {
               );
         }catch(error){
             if (axios.isAxiosError(error) && error.response.status === 400) {
-                toast.error("Please Login Before Continue");
-                navigate('/login')
-                window.location.reload();
+              console.log(error)
+                // toast.error("Please Login Before Continue");
+                // navigate('/login')
+                // setTimeout(()=>{
+                //   window.location.reload();
+                // },2000)
               }else{
                 toast.error("abcd")
               }
         }
-       
+
     }
   return (
     <UserContext.Provider

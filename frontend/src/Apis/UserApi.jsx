@@ -105,3 +105,13 @@ export const LoginApi = async (userData) => {
     );
     return response;
   };
+
+  export const AllappointmentsApi = async () => {
+    const response = await axios.get(
+      "http://localhost:4501/api/v1/user/allappointments",
+      {
+        withCredentials: true,
+      }
+    );
+    return response;
+  };

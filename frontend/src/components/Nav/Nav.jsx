@@ -16,6 +16,8 @@ import "./NavResp.css";
 import logo from "../../images/logo.png";
 import SideNav from "./SideNav";
 import { ProfileApi } from "../../Apis/UserApi";
+import { toast } from "react-toastify";
+import axios from "axios";
 const Nav = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -31,13 +33,27 @@ const Nav = () => {
   const [isactiv7, setactiv7] = useState(false);
   const [isScrolled, setScrolled] = useState(false);
   const [sideNav, setsideNav] = useState(false);
+  
 
   useEffect(() => {
     const fetchData = async () => {
-      const resp = await ProfileApi();
-      setUser(resp.data);
-      setrole(resp.data.data.role)
-      setNewNotification(resp.data.data.NewNotification);
+      try {
+        const resp = await ProfileApi();
+        setUser(resp.data);
+        setrole(resp.data.data.role)
+        setNewNotification(resp.data.data.NewNotification);
+      } catch (Er) {
+        if (axios.isAxiosError(Er) && Er.response.status === 400) {
+          toast.error("PLease Login Before continuing");
+          navigate("/login")
+          setTimeout(()=>{
+            window.location.reload();
+          },2000)
+        }else{
+          toast.error("Something wnet wrong")
+        }
+      }
+      
     };
     fetchData();
   }, [location.pathname]);

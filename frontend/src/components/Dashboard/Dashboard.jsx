@@ -33,8 +33,8 @@ const Dashboard = () => {
          <img src={dp} alt="" srcset="" />
          <h3>Update your Profile Picture</h3>
          <div className="dashBtnCont">
-          <button className="DashChangeBtn">Change Pic</button>
-          <button className="DashRemoveBtn">Remove Pic</button>
+          <button className="DashChangeBtn">Change </button>
+          <button className="DashRemoveBtn">Remove</button>
          </div>
           </div>
           <div className="updateuserName">

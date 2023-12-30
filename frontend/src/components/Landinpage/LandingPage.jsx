@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const LandingPage = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const nanvigate = useNavigate();
-  
+
   useEffect(() => {
     const updateCursorPosition = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
@@ -22,7 +22,7 @@ const LandingPage = () => {
   };
   const handleRegisterClick = () => {
     console.log("Register btn clickedd");
-    //to be implemneted
+    nanvigate("/register");
   };
   return (
     <div className="landingpage">
@@ -32,13 +32,22 @@ const LandingPage = () => {
       ></div>
       <div className="landnav">
         <div className="landlogo"></div>
-        <button className="register">Free consult</button>
+        <button className="register">About Us</button>
       </div>
       <div className="mainland">
         <div className="leftland">
           <h1 className="biglandfont">Your Journey to </h1>
           <h1 className="biglandfont">
-            Better <span className="yellowtxt">Health</span> Starts
+            Better{" "}
+            <span class="waviy">
+              <span style={{ "--i": 1 }}>H</span>
+              <span style={{ "--i": 2 }}>E</span>
+              <span style={{ "--i": 3 }}>A</span>
+              <span style={{ "--i": 4 }}>L</span>
+              <span style={{ "--i": 5 }}>T</span>
+              <span style={{ "--i": 6 }}>H</span>
+            </span>{" "}
+            Starts
           </h1>
           <h1 className="biglandfont">Here</h1>
           <p className="landinfo">

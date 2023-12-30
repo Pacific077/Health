@@ -43,6 +43,10 @@ const DoctorsList = () => {
         ) : (
           <div>Loading</div>
         )}
+        <DoctorCard />
+        <DoctorCard />
+        <DoctorCard />
+        <DoctorCard />
       </div>
     </div>
   );

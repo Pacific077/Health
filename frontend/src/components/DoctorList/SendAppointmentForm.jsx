@@ -13,17 +13,18 @@ const SendAppointmentForm = () => {
     UnsetVisiblity();
   };
   const handleSendReq = async () => {
-    const resp = await SendAppReqApi({id:DoctorId,//will work in future
+    try {
+      const resp = await SendAppReqApi({id:DoctorId,//will work in future
       date:"12/21/12",
       time:"12:12:12"})
       if(resp.status===200){
        toast.success("Appointment request sent !!"); 
-      }else{
-        //may not be crct
-        //check after hndling errors in backend
-        toast.error(resp.message)
       }
       UnsetVisiblity()
+    } catch (error) {
+      toast.error("Something Went wrong")
+    }
+
   };
   return (
     <div className="sendAppointReqForm">

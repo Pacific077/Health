@@ -160,7 +160,6 @@ const SendDoctorReq = async (req, res) => {
   const data = {
     name,
     email,
-    password,
     Speciality,
     Fees,
     date,
@@ -171,7 +170,7 @@ const SendDoctorReq = async (req, res) => {
     userId: req.user._id,
     name,
     email,
-    password,
+    status:"pending",
     Speciality,
     Fees,
   });
@@ -263,6 +262,23 @@ const getMatchedAppointments = async (req, res) => {
     matchedAppointemnts,
   });
 };
+
+const GetAllAppointments = async (req,res)=>{
+  const userid = req.user._id;
+  const user = await User.findById(userid).populate({
+    path: 'appointments',
+    populate: {
+      path: 'DoctorId',
+      model:'user'
+    },
+  })
+  ;
+  const appointments = await user.appointments;
+  res.status(200).json({
+    message:"All Appointments",
+    data:appointments
+  })
+}
 export {
   RegisterUser,
   LoginUser,
@@ -272,4 +288,5 @@ export {
   MarkAllread,
   Appointmentreq,
   GetAllNotifiaction,
+  GetAllAppointments
 };

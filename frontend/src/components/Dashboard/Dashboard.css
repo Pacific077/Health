@@ -6,8 +6,8 @@
     padding-top: 7vh;
     display: flex;
     justify-content: space-evenly;
-background-color: aliceblue;
-box-sizing: border-box;
+    background-color: aliceblue;
+    box-sizing: border-box;
 }
 .dashLeft{
     /* border: 1px solid red; */
@@ -96,12 +96,13 @@ box-sizing: border-box;
 
 .greetimgcont{    /* ab */
     width: 50%;
+    overflow: hidden;
 }
 .greetImg{    /* ab */
     /* border: 2px solid red; */
     margin-left: 5vh;
     height: 120%;
-    width: 37vh;
+    width: 70%;
     margin-top: -7vh;
     margin-bottom: 1vh;
 }
@@ -180,4 +181,76 @@ box-sizing: border-box;
 .DashChangeBtn:hover{
     background-color: rgb(1, 174, 1);
     cursor: pointer;
+}
+@media screen and (max-width: 1025px) {
+    .dashboardPage {
+
+        padding-left: 0;
+        padding-right: 0;
+        
+    }
+    .DashChangeBtn{
+        margin-left: 1vh;
+        margin-right: 2vh;
+    }
+}
+@media screen and (max-width: 769px) {
+    .dashLeft img {
+        height: 39%;
+        
+    }
+    .dashinfo p {
+        font-size:large;
+    }
+    .greetImg {
+        width: 85%;
+    }
+}
+@media screen and (max-width: 664px) {
+    .dashLeft {
+        width: 34%;
+    }
+    .uplaodProfilePic {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 481px) {
+    .dashboardPage {
+        height: 180vh;
+
+        flex-direction: column;
+        display: flex;
+        
+    }
+    .dashLeft {
+        width: 56%;
+        margin: auto;
+    }
+    .dashright {
+        width: 100%;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+}
+@media screen and (max-width: 481px) {
+    .dashLeft {
+        width: 66%;
+    }
+}
+@media screen and (max-width: 321px) {
+    .greet {
+        padding-left: 3vh;
+    }
+    .greetImg {
+        width: 90%;
+        margin-left: 2vh;
+        margin-top: -4vh;
+    }
+    
+    .dashrightUpper {
+        height: 40%;
+    }
+    .uplaodProfilePic h3 {
+        margin-bottom: 0;
+    }
 }

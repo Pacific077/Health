@@ -1,125 +1,232 @@
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.landingpage{
-    background-color: #29298c;
-    height: 100vh;
-    color: white;
+.landingpage {
+  background-color: #29298c;
+  height: 100vh;
+  color: white;
+  overflow: hidden;
 }
-.landnav{
-    display: flex;
-    justify-content: space-between;
+.landnav {
+  display: flex;
+  justify-content: space-between;
 
-    margin-left: 20vh;
-    margin-right: 20vh;
-    margin-bottom: 10vh;
-    padding-top: 3vh;
+  margin-left: 20vh;
+  margin-right: 20vh;
+  margin-bottom: 10vh;
+  padding-top: 3vh;
 }
-.landlogo{
-    height: 50px;
-    width: 177px;
-    background-image: url('../../images/logo.png');
-    background-size: cover;
+.landlogo {
+  height: 50px;
+  width: 177px;
+  background-image: url("../../images/logo.png");
+  background-size: cover;
 }
-.freeconsult{
-    background-color:#8CC084 ;
+.freeconsult {
+  background-color: #8cc084;
 }
-.mainland{
-    margin-left: 20vh;  
-    margin-right: 20vh;
-    display: flex;
-    height: 71vh;
-    justify-content: space-between;
+.mainland {
+  margin-left: 20vh;
+  margin-right: 20vh;
+  display: flex;
+  height: 71vh;
+  justify-content: space-between;
 }
-.leftland{
-    height:100%;
-    width: 45%;
+.leftland {
+  height: 100%;
+  width: 45%;
 }
-.rightland{
-    height:100%;
-    width: 45%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.rightland {
+  height: 100%;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.biglandfont{
-    animation: flip 2s ease-in-out;
-    margin: 3vh;
-    margin-left: 2vh;
-    font-size: 7vh;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.yellowtxt{
-
-    color: yellow;
-}
-.landinfo{
-    margin: 3vh;
-    margin-top: 7vh;
-    letter-spacing: 1px;
-    line-height: 20px;
-    font-weight: 100;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.landbtncont{
-    margin: 3vh;
-    margin-top: 7vh;
-    display: flex;
-    gap: 7vh;
-}
-.login,.register{
-    height: 6vh;
-    width: 16vh;
-    border-radius: 10px;
-    color: black;
-    font-size: 2vh;
-}
-.login{
-    background-color: #00BFFF;
-}
-.register{
-    background-color: #00FF00;
+.biglandfont {
+  animation: flip 2s ease-in-out;
+  margin: 3vh;
+  margin-left: 2vh;
+  font-size: 7vh;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-.login:hover{
-    background-color: #02aae2;
+.yellowtxt {
+  color: yellow;
 }
-.register:hover{
-    background-color: #00e400;
+.landinfo {
+  margin: 3vh;
+  margin-top: 7vh;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-weight: 100;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.landimage{
-    height: 85%;
-    width: 55%;
-    border: 1px solid white;
-    border-radius: 110px;
-    background-color: white;
-    background-image: url('../../images/dp.jpg');
-    background-size: cover;
+.landbtncont {
+  margin: 3vh;
+  margin-top: 7vh;
+  display: flex;
+  gap: 7vh;
+}
+.login,
+.register {
+  height: 6vh;
+  width: 16vh;
+  border-radius: 10px;
+  color: black;
+  font-size: 2vh;
+}
+.login {
+  background-color: #00bfff;
+}
+.register {
+  background-color: #00ff00;
 }
 
+.login:hover {
+  background-color: #02aae2;
+}
+.register:hover {
+  background-color: #00e400;
+}
+.landimage {
+  height: 85%;
+  width: 55%;
+  border: 1px solid white;
+  border-radius: 110px;
+  background-color: white;
+  background-image: url("../../images/dp.jpg");
+  background-size: cover;
+}
 
 /* Keyframes for the slideIn animation */
 @keyframes flip {
-    0% {
-        transform: perspective(400px) rotateY(0deg); /* Initial state (no rotation) */
-    }
-    50% {
-        transform: perspective(400px) rotateY(180deg); /* Mid-point of the rotation */
-    }
-    100% {
-        transform: perspective(400px) rotateY(360deg); /* Final state (complete rotation) */
-    }
+  0% {
+    transform: perspective(400px) rotateY(0deg); /* Initial state (no rotation) */
+  }
+  50% {
+    transform: perspective(400px) rotateY(180deg); /* Mid-point of the rotation */
+  }
+  100% {
+    transform: perspective(400px) rotateY(360deg); /* Final state (complete rotation) */
+  }
 }
 
-.cursor{
-    position: absolute;
-    pointer-events: none;
-    background-image: url('../../images/cursor.png');
-    background-size: cover;
-    height: 100px;
-    width: 95px;
-    z-index: 100;
+.cursor {
+  position: absolute;
+  pointer-events: none;
+  background-image: url("../../images/cursor.png");
+  background-size: cover;
+  height: 100px;
+  width: 95px;
+  z-index: 100;
+}
+@keyframes waviy {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+}
+.waviy {
+  position: relative;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+  font-size: 50px;
+  color: yellow;
+}
+.waviy span {
+  font-family: "Alfa Slab One", cursive;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  animation: waviy 1s infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@media screen and (max-width: 1477px) {
+  .landimage {
+    width: 81%;
+  }
+  .biglandfont {
+    font-size: 5vh;
+  }
+  .waviy {
+    font-size: 4vh;
+  }
+  .landinfo {
+    margin-top: 4vh;
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+  }
+}
+
+@media screen and (max-width: 769px) {
+    .landnav {
+        margin-left: 2vh; 
+        margin-right: 2vh;
+    }
+    .mainland {
+        margin-left: 0vh;
+        margin-right: 0vh;
+    }
+}
+@media screen and (max-width: 664px) {
+    .leftland {
+        width: 57%;
+    }
+    .landimage{
+        width: 88%;
+        border-radius: 83px;
+    }
+}
+@media screen and (max-width: 481px) {
+    .mainland {
+        flex-direction: column-reverse;
+    }
+    .landingpage{
+        height: 180vh;
+    }
+    .mainland{
+        height: 160vh;
+        align-items: center;
+
+    }
+    .rightland{
+        height: 100%;
+        width: 69%;
+    }
+    .leftland{
+        width: 69%;
+    }
+}
+@media screen and (max-width: 481px) {
+    
+    .leftland{
+        width: 90%;
+    }
+    .landimage{
+        height: 73%;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 322px) {
+    
+    .leftland{
+        width: 100%;
+    }
+    .landimage{
+        height: 63%;
+        width: 100%;
+    }
+    .landnav{
+        margin-bottom: 0;
+    }
 }

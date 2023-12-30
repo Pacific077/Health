@@ -14,10 +14,6 @@ const DoctorSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    password: {
-      type: String,
-      required: true,
-    },
     Speciality: {
       type: String,
       required: true,
@@ -26,24 +22,11 @@ const DoctorSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
-    appointments: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Appointment",
-      },
-    ],
-    SeenNotification: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Notification",
-      },
-    ],
-    NewNotification: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Notification",
-      },
-    ],
+    status:{
+      type:String,
+      required: true,
+      enum:["pending","approved"]
+    }
   },
   {
     timestamps: true,

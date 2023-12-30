@@ -1,15 +1,19 @@
-import React, {  useState } from "react";
-
+import React, { useState } from "react";
+import { useNavigate  } from "react-router-dom";
 import "./LoginPage.css";
 import { faLock, faLockOpen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { LoginApi } from "../../Apis/UserApi";
 import axios from "axios";
 import { toast } from "react-toastify";
+
+
 const LoginPage = () => {
+ 
   const [showPass, setShowPass] = useState(false);
   const [password ,setPass] = useState("")
   const [email ,setemail] = useState("")
+  const navigate  = useNavigate();
 
   const handleShowPass = () => {
     setShowPass(!showPass);
@@ -26,7 +30,13 @@ const LoginPage = () => {
     try {
       const resp = await LoginApi({ email, password});
       if (resp.status === 200) {
+        navigate('/home')
         toast.success("Logged in !!");
+        setTimeout(() => {
+          navigate('/home');
+          window.location.reload();
+        }, 1000);
+        
       } 
     } catch (Er) {
       if (axios.isAxiosError(Er) && Er.response.status === 400) {

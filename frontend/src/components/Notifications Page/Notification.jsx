@@ -7,14 +7,24 @@ const Notfication = () => {
   const [newNot, setnewNot] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
+      try {
       const resp = await GetAllNotifiactions();
       console.log("resp",resp.data.newNotifications)
       setnewNot(resp.data.newNotifications);
       setOldNot(resp.data.oldnotifcation);
       abc();
+      } catch (error) {
+        console.log(error)
+      }
+      
     };
     const abc = async ()=>{
-      await MarkAllNotificationRead ();
+      try {
+        await MarkAllNotificationRead ();
+      } catch (error) {
+        console.log(error)
+      }
+      
     };
     fetchData();
  
@@ -29,12 +39,7 @@ const Notfication = () => {
           <p className="markallread">Mark all as read</p>
         </div>
         <div className="notifContainer">
-          {/* {
-          console.log("new notifiction",newNot)
-          }
-          {
-            console.log("oldnot",oldNot)
-          } */}
+         
           {oldNot.length === 0 && newNot.length === 0 ? (
             "No Notifications to show"
           ) : (
@@ -47,6 +52,7 @@ const Notfication = () => {
               })}
             </>
           )}
+       
         </div>
       </div>
     </div>

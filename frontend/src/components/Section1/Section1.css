@@ -17,6 +17,9 @@
     border: 1px solid grey;
 
 }
+body::-webkit-scrollbar {
+    display: none;
+}
 
 .bigHead{
     margin-top: 0;

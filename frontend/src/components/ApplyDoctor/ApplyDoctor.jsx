@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate  } from "react-router-dom";
 import "./ApplyDoctor.css";
 import { SendDoctorReqApi } from "../../Apis/UserApi";
@@ -7,8 +7,9 @@ const ApplyDoctor = () => {
     const navigate = useNavigate()
 
   const handleSubmit =async () => {
-    console.log("I Got Clicked");
-    const result = await SendDoctorReqApi({
+  
+    try {
+      const result = await SendDoctorReqApi({
         name:"anything",
         email:"abcd@email.com",
         password:"random",
@@ -22,6 +23,10 @@ const ApplyDoctor = () => {
         toast.success("Applied for Doctor Role");
         navigate('/home');
       }
+    } catch (error) {
+      
+    }
+
     
   };
 

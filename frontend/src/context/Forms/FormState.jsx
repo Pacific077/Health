@@ -3,6 +3,7 @@ import FormContext from "./FormsContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const FormState = ({ children }) => {
+
   const [AppointmentReqFromVis, setAppointmentReqFromVis] = useState(false);
   const [DoctorId, setDoctorID] = useState("");
   const setVisiblity = () => {
@@ -18,7 +19,7 @@ const FormState = ({ children }) => {
         setVisiblity,
         UnsetVisiblity,
         DoctorId,
-        setDoctorID,
+        setDoctorID
       }}
     >
       {children}
