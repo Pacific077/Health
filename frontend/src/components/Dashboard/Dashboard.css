@@ -144,8 +144,8 @@
     text-shadow: 2px 2px 1px white;
 }
 .uplaodProfilePic img{
-    height: 50%;
-    width: 50%;
+    height: 35%;
+    width: 35%;
     margin-top: 2vh;
     border-radius: 100%;
     box-sizing: border-box;
@@ -153,11 +153,16 @@
     padding: 5px;
 
 }
+.uplaodProfilePic input{
+    height: 3vh;
+    border: 2px solid black;
+}
 .uplaodProfilePic h3{
     color: rgb(105, 13, 191);
     font-family: 'Ubuntu', sans-serif;
     text-shadow: 2px 2px 1px white;
     font-size: 2.5vh;
+    margin-top: 1vh;
 }
 .DashChangeBtn{
     height: 4.5vh;

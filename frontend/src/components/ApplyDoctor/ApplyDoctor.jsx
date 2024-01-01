@@ -1,20 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate  } from "react-router-dom";
 import "./ApplyDoctor.css";
 import { SendDoctorReqApi } from "../../Apis/UserApi";
 import { toast } from "react-toastify";
 const ApplyDoctor = () => {
+  const [Speciality,setSpeciality] = useState("")
+    const [fee,setfee] = useState()
     const navigate = useNavigate()
 
   const handleSubmit =async () => {
-  
     try {
       const result = await SendDoctorReqApi({
         name:"anything",
         email:"abcd@email.com",
         password:"random",
-        Speciality:"sb kch",
-        Fees:45678,
+        Speciality:Speciality,
+        Fees:fee,
         date:"21:12:12",
         time:"12:34"
       });
@@ -29,6 +30,12 @@ const ApplyDoctor = () => {
 
     
   };
+  const handleSpechange = (e)=>{
+    setSpeciality(e.target.value)
+  }
+  const handleFeeChange = (e)=>{
+  setfee(e.target.value)
+  }
 
   return (
     <div className="ApplyDoctorPage">
@@ -79,7 +86,14 @@ const ApplyDoctor = () => {
           <br />
         </div>
         <div className="thrdblock">
-          <h1>//complete rest form</h1>
+          <p>What is your Specility ?</p>
+          <input type="text" name="" id="" value={Speciality} onChange={handleSpechange}/>
+          <p>What is your Fees ?</p>
+          <input type="number" name="" id="" value={fee} onChange={handleFeeChange} />
+          <p>What is your Highest Degree ?</p>
+          <input type="text" name="" id="" />
+          <p>What is your total Experince ?</p>
+          <input type="text" name="" id="" />
         </div>
         <div className="applicationBtnCont">
           <button className="applicationSubmitBtn" onClick={handleSubmit}>

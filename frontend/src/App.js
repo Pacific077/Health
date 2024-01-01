@@ -14,6 +14,9 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import RequestPage from "./components/Request/RequestPage";
 import Register from "./components/Register/Register";
 import NotAvailablePage from "./components/NotAvailable/NotAvailable";
+import Symptoms from "./components/Disease Predict/Symptoms/Symptoms";
+
+
 
 
 
@@ -43,6 +46,8 @@ const App = () => {
           <Route path="/notifications" element={<Notification />} />
           <Route path="/intro" element={<Introduction />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/symptoms" element={<Symptoms />} />
+
           <Route path="*" element={<NotAvailablePage />} />
         </Routes>
           </UserState>

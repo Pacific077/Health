@@ -1,106 +1,122 @@
-.ApplyDoctorPage{
-    height: 90vh;
-    border: 2ox solid black;
-    padding-left: 20vh;
-    padding-right: 20vh;
-    display: flex;
+.ApplyDoctorPage {
+  height: 90vh;
+  border: 2ox solid black;
+  padding-left: 20vh;
+  padding-right: 20vh;
+  display: flex;
 }
-.InfoBeforeApply{
-    width: 50%;
-    height: 100%;
-    background-color: aqua  ;
-    background-image: url('../../images/applicationPage.jpg');
-    background-size: cover;
+.InfoBeforeApply {
+  width: 50%;
+  height: 100%;
+  background-color: aqua;
+  background-image: url("../../images/applicationPage.jpg");
+  background-size: cover;
 }
-.applictionForm{
-    width: 50%;
-    height: 100%;
-    border: 2px solid black;
-    padding: 2vh;
-    box-sizing: border-box;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px;
+.applictionForm {
+  width: 50%;
+  height: 100%;
+  border: 2px solid black;
+  padding: 2vh;
+  box-sizing: border-box;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
 }
-.ApplicationHead{
-    height: 10%;
-    margin-top: 3vh;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    font-family: 'Ubuntu', sans-serif;
-    color: green;
-    text-decoration: underline;
-    font-size: 5vh;
-    background-color: white;
+.ApplicationHead {
+  height: 10%;
+  margin-top: 3vh;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  font-family: "Ubuntu", sans-serif;
+  color: green;
+  text-decoration: underline;
+  font-size: 5vh;
+  background-color: white;
 }
-.applicationPoints{
-    width: 90%;
+.applicationPoints {
+  width: 90%;
 }
-.applicationPoints li{
-    width: fit-content;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    font-size: 3vh;
-    margin-top: 2vh;
-    font-family: 'Ubuntu', sans-serif;
-    color: green;
-    text-shadow: 1px 1px 1px gray;
+.applicationPoints li {
+  width: fit-content;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  font-size: 3vh;
+  margin-top: 2vh;
+  font-family: "Ubuntu", sans-serif;
+  color: green;
+  text-shadow: 1px 1px 1px gray;
 }
-.applictionForm h1{
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-    color:#4D31D7;
+.applictionForm h1 {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  color: #4d31d7;
 }
-.frstBlock{
-    display: flex;
-    justify-content: space-between;
+.frstBlock {
+  display: flex;
+  justify-content: space-between;
 }
-.nameApp ,.emailApp {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    justify-content: center;
-    gap: 1vh;
-    font-size: larger;
-    color: green;
-    font-weight: 800;
+.nameApp,
+.emailApp {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  justify-content: center;
+  gap: 1vh;
+  font-size: larger;
+  color: green;
+  font-weight: 800;
 }
-.nameApp input,.emailApp input{
+.nameApp input,
+.emailApp input {
+  height: 3vh;
+  width: 27vh;
+
+  border: 2px solid green;
+}
+.nameApp input:focus,
+.emailApp input:focus {
+  outline: 1px solid #2b00ff;
+}
+.secondBlock p {
+  font-size: x-large;
+  font-weight: 900;
+  color: green;
+  /* text-decoration: underline; */
+  margin-bottom: 1vh;
+}
+.secondBlock label {
+  color: green;
+  font-size: large;
+}
+.applicationBtnCont {
+  margin-top: 2vh;
+  text-align: center;
+}
+.applicationSubmitBtn {
+  height: 5vh;
+  border-radius: 17px;
+  font-size: larger;
+  background-color: green;
+  color: white;
+  width: 16vh;
+  font-weight: 400;
+  font-family: "Ubuntu", sans-serif;
+}
+.applicationSubmitBtn:hover {
+  cursor: pointer;
+  background-color: rgb(1, 155, 1);
+}
+.thrdblock p {
+  font-size: x-large;
+  font-weight: 900;
+  color: green;
+  margin-bottom: 1vh;
+}
+
+.thrdblock input{
+
     height: 3vh;
     width: 27vh;
-
-    border:2px solid green;
-}
-.nameApp input:focus,.emailApp input:focus{
-    outline: 1px solid #2b00ff;
-}
-.secondBlock p{
-    font-size: x-large;
-    font-weight: 900;
-    color: green;
-    /* text-decoration: underline; */
-    margin-bottom: 1vh;
-}
-.secondBlock label{
-    color: green;
-    font-size: large;
-}
-.applicationBtnCont{
-    margin-top: 2vh;
-    text-align: center;
-}
-.applicationSubmitBtn{
-    height: 5vh;
-    border-radius: 17px;
-    font-size: larger;
-    background-color: green;
-    color: white;
-    width: 16vh;
-    font-weight: 400;
-    font-family: 'Ubuntu', sans-serif
-}
-.applicationSubmitBtn:hover{
-
-    cursor: pointer;
-    background-color: rgb(1, 155, 1);
+    
+    border: 2px solid green;
 }

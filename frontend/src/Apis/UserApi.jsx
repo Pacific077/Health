@@ -115,3 +115,16 @@ export const LoginApi = async (userData) => {
     );
     return response;
   };
+
+  export const UploadProfileApi = async ({formData})=>{
+      // const profile = formData;
+      const resp = await axios.put("http://localhost:4501/api/v1/user/profile-photo-upload", formData, {
+        withCredentials: true,
+        headers: {
+          'Content-Type': 'multipart/form-data', 
+        },
+      });
+  
+      return resp;
+   
+  }

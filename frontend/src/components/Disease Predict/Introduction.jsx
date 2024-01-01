@@ -3,7 +3,16 @@ import "./Intro.css";
 import intrImg from "../../images/introrig.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import {  useNavigate } from "react-router-dom";
 const Introduction = () => {
+  const navigate = useNavigate();
+  const introStyle = {
+    fontWeight: 900,
+    borderRight: '4px solid red',
+  };
+  const handleClick = ()=>{
+    navigate('/symptoms')
+  }
   return (
     <div className="Intro">
       <div className="introScreen">
@@ -46,11 +55,11 @@ const Introduction = () => {
             </div>
           </div>
           <div className="introbtncnt">
-            <button className="introbtn">Next</button>
+            <button className="introbtn" onClick={handleClick}>Next</button>
           </div>
         </div>
         <div className="diseasePredicProgress">
-          <div className="intro1">Introduction</div>
+          <div className="intro1" style={introStyle} >Introduction</div>
           <div className="intro2">Patients</div>
           <div className="intro3">Symptoms</div>
           <div className="intro4">Region</div>

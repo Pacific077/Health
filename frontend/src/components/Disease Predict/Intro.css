@@ -32,10 +32,7 @@
     height: 10%;
     border-right: 4px solid rgb(211, 161, 161);
 }
-.intro1{
-    font-weight: 900;
-    border-right: 4px solid red;
-}
+
 .leftintro{
     padding-left: 4vh;
     width: 55%;

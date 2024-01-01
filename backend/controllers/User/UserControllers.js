@@ -279,6 +279,32 @@ const GetAllAppointments = async (req,res)=>{
     data:appointments
   })
 }
+
+const ProfilpicUpload = async(req,res)=>{
+  try {
+    if(!req.file){
+      return res.status(400).json({
+        msg:"no file found"
+      })
+    }
+    //find user to be updated
+    const UserId = req.user._id;
+    const userFound = await User.findById(UserId);
+    if (!userFound) {
+      return res.status(400).json({
+        err:"User not found"
+      })
+    }
+    const updateduser = await User.findByIdAndUpdate(UserId, {
+      profileImage: req.file.path,
+    });
+    res.status(200).json("Profile Pic Updated")
+  } catch (Er) {
+    res.status(400).json({
+      err:Er
+    })
+  }
+}
 export {
   RegisterUser,
   LoginUser,
@@ -288,5 +314,5 @@ export {
   MarkAllread,
   Appointmentreq,
   GetAllNotifiaction,
-  GetAllAppointments
+  GetAllAppointments,ProfilpicUpload
 };
