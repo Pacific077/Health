@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Dashboard.css";
 import img from "../../images/greet.png";
-import dp from "../../images/dp.jpg";
-import { UploadProfileApi } from "../../Apis/UserApi";
+
+import { ProfileApi, UploadProfileApi } from "../../Apis/UserApi";
 import { toast } from "react-toastify";
 
 const Dashboard = () => {
   const [file, setFile] = useState(null);
-  const [loading,setLoading]= useState(false)
+  const [loading,setLoading]= useState(false);
+  const [userdp,setuserdp] = useState(null);
+  const [user,setuser] = useState("");
+  useEffect(()=>{
+    const fetchData = async ()=>{
+      const resp = await ProfileApi()
+      setuserdp(resp.data.data.profileImage);
+      setuser(resp.data.data);
+    };
+    fetchData();
+  },[])
   const handleChange = (e) => {
     setFile(e.target.files[0]);
     console.log("files", e.target.files[0]);
@@ -31,10 +41,11 @@ const Dashboard = () => {
   return (
     <div className="dashboardPage">
       <div className="dashLeft">
-        <img src={dp} alt="" srcset="" />
+        <img src={userdp} alt="" srcset="" />
         <div className="dashinfo">
-          <p>Name : John Doe</p>
-          <p>Email : John@Doe.com</p>
+          {console.log("user",user)}
+          <p>Name : {user.name}</p>
+          <p>Email :{user.email}</p>
           <p>Age : 69</p>
           <p>Gender : Binary</p>
         </div>
@@ -53,7 +64,7 @@ const Dashboard = () => {
         </div>
         <div className="dashrightLower">
           <div className="uplaodProfilePic">
-            <img src={dp} alt="" srcset="" />
+            <img src={userdp} alt="" srcset="" />
             <input type="file" name="profile" id="" onChange={handleChange} />
             {loading&&  <progress value={null} />}
             <h3>Update your Profile Picture</h3>

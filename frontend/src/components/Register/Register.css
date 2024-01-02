@@ -1,28 +1,12 @@
-.registerPage{
-    height: 90%;
-    width: 80%;
-    /* border: 1px solid white; */
-    background-color: #00BFFF;
-    border-radius: 100px;
-    display: flex;
-    overflow: hidden;
-}
-.lft,.loginpgright{
-    width: 50%;
-    height: 100%;
-}
-.lft{
-    background-image: url('../../images/register.jpg');
+.registerPagebg{
+    background-image: url("../../images/registerBg.jpg");
     background-size: cover;
-    /* background-color: black; */
-    border-top-right-radius: 70px;
-
-    border-bottom-right-radius: 70px;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.loginpage{
+.registerPage{
     height: 80%;
     width: 70%;
     border: 1px solid white;
@@ -31,14 +15,102 @@
     display: flex;
     overflow: hidden;
 }
-.LoginHere{
-    text-decoration: underline;
-    color: blue;
-    cursor: pointer;
-    margin-left: 2vh;
-    font-size: 2.5vh;
+.registerpgLeft,.registerPgRight{
+    width: 50%;
+    height: 100%;
 }
-.alreadySigned{
-    font-size: 2.5vh;
-
+.registerpgLeft{
+    background-image: url('../../images/register.jpg');
+    background-size: cover;
+    border-top-right-radius: 70px;
+    border-bottom-right-radius: 70px;
+}
+.registerPgRight{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#00BFFF ;
+}
+.registerform{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: transparent;
+    opacity: 0.9;
+    height: 80%;
+    width: 80%;
+    background-color: white;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 10vh;
+    padding-bottom: 4vh;
+    padding-top: 4vh;
+    box-shadow: 10px 10px 10px grey;
+    /* border:  1px solid white; */
+}
+.registerform input{
+    margin-bottom: 2vh;
+    width: 70%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+    font-size: 2vh;
+}
+.signupbtn:hover{
+    cursor: pointer;
+    background-color: #06d006;
+}
+.signupbtn{
+    font-size: large;
+    background-color:#00ff00;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px grey;
+    margin-top: 5vh;
+    width: 50%;
+    height: 8%;
+}
+.registerform label{
+    font-size: larger;
+}
+.lockicon{
+    color: #00BFFF;
+    cursor: pointer;
+    font-size: larger;
+}
+@media screen and (max-width: 1025px) {
+    .registerPage {
+        width: 85%;
+    }
+}
+@media screen and (max-width: 769px) {
+    .registerPage {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 664px) {
+    .registerpgLeft{
+        display: none;
+    }
+    .registerPgRight {
+        width: 100%;
+        height: 100%;
+    }
+    .registerPage{
+        border-radius: 32px;
+    }
+}
+@media screen and (max-width: 481px) {
+    .registerPage {
+        width: 84%;
+    }
+}
+@media screen and (max-width: 377px) {
+    .registerPage {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 322px) {
+    .registerform {
+        width: 96%;
+    }
 }

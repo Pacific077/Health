@@ -42,46 +42,32 @@ const Register = () => {
     }
   };
   return (
-    <div className="loginPagebg">
-      <div className="registerPage">
-        <div className="lft"></div>
-        <div className="loginpgright">
-          <div className="loginform">
-            <label htmlFor="">Full Name</label>
-            <input
-              type="text"
-              placeholder="John Doe"
-              onChange={handleNameChange}
+    <div className="registerPagebg">
+    <div className="registerPage">
+      <div className="registerpgLeft">left</div>
+      <div className="registerPgRight">
+        <div className="registerform">
+          <label htmlFor="">Name</label>
+          <input type="email" placeholder="John Doe" onChange={handleNameChange}/>
+          <label htmlFor="">Email</label>
+          <input type="text" placeholder="abx@exxmple.com" onChange={handleEmailchange}/>
+          <label htmlFor="">Password</label>
+          <div>
+            <input type={showPass ? "text" : "password"} onChange={handlePassChange}/>
+            <FontAwesomeIcon
+              className="lockicon"
+              icon={showPass ? faLockOpen : faLock}
+              onClick={handleShowPass}
             />
-            <label htmlFor="">Email</label>
-            <input
-              type="text"
-              placeholder="abx@exxmple.com"
-              onChange={handleEmailchange}
-            />
-            <label htmlFor="">Password</label>
-            <div>
-              <input
-                type={showPass ? "text" : "password"}
-                onChange={handlePassChange}
-              />
-              <FontAwesomeIcon
-                className="lockicon"
-                icon={showPass ? faLockOpen : faLock}
-                onClick={handleShowPass}
-              />
-            </div>
-            <button className="signupbtn" onClick={onRegister}>
-              Register
-            </button>
-            <p className="alreadySigned">
-              Already have an Account ?{" "}
-              <span className="LoginHere"> Login here</span>
-            </p>
           </div>
+          <button className="signupbtn" onClick={onRegister}>
+            Register
+          </button>
+          <p>Already have an Account ?</p>
         </div>
       </div>
     </div>
+  </div>
   );
 };
 
