@@ -38,6 +38,7 @@ const LoginPage = () => {
         }, 1000);
         
       } 
+      console.log("resp",resp);
     } catch (Er) {
       if (axios.isAxiosError(Er) && Er.response.status === 400) {
         Er.response.data.err.map((msg) => {

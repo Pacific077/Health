@@ -1,16 +1,15 @@
 import React from 'react'
 
-const SymptCard = () => {
+const SymptCard = ({ques,name }) => {
   return (
     <div className="symptCard">
-              <p>Are u having Itchings ?</p>
+              <p>{ques}</p>
               <div>
-                <input type="radio" id="css" name="itching" value="CSS" />
+                <input type="radio"  name={name} value="CSS" />
                 <label htmlFor="Yes">Yes</label>
                 <input
                   type="radio"
-                  id="javascript"
-                  name="itching"
+                  name={name}
                   value="JavaScript"
                 />
                 <label htmlFor="No">No</label>

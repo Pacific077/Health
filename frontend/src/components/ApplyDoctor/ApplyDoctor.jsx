@@ -14,8 +14,8 @@ const ApplyDoctor = () => {
         name:"anything",
         email:"abcd@email.com",
         password:"random",
-        Speciality:Speciality,
-        Fees:fee,
+        Speciality:"everyhitng",
+        Fees:100,
         date:"21:12:12",
         time:"12:34"
       });

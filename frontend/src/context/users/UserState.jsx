@@ -9,7 +9,7 @@ const UserState = ({ children }) => {
     const GetProfile =async ()=>{
         try{
              await axios.get(
-                "http://localhost:4501/api/v1/user/profile",
+                "/api/v1/user/profile",
                 {
                   withCredentials: true,
                 }

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Symptoms.css";
 import SymptCard from "./SymptCard";
+import quesarr from "./QuestionArr";
 const Symptoms = () => {
   const introStyle = {
     fontWeight: 900,
@@ -12,20 +13,10 @@ const Symptoms = () => {
         <div className="introPage">
           <h1 className="symphead">Please Select all That Applies</h1>
           <div className="symptCont">
-            <SymptCard/>
-            <SymptCard/>
-            <SymptCard/>
-            <SymptCard/>
-            <SymptCard/>
-            <SymptCard/>
-            <SymptCard/>
-            <SymptCard/>
-            <SymptCard/>
-            <SymptCard/>
-            <SymptCard/>
-            <SymptCard/>
-            <SymptCard/>
-            <SymptCard/>
+            {quesarr.map((ques,index)=>{
+              return <SymptCard ques = {ques.q} name={`q${index + 1}`} />
+            })}
+          
             <div className="symptBtnCont"><button>Predict</button></div>
           </div>
         </div>

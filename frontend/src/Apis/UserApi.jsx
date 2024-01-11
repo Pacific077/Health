@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const RegisterApi = async ({name,email,password}) => {
   const response = await axios.post(
-    "http://localhost:4501/api/v1/user/register",
+    "/api/v1/user/register",
     {
       name,
       email,password
@@ -17,7 +17,7 @@ export const RegisterApi = async ({name,email,password}) => {
 
 export const LoginApi = async (userData) => {
     const response = await axios.post(
-      "http://localhost:4501/api/v1/user/login",
+      "/api/v1/user/login",
       {
         email: userData.email,
         password: userData.password,
@@ -32,7 +32,7 @@ export const LoginApi = async (userData) => {
 
   export const SendAppReqApi = async ({id,date,time}) => {
     const response = await axios.post(
-      `http://localhost:4501/api/v1/user/appointmentReq/${id}`,
+      `/api/v1/user/appointmentReq/${id}`,
       {
        date,
        time
@@ -47,7 +47,7 @@ export const LoginApi = async (userData) => {
 
   export const ProfileApi = async () => {
     const response = await axios.get(
-      "http://localhost:4501/api/v1/user/profile",
+      "/api/v1/user/profile",
       {
         withCredentials: true,
       }
@@ -58,7 +58,7 @@ export const LoginApi = async (userData) => {
   
   export const GetAllNotifiactions = async () => {
     const response = await axios.get(
-      "http://localhost:4501/api/v1/user/notification",
+      "/api/v1/user/notification",
       {
         withCredentials: true,
       }
@@ -70,7 +70,7 @@ export const LoginApi = async (userData) => {
   export const SendDoctorReqApi = async ({name,email,password,Speciality,Fees,date,time}) => {
 
     const response = await axios.post(
-      "http://localhost:4501/api/v1/user/sendreq",
+      "/api/v1/user/sendreq",
       {
         name,
         email,
@@ -87,7 +87,7 @@ export const LoginApi = async (userData) => {
   
   export const MarkAllNotificationRead = async () => {
     const response = await axios.get(
-      "http://localhost:4501/api/v1/user/allRead",
+      "/api/v1/user/allRead",
       {
         withCredentials: true,
       }
@@ -98,7 +98,7 @@ export const LoginApi = async (userData) => {
 
   export const matchedAppointmensApi = async () => {
     const response = await axios.get(
-      "http://localhost:4501/api/v1/user/matched",
+      "/api/v1/user/matched",
       {
         withCredentials: true,
       }
@@ -108,7 +108,7 @@ export const LoginApi = async (userData) => {
 
   export const AllappointmentsApi = async () => {
     const response = await axios.get(
-      "http://localhost:4501/api/v1/user/allappointments",
+      "/api/v1/user/allappointments",
       {
         withCredentials: true,
       }
@@ -118,7 +118,7 @@ export const LoginApi = async (userData) => {
 
   export const UploadProfileApi = async ({formData})=>{
       // const profile = formData;
-      const resp = await axios.put("http://localhost:4501/api/v1/user/profile-photo-upload", formData, {
+      const resp = await axios.put("/api/v1/user/profile-photo-upload", formData, {
         withCredentials: true,
         headers: {
           'Content-Type': 'multipart/form-data', 

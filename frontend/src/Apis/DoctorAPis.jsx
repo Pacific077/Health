@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const GetAllDoctor = async () => {
     const response = await axios.get(
-      "http://localhost:4501/api/v1/doctor/all",
+      "/api/v1/doctor/all",
       {
         withCredentials: true,
       }
@@ -13,7 +13,7 @@ export const GetAllDoctor = async () => {
 
   export const AcceptAppointmentReq = async ( {appointID, userId} ) => {
     const response = await axios.post(
-      `http://localhost:4501/api/v1/doctor/acceptAppointment/${userId}`,
+      `/api/v1/doctor/acceptAppointment/${userId}`,
       {
         appointID,
       },
@@ -28,7 +28,7 @@ export const GetAllDoctor = async () => {
   export const RejectAppointmentReq = async ( {appointID, userId} ) => {
     console.log("inside api",appointID,userId)
     const response = await axios.post(
-      `http://localhost:4501/api/v1/doctor/rejectAppointmet/${userId}`,
+      `/api/v1/doctor/rejectAppointmet/${userId}`,
       {
         appointID,
       },
