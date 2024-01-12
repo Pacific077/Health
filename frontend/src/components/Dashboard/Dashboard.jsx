@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Dashboard.css";
 import img from "../../images/greet.png";
+import ReactLoading from 'react-loading';
 
 import { ProfileApi, UploadProfileApi } from "../../Apis/UserApi";
 import { toast } from "react-toastify";
@@ -66,7 +67,7 @@ const Dashboard = () => {
           <div className="uplaodProfilePic">
             <img src={userdp} alt="" srcset="" />
             <input type="file" name="profile" id="" onChange={handleChange} />
-            {loading&&  <progress value={null} />}
+            {loading&& <div className="profileLoading"><ReactLoading type="spokes" color="#4D31D7" height={40} width={40} /></div>}
             <h3>Update your Profile Picture</h3>
             <div className="dashBtnCont">
               <button

@@ -2,13 +2,17 @@ import React, { useEffect, useState } from "react";
 import "./Appointment.css";
 import AppointmentCard from "./AppointmentCard";
 import { AllappointmentsApi } from "../../Apis/UserApi";
+import ReactLoading from 'react-loading';
 const AppointmentPage = () => {
   const [appoint, setAPoint] = useState([]);
+  const [loading ,setLoading] = useState(false);
   useEffect(() => {
+    setLoading(true);
     const fetchdata = async () => {
       const resp = await AllappointmentsApi();
       console.log("resp", resp.data.data);
       setAPoint(resp.data.data);
+      setLoading(false);
     };
     fetchdata();
   }, []);
@@ -22,8 +26,9 @@ const AppointmentPage = () => {
           <p>Mark all as read</p>
         </div>
         <div className="appointmentcont">
+          {loading&&<div className="profileLoading" style={{width:"100%"}}><ReactLoading type="spokes" color="#2E1F8B" height={100} width={100} /></div>}
           {appoint.length <= 0
-            ? "array empty"
+            ? "please wait"
             : appoint.map((app) => {
                 console.log("naem", app.DoctorId.name);
                 return (

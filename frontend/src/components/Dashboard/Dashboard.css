@@ -187,6 +187,10 @@
     background-color: rgb(1, 174, 1);
     cursor: pointer;
 }
+.profileLoading{
+    display: flex;
+    justify-content: center;
+}
 @media screen and (max-width: 1025px) {
     .dashboardPage {
 

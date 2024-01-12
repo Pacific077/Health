@@ -4,9 +4,11 @@ import { ProfileApi, matchedAppointmensApi } from "../../Apis/UserApi";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Requestscard from "./Requestscard";
+import ReactLoading from 'react-loading';
 const RequestPage = () => {
   const [role, setrole] = useState("");
   const [appointemnt, setAppointments] = useState([]);
+  const [loading, setloading] = useState(false);
   const navigate = useNavigate();
   //dues
   //if response.status
@@ -19,6 +21,7 @@ const RequestPage = () => {
     fetchData();
   }, []);
   useEffect(() => {
+    setloading(true);
     const checkrole = async () => {
       console.log(role);
       if (role === "Patient") {
@@ -31,6 +34,7 @@ const RequestPage = () => {
           setAppointments(Resp.data.matchedAppointemnts);
         }
       }
+      setloading(false);
     };
     checkrole();
   }, [role]);
@@ -43,6 +47,7 @@ const RequestPage = () => {
       )}
 
       <div className="requestPage">
+        {loading&&<div className="profileLoading" style={{width:"100%"}}><ReactLoading type="spokes" color="purple" height={120} width={120} /></div>}
         {appointemnt.length > 0
           ? appointemnt.map((appoint) => {
             if(appoint.status==='pending'){
