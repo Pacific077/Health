@@ -1,0 +1,73 @@
+.logoutPage{
+    height: 90vh;
+    background-image: url("../../images/sky.jpg");
+    background-size: cover;
+    background-color: rgb(226, 246, 246);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.LogoutCard{
+    border: 2px solid grey;
+    background: white;
+    width: 60vh;
+    height: 40vh;
+    border-radius: 15px;
+    box-shadow: 10px 10px 4px gray;
+    background-image: url("../../images/logoutBg.jpg");
+    background-size: cover;
+    
+    /* margin-top: 4vh; */
+}
+.logouttext{
+    font-size: 3.5vh;
+    color: blue;
+    background-color: white;
+    font-family: cursive;
+
+    /* background-color: white; */
+    margin: auto;
+    margin-top: 22%;
+    width: fit-content;
+}
+.logutyesBtn{
+    height: 5vh;
+    width: 12vh;
+    font-size: larger;
+    font-family: cursive;
+    background-color: aliceblue;
+    color: blue;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px blue;
+}
+.logutNoBtn{
+    height: 5vh;
+    width: 12vh;
+    font-size: larger;
+    font-family: cursive;
+    color: aliceblue;
+    background-color: blue;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px white;
+}
+.logutNoBtn:hover{
+    cursor: pointer;
+    background-color: aliceblue;
+    color: blue;
+    transition: 0.3s ease;
+    box-shadow: 4px 4px 4px blue;
+}
+.logutyesBtn:hover{
+    cursor: pointer;
+    background-color: blue;
+    color: aliceblue;
+    transition: 0.3s ease;
+    box-shadow: 4px 4px 4px aliceblue;
+}
+.logutbtnsCont{
+    margin-top: 9vh;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 12vh;
+    padding-right: 12vh;
+}

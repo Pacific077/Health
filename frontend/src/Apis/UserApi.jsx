@@ -128,3 +128,14 @@ export const LoginApi = async (userData) => {
       return resp;
    
   }
+
+  export const LogoutApi = async () => {
+    const response = await axios.post(
+      "/api/v1/user/logout",
+      {},
+      {
+        withCredentials: true,
+      }
+    );
+    return response;
+  };

@@ -79,6 +79,7 @@ const Nav = () => {
     setactiv7(false);
     setactiv1(false);
     setactiv6(false);
+    navigate('/logout')
   };
   const handleHomeclick = () => {
     setactiv1(true);

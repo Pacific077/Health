@@ -305,6 +305,16 @@ const ProfilpicUpload = async(req,res)=>{
     })
   }
 }
+
+const Logout = async(req,res)=>{
+  res.cookie("token", "", {
+    httpOnly: true,
+    maxAge: 24 * 60 * 60 * 1000,
+  });
+  res.status(200).json({
+    message : "Logged out!!"
+  })
+}
 export {
   RegisterUser,
   LoginUser,
@@ -314,5 +324,5 @@ export {
   MarkAllread,
   Appointmentreq,
   GetAllNotifiaction,
-  GetAllAppointments,ProfilpicUpload
+  GetAllAppointments,ProfilpicUpload,Logout
 };

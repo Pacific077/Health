@@ -1,5 +1,5 @@
 import express from 'express';
-import { Appointmentreq, GetAllAppointments, GetAllNotifiaction, LoginUser, MarkAllread, ProfilpicUpload, RegisterUser, SendDoctorReq, UserProfile, getMatchedAppointments } from '../controllers/User/UserControllers.js';
+import { Appointmentreq, GetAllAppointments, GetAllNotifiaction, LoginUser, Logout, MarkAllread, ProfilpicUpload, RegisterUser, SendDoctorReq, UserProfile, getMatchedAppointments } from '../controllers/User/UserControllers.js';
 import IsAuthenticated from '../Middlewares/Isauthenticated.js';
 import signupValidators from '../validators/RegisterValidator.js';
 import LoginValidators from '../validators/LoginValidators.js';
@@ -20,6 +20,7 @@ UserRoute.put("/profile-photo-upload" , IsAuthenticated ,upload.single('profile'
 UserRoute.get('/notification',IsAuthenticated,GetAllNotifiaction);
 UserRoute.get('/matched',IsAuthenticated,getMatchedAppointments);
 UserRoute.get('/allappointments',IsAuthenticated,GetAllAppointments);
+UserRoute.post('/logout',IsAuthenticated,Logout);
 UserRoute.post('/appointmentReq/:id',IsAuthenticated,Appointmentreq);
 
 export default UserRoute;

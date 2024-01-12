@@ -15,6 +15,7 @@ import RequestPage from "./components/Request/RequestPage";
 import Register from "./components/Register/Register";
 import NotAvailablePage from "./components/NotAvailable/NotAvailable";
 import Symptoms from "./components/Disease Predict/Symptoms/Symptoms";
+import Logout from "./components/Logout/Logout";
 
 
 
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/notifications" element={<Notification />} />
           <Route path="/intro" element={<Introduction />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/logout" element={<Logout/>} />
           <Route path="/symptoms" element={<Symptoms />} />
 
           <Route path="*" element={<NotAvailablePage />} />
