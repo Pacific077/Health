@@ -7,6 +7,45 @@ import babydr2yrs from "../../images/babydr2yrs.jpeg"
 import breastCancer from "../../images/breastCancer.jpeg"
 import childdr5yr from "../../images/childr5yr.jpeg"
 import childsr14 from "../../images/childsr14jpg.jpg"
+import teen17 from "../../images/teen17.jpeg"
+import childteeth from "../../images/childteeth.jpeg"
+import getScr from "../../images/getScr.jpeg"
+import abdominal from "../../images/abdominal-aneurysm.jpg"
+import bp from "../../images/bp.jpg"
+import bonedensity from "../../images/bonedensity.jpg"
+import cervicl from "../../images/cervicl.jpg"
+import Cholesterol from "../../images/Cholesterol.jpg"
+import colcan from "../../images/colcan.jpg"
+import Teendepress from "../../images/Teendepress.jpg"
+import talkingdepression from "../../images/talkingdepression.jpg"
+import childvis from "../../images/childvis.jpg"
+import oldVac from "../../images/oldVac.jpg"
+import vac40 from "../../images/vac40.jpg"
+import HPVshot from "../../images/HPVshot.jpg"
+import secChil from "../../images/secChil.jpg"
+import OYH_womenshealth from "../../images/OYH_womenshealth.jpg"
+import covid from "../../images/covid.jpg"
+import seasflu from "../../images/seasflu.jpg"
+import chrgrg from "../../images/chrgrg.jpg"
+import askdr from "../../images/askdr.jpg"
+import clacium from "../../images/clacium.jpg"
+import habits from "../../images/healthy-habits.jpg"
+import skincan from "../../images/skincan.jpg"
+import sleep from "../../images/sleep.jpg"
+import care from "../../images/care.jpg"
+import nasha from "../../images/nasha.jpg"
+import diab from "../../images/diab.jpg"
+import domvi from "../../images/domvi.jpg"
+import birth from "../../images/birth.jpg"
+import welwo from "../../images/welwo.jpg"
+import menht from "../../images/menht.jpg"
+import sext from "../../images/sex-talk.jpg"
+import bacpain from "../../images/bacpain.jpg"
+import asprin from "../../images/asprin.jpg"
+
+
+
+
 
 
 const topicArr = [
@@ -57,147 +96,184 @@ const topicArr = [
     },
     {
       "id": "529",
-      "title": "Make the Most of Your Teen\u2019s Visit to the Doctor (Ages 15 to 17 Years)"
+      "title": "Make the Most of Your Teen\u2019s Visit to the Doctor (Ages 15 to 17 Years)",
+      "img":teen17
     },
     {
       "id": "530",
-      "title": "Take Care of Your Child's Teeth"
+      "title": "Take Care of Your Child's Teeth",
+      "img":childteeth
     },
     {
       "id": "531",
-      "title": "Get Screened"
+      "title": "Get Screened",
+      "img":getScr
+      
     },
     {
       "id": "532",
-      "title": "Talk to Your Doctor About Abdominal Aortic Aneurysm"
+      "title": "Talk to Your Doctor About Abdominal Aortic Aneurysm",
+      "img":abdominal
     },
     {
       "id": "533",
-      "title": "Get Your Blood Pressure Checked"
+      "title": "Get Your Blood Pressure Checked",
+      "img":bp
     },
     {
       "id": "534",
-      "title": "Get a Bone Density Test"
+      "title": "Get a Bone Density Test",
+      "img":bonedensity
     },
     {
       "id": "536",
-      "title": "Get Screened for Cervical Cancer"
+      "title": "Get Screened for Cervical Cancer",
+      "img":cervicl
     },
     {
       "id": "537",
-      "title": "Get Your Cholesterol Checked"
+      "title": "Get Your Cholesterol Checked",
+      "img":Cholesterol
     },
     {
       "id": "538",
-      "title": "Get Screened for Colorectal Cancer"
+      "title": "Get Screened for Colorectal Cancer",
+      "img":colcan
     },
     {
       "id": "539",
-      "title": "Get Your Teen Screened for Depression"
+      "title": "Get Your Teen Screened for Depression",
+      "img":Teendepress
     },
     {
       "id": "540",
-      "title": "Talk with Your Doctor About Depression"
+      "title": "Talk with Your Doctor About Depression",
+      "img":talkingdepression
     },
     {
       "id": "541",
-      "title": "Get Your Child\u2019s Vision Checked"
+      "title": "Get Your Child\u2019s Vision Checked",
+      "img":childvis
     },
     {
       "id": "542",
-      "title": "Get Vaccines to Protect Your Health (Adults Age 50 or Older)"
+      "title": "Get Vaccines to Protect Your Health (Adults Age 50 or Older)",
+      "img":oldVac
     },
     {
       "id": "543",
-      "title": "Get Vaccines to Protect Your Health (Adults Ages 19 to 49)"
+      "title": "Get Vaccines to Protect Your Health (Adults Ages 19 to 49)",
+      "img":vac40
     },
     {
       "id": "544",
-      "title": "Get Your Child the HPV Vaccine"
+      "title": "Get Your Child the HPV Vaccine",
+      "img":HPVshot
     },
     {
       "id": "546",
-      "title": "Get Your Child\u2019s Vaccines on Schedule"
+      "title": "Get Your Child\u2019s Vaccines on Schedule",
+      "img":secChil
     },
     {
       "id": "547",
-      "title": "Talk with a Doctor if Breast or Ovarian Cancer Runs in Your Family"
+      "title": "Talk with a Doctor if Breast or Ovarian Cancer Runs in Your Family",
+      "img":OYH_womenshealth
     },
     {
       "id": "549",
-      "title": "Get Your Pre\u2011teen\u2019s Vaccines on Schedule"
+      "title": "Get Your Pre\u2011teen\u2019s Vaccines on Schedule",
+      "img":covid
     },
     {
       "id": "551",
-      "title": "Protect Yourself from Seasonal Flu"
+      "title": "Protect Yourself from Seasonal Flu",
+      "img":seasflu
     },
     {
       "id": "552",
-      "title": "Take Charge of Your Health Care"
+      "title": "Take Charge of Your Health Care",
+      "img":chrgrg
     },
     {
       "id": "553",
-      "title": "Colorectal Cancer Screening: Questions for the Doctor"
+      "title": "Colorectal Cancer Screening: Questions for the Doctor",
+      "img":askdr
     },
     {
       "id": "30530",
-      "title": "Get Enough Calcium"
+      "title": "Get Enough Calcium",
+      "img":clacium
     },
     {
       "id": "30531",
-      "title": "Protect Your Health as You Grow Older"
+      "title": "Protect Your Health as You Grow Older",
+      "img":habits
     },
     {
       "id": "30532",
-      "title": "Take Steps to Prevent Skin Cancer"
+      "title": "Take Steps to Prevent Skin Cancer",
+      "img":skincan
     },
     {
       "id": "30533",
-      "title": "Get Enough Sleep"
+      "title": "Get Enough Sleep",
+      "img":sleep
     },
     {
       "id": "30534",
-      "title": "Get Support If You're a Caregiver"
+      "title": "Get Support If You're a Caregiver",
+      "img":care
     },
     {
       "id": "30535",
-      "title": "Talk to Your Kids About Tobacco, Alcohol, and Drugs"
+      "title": "Talk to Your Kids About Tobacco, Alcohol, and Drugs",
+      "img":nasha
     },
     {
       "id": "30536",
-      "title": "Take Steps to Prevent Type 2 Diabetes"
+      "title": "Take Steps to Prevent Type 2 Diabetes",
+      "img":diab
     },
     {
       "id": "30537",
-      "title": "Watch for Warning Signs of Relationship Violence"
+      "title": "Watch for Warning Signs of Relationship Violence",
+      "img":domvi
     },
     {
       "id": "30538",
-      "title": "Choose the Right Birth Control"
+      "title": "Choose the Right Birth Control",
+      "img":birth
     },
     {
       "id": "30539",
-      "title": "Eat Healthy"
+      "title": "Eat Healthy",
+      "img":FolicAcid
     },
     {
       "id": "30540",
-      "title": "Get Your Well-Woman Visit Every Year"
+      "title": "Get Your Well-Woman Visit Every Year",
+      "img":welwo
     },
     {
       "id": "30541",
-      "title": "Men: Take Charge of Your Health"
+      "title": "Men: Take Charge of Your Health",
+      "img":menht
     },
     {
       "id": "30542",
-      "title": "Talk to Your Kids About Sex and Healthy Relationships"
+      "title": "Talk to Your Kids About Sex and Healthy Relationships",
+      "img":sext
     },
     {
       "id": "30543",
-      "title": "Prevent Back Pain"
+      "title": "Prevent Back Pain",
+      "img":bacpain
     },
     {
       "id": "30544",
-      "title": "Talk with Your Doctor About Taking Aspirin to Prevent Disease"
+      "title": "Talk with Your Doctor About Taking Aspirin to Prevent Disease",
+      "img":asprin
     },
     {
       "id": "30545",
