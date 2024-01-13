@@ -14,11 +14,12 @@ const Dashboard = () => {
   useEffect(()=>{
     const fetchData = async ()=>{
       const resp = await ProfileApi()
+      console.log("Resp",resp);
       setuserdp(resp.data.data.profileImage);
       setuser(resp.data.data);
     };
     fetchData();
-  },[])
+  },[userdp])
   const handleChange = (e) => {
     setFile(e.target.files[0]);
     console.log("files", e.target.files[0]);

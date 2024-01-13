@@ -6,6 +6,7 @@ const FormState = ({ children }) => {
 
   const [AppointmentReqFromVis, setAppointmentReqFromVis] = useState(false);
   const [DoctorId, setDoctorID] = useState("");
+  const [infoArr,setinfoArr] =useState([]);
   const setVisiblity = () => {
     setAppointmentReqFromVis(true);
   };
@@ -19,7 +20,10 @@ const FormState = ({ children }) => {
         setVisiblity,
         UnsetVisiblity,
         DoctorId,
-        setDoctorID
+        setDoctorID,
+        infoArr,
+        setinfoArr
+
       }}
     >
       {children}

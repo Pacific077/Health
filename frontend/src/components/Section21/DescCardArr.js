@@ -15,10 +15,10 @@ const DescCardArr = [
 },
     {
     greentext:"SYNC, TRANSFORM, GET FIT WITH SMART HEALTH",
-    head:"Connect to the fitness galaxy and embark on an adventure",
-    desc:"Sync your healthcare devices, elevate consistency, and be on the path of a transformational journey like never before!",
-    btn1:"Download Now",
-    btn2:"Know More",navigate:"list"
+    head:"Uncover Vital Insights: Your Comprehensive Health Topic Information Hub",
+    desc:"Dive into crucial details about ypur health. Equip yourself with essential questions for your doctor's appointment. Your health matters.",
+    btn1:"Explore More",
+    btn2:"Know More",navigate:"awareness"
 }
 ]
 

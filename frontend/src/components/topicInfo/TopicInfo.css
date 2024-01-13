@@ -1,0 +1,59 @@
+.TopicInfoPage{
+    padding-left: 20vh;
+    padding-right: 20vh;
+}
+.topicInfoheader{
+    position: relative;
+    /* border: 1px solid black; */
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    /* background-color: black; */
+}
+.topicInfoHEaderLeft{
+    width: 70%;
+    height: 100%;
+    border-right: 2px solid purple;
+    /* clip-path: polygon(0 0, 100% 1%, 87% 100%, 0 100%); */
+}
+.blurbgimg{
+    background-image: url('../../images/register.jpg');
+    height: 100%;
+    background-size: cover;
+    filter: blur(4px);
+    -webkit-filter: blur(6px);
+}
+.topicInfoheader h1{
+    position: absolute;
+    top:35%;
+    left: 10%;
+    font-weight: 500;
+    /* margin: auto; */
+    color: black;
+    font-family: cursive;
+    font-size: 6vh;
+    text-shadow: 3px 3px 4px white;
+    animation: fadeInFromTop 1s ease-out ;
+    /* background-color: black; */
+    /* color: black; */
+}
+.topicinfoheaderight{
+    background-image: url("https://health.gov/sites/default/files/2022-07/gtfbc.jpg");
+    background-size: cover;
+    width: 30%;
+    height: 100%;
+    box-shadow: 10px 10px 10px gray;
+    /* clip-path: polygon(29% 0, 100% 1%, 100% 100%, 0 100%); */
+}
+@keyframes fadeInFromTop {
+    from {
+      opacity: 0;
+      transform: translateY(150px);
+      /* font-size: 7vh; */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      
+    }
+  }

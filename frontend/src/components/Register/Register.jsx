@@ -4,6 +4,7 @@ import { faLock, faLockOpen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { RegisterApi } from "../../Apis/UserApi";
 import { toast } from "react-toastify";
+import { Link  } from "react-router-dom";
 import axios from "axios";
 const Register = () => {
   const [showPass, setShowPass] = useState(false);
@@ -63,7 +64,7 @@ const Register = () => {
           <button className="signupbtn" onClick={onRegister}>
             Register
           </button>
-          <p>Already have an Account ?</p>
+          <p>Already have an Account ?<Link to='/login'> Login</Link></p>
         </div>
       </div>
     </div>

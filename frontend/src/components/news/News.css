@@ -1,0 +1,49 @@
+.newspage{
+    border: 2px solid black;
+    height: fit-content;
+    padding-left: 20vh;
+    padding-right: 20vh;
+    padding-top: 3vh;
+}
+.newshead{
+    width: fit-content;
+    margin: auto;
+    font-family: cursive;
+    font-size: 4.5vh;
+    font-weight: 500;
+    color: blue;
+    text-shadow: 3px 3px 2px gray;
+    padding: 3vh;
+    padding-top: 0;
+    padding-bottom: 1vh;
+    border-bottom: 4px solid black;
+    /* margin-bottom: 4vh; */
+}
+.newscont{
+    margin-top: 5vh;
+}
+.newscard{
+    /* border: 2px solid red; */
+    height:23vh ;
+    display: flex;
+    gap:5vh;
+    margin-bottom: 3vh;
+}
+.newsimg{
+    width: 14%;
+    /* border: 2px solid black; */
+    background-size: cover;
+}
+.newsdetails{
+    width: 70%;
+    box-sizing: border-box;
+}
+.newstitle{
+    font-size: 3.5vh;
+    color: rgb(1, 66, 1);
+}
+.newsimg img{
+    max-width: 100%;
+    max-height: 100%;
+}
+/* eb08c603be8841db95c9bcafd3909f70 */

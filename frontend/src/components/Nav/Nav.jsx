@@ -8,6 +8,7 @@ import {
   faUserDoctor,
   faCalendarCheck,
   faUserPlus,
+  faNewspaper,
 } from "@fortawesome/free-solid-svg-icons";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -31,6 +32,7 @@ const Nav = () => {
   const [isactiv5, setactiv5] = useState(false);
   const [isactiv6, setactiv6] = useState(false);
   const [isactiv7, setactiv7] = useState(false);
+  const [isactiv8, setactiv8] = useState(false);
   const [isScrolled, setScrolled] = useState(false);
   const [sideNav, setsideNav] = useState(false);
   
@@ -79,6 +81,7 @@ const Nav = () => {
     setactiv7(false);
     setactiv1(false);
     setactiv6(false);
+    setactiv8(false);
     navigate('/logout')
   };
   const handleHomeclick = () => {
@@ -89,6 +92,7 @@ const Nav = () => {
     setactiv5(false);
     setactiv7(false);
     setactiv6(false);
+    setactiv8(false);
     navigate("/home");
   };
   const handleNotificationclick = () => {
@@ -99,6 +103,7 @@ const Nav = () => {
     setactiv5(false);
     setactiv6(false);
     setactiv7(false);
+    setactiv8(false);
     navigate("/notifications");
   };
   const handleAboutclick = () => {
@@ -109,6 +114,7 @@ const Nav = () => {
     setactiv5(false);
     setactiv7(false);
     setactiv6(false);
+    setactiv8(false);
     navigate("/dashboard");
   };
   const handleDoctorCLick = () => {
@@ -119,6 +125,7 @@ const Nav = () => {
     setactiv5(true);
     setactiv7(false);
     setactiv6(false);
+    setactiv8(false);
     navigate("/list");
   };
   const handleCalendarClick = () => {
@@ -129,6 +136,7 @@ const Nav = () => {
     setactiv5(false);
     setactiv6(true);
     setactiv7(false);
+    setactiv8(false);
     navigate("/appointments");
   };
   const handleUserPlusClick = () =>{
@@ -139,7 +147,19 @@ const Nav = () => {
     setactiv5(false);
     setactiv6(false);
     setactiv7(true);
+    setactiv8(false);
     navigate('/request')
+  }
+  const handleNewsClick = ()=>{
+    setactiv1(false);
+    setactiv2(false);
+    setactiv3(false);
+    setactiv4(false);
+    setactiv5(false);
+    setactiv6(false);
+    setactiv7(false);
+    setactiv8(true);
+    navigate('/news')
   }
   const handlesidenav = () => {
     setsideNav(!sideNav);
@@ -156,6 +176,12 @@ const Nav = () => {
             className={isactiv1 ? "activ opaczero" : "opaczero"}
           >
             <FontAwesomeIcon className="navicons" icon={faHouseUser} />
+          </li>
+          <li
+            onClick={handleNewsClick}
+            className={ isactiv8? "activ opaczero" : "opaczero"}
+          >
+            <FontAwesomeIcon className="navicons" icon={faNewspaper} />
           </li>
           {role === "admin" || role === "Doctor" ? (
             <li

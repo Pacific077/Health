@@ -16,6 +16,9 @@ import Register from "./components/Register/Register";
 import NotAvailablePage from "./components/NotAvailable/NotAvailable";
 import Symptoms from "./components/Disease Predict/Symptoms/Symptoms";
 import Logout from "./components/Logout/Logout";
+import News from "./components/news/News";
+import Topics from "./components/topics/Topics";
+import TopicInfo from "./components/topicInfo/TopicInfo";
 
 
 
@@ -49,6 +52,9 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/logout" element={<Logout/>} />
           <Route path="/symptoms" element={<Symptoms />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/awareness" element={<Topics />} />
+          <Route path="/topicInfo" element={<TopicInfo />} />
 
           <Route path="*" element={<NotAvailablePage />} />
         </Routes>

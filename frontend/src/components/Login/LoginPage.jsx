@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate  } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 import "./LoginPage.css";
 import { faLock, faLockOpen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -71,7 +71,7 @@ const LoginPage = () => {
             <button className="signupbtn" onClick={handleClick}>
               Login
             </button>
-            <p>Dont have an Account ?</p>
+            <p>Dont have an Account ?<Link to='/register'> Register</Link></p>
           </div>
         </div>
       </div>
