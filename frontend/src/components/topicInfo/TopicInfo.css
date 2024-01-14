@@ -38,7 +38,7 @@
     /* color: black; */
 }
 .topicinfoheaderight{
-    background-image: url("https://health.gov/sites/default/files/2022-07/gtfbc.jpg");
+    /* background-image: url("https://health.gov/sites/default/files/2022-07/gtfbc.jpg"); */
     background-size: cover;
     width: 30%;
     height: 100%;
@@ -57,3 +57,15 @@
       
     }
   }
+.TopicInfocard h1{
+    font-size: 4.5vh;
+    text-shadow: 3px 3px 3px gray;
+    font-weight: 500;
+    color: purple;
+    font-family: cursive;
+    text-decoration: underline;
+}
+.TopicInfocard div{
+    font-size: 2.5vh;
+    color: black;
+}
