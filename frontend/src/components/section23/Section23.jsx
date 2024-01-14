@@ -2,9 +2,9 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import "./Section23.css";
-import img1 from "../../images/carousel1.jpg";
-import img2 from "../../images/carousel2.jpg";
-import img3 from "../../images/carousel3.jpg";
+import img1 from "../../images/bnr1.jpg";
+import img2 from "../../images/bnr2.jpg";
+import img3 from "../../images/bnr3.jpg";
 import img4 from "../../images/carousel4.jpg";
 import './Sec23resp.css'
 const Section23 = () => {

@@ -42,6 +42,24 @@ import menht from "../../images/menht.jpg"
 import sext from "../../images/sex-talk.jpg"
 import bacpain from "../../images/bacpain.jpg"
 import asprin from "../../images/asprin.jpg"
+import inf from "../../images/inf.jpg"
+import medsa from "../../images/medsa.jpg"
+import geac from "../../images/geac.jpg"
+import hepr from "../../images/hepr.jpg"
+import nesc from "../../images/nesc.jpg"
+import brfe from "../../images/brfe.jpg"
+import hewe from "../../images/hewe.jpg"
+import drac from "../../images/drac.jpg"
+import lena from "../../images/lena.jpg"
+import mast from "../../images/mast.jpg"
+import rest from "../../images/rest.jpg"
+import tast from "../../images/tast.jpg"
+import hite from "../../images/hite.jpg"
+import btes from "../../images/btes.jpg"
+import chhe from "../../images/chhe.jpg"
+import smqi from "../../images/smqi.jpg"
+import quti from "../../images/quti.jpg"
+import prca from "../../images/prca.jpg"
 
 
 
@@ -277,135 +295,169 @@ const topicArr = [
     },
     {
       "id": "30545",
-      "title": "Prevent Infections When You Get Medical Care"
+      "title": "Prevent Infections When You Get Medical Care",
+      "img":inf
     },
     {
       "id": "30546",
-      "title": "Use Medicines Safely"
+      "title": "Use Medicines Safely",
+      "img":medsa
     },
     {
       "id": "30547",
-      "title": "Get Active"
+      "title": "Get Active",
+      "img":geac
     },
     {
       "id": "30548",
-      "title": "Have a Healthy Pregnancy"
+      "title": "Have a Healthy Pregnancy",
+      "img":hepr
     },
     {
       "id": "30549",
-      "title": "Talk with Your Doctor About Newborn Screening"
+      "title": "Talk with Your Doctor About Newborn Screening",
+      "img":nesc
     },
     {
       "id": "30550",
-      "title": "Breastfeed Your Baby"
+      "title": "Breastfeed Your Baby",
+      "img":brfe
     },
     {
       "id": "30551",
-      "title": "Aim for a Healthy Weight"
+      "title": "Aim for a Healthy Weight",
+       "img":hewe
     },
     {
       "id": "30558",
-      "title": "Drink Alcohol Only in Moderation"
+      "title": "Drink Alcohol Only in Moderation",
+      "img":drac
     },
     {
       "id": "30559",
-      "title": "Eat Less Sodium: Quick Tips"
+      "title": "Eat Less Sodium: Quick Tips",
+      "img":lena
     },
     {
       "id": "30560",
-      "title": "Manage Stress"
+      "title": "Manage Stress",
+      "img":mast
     },
     {
       "id": "30561",
-      "title": "Reduce Your Risk of Stroke"
+      "title": "Reduce Your Risk of Stroke",
+      "img":rest
     },
     {
       "id": "30562",
-      "title": "Talk with Your Teen About Preventing STDs"
+      "title": "Talk with Your Teen About Preventing STDs",
+      "img":tast
     },
     {
       "id": "30564",
-      "title": "Get Tested for HIV"
+      "title": "Get Tested for HIV",
+      "img":hite
     },
     {
       "id": "30565",
-      "title": "Protect Yourself from Hepatitis B"
+      "title": "Protect Yourself from Hepatitis B",
+      "img":btes
     },
     {
       "id": "30566",
-      "title": "Help Your Child Stay at a Healthy Weight"
+      "title": "Help Your Child Stay at a Healthy Weight",
+      "img":chhe
     },
     {
       "id": "30567",
-      "title": "Get Your Medicare Wellness Visit Every Year"
+      "title": "Get Your Medicare Wellness Visit Every Year",
+      "img":talkingdepression
     },
     {
       "id": "30574",
-      "title": "Gestational Diabetes Screening: Questions for the Doctor"
+      "title": "Gestational Diabetes Screening: Questions for the Doctor",
+      "img":OYH_womenshealth
+
     },
     {
       "id": "30575",
-      "title": "Hepatitis C Screening: Questions for the Doctor"
+      "title": "Hepatitis C Screening: Questions for the Doctor",
+      "img":childteeth
     },
     {
       "id": "30582",
-      "title": "Eat Healthy While Breastfeeding: Quick Tips"
+      "title": "Eat Healthy While Breastfeeding: Quick Tips",
+      "img":brfe
     },
     {
       "id": "30583",
-      "title": "Eat Healthy During Pregnancy: Quick Tips"
+      "title": "Eat Healthy During Pregnancy: Quick Tips",
+      "img":chrgrg
     },
     {
       "id": "30584",
-      "title": "Genetic Testing to Learn About Your Risk of Breast and Ovarian Cancer: Questions for the Doctor"
+      "title": "Genetic Testing to Learn About Your Risk of Breast and Ovarian Cancer: Questions for the Doctor",
+      "img":brfe
     },
     {
       "id": "30586",
-      "title": "Colorectal Cancer Screening: Conversation Starters"
+      "title": "Colorectal Cancer Screening: Conversation Starters",
+      "img":colcan
     },
     {
       "id": "30588",
-      "title": "Quitting Smoking: Conversation Starters"
+      "title": "Quitting Smoking: Conversation Starters",
+      "img":smqi  
     },
     {
       "id": "30589",
-      "title": "Choosing a Doctor: Quick Tips"
+      "title": "Choosing a Doctor: Quick Tips",
+      "img":quti  
     },
     {
       "id": "30590",
-      "title": "Prostate Cancer Screening: Questions for the Doctor"
+      "title": "Prostate Cancer Screening: Questions for the Doctor",
+      "img":prca  
     },
     {
       "id": "30591",
-      "title": "Oral Health for Older Adults: Quick Tips"
+      "title": "Oral Health for Older Adults: Quick Tips",
+      "img":heartimg
     },
     {
       "id": "30592",
-      "title": "Lung Cancer Screening: Questions for the Doctor"
+      "title": "Lung Cancer Screening: Questions for the Doctor",
+      "img":FolicAcid
     },
     {
       "id": "30593",
-      "title": "Mammograms: Questions for the Doctor"
+      "title": "Mammograms: Questions for the Doctor",
+      "img":oldVac
     },
     {
       "id": "30594",
-      "title": "Medicines to Prevent Heart Attack and Stroke: Questions for the Doctor"
+      "title": "Medicines to Prevent Heart Attack and Stroke: Questions for the Doctor",
+      "img":bonedensity
     },
     {
       "id": "30595",
-      "title": "Preventing Osteoporosis: Questions for the Doctor"
+      "title": "Preventing Osteoporosis: Questions for the Doctor",
+      "img":Cholesterol
     },
     {
       "id": "30596",
-      "title": "Healthy Eating: Conversation Starters"
+      "title": "Healthy Eating: Conversation Starters",
+      "img":chhe
     },
     {
       "id": "30597",
-      "title": "Help a Loved One Get More Active: Quick Tips"
+      "title": "Help a Loved One Get More Active: Quick Tips",
+      "img":talkingdepression
     },
     {
       "id": "30598",
-      "title": "Losing Weight: Conversation Starters"
+      "title": "Losing Weight: Conversation Starters",
+      "img":menht
     },
     {
       "id": "30599",
@@ -413,99 +465,123 @@ const topicArr = [
     },
     {
       "id": "30600",
-      "title": "Preventing Preeclampsia: Questions for the Doctor"
+      "title": "Preventing Preeclampsia: Questions for the Doctor",
+      "img":geac
     },
     {
       "id": "30601",
-      "title": "Preventing Type 2 Diabetes: Questions for the Doctor"
+      "title": "Preventing Type 2 Diabetes: Questions for the Doctor",
+      "img":medsa
     },
     {
       "id": "30602",
-      "title": "Heart-Healthy Foods: Shopping List"
+      "title": "Heart-Healthy Foods: Shopping List",
+      "img":drac
     },
     {
       "id": "30604",
-      "title": "Depression: Conversation Starters"
+      "title": "Depression: Conversation Starters",
+      "img":fallRisk
     },
     {
       "id": "30605",
-      "title": "Heart Health: Conversation Starters"
+      "title": "Heart Health: Conversation Starters",
+      "img":Chlamydia
     },
     {
       "id": "30606",
-      "title": "Alcohol Use: Conversation Starters"
+      "title": "Alcohol Use: Conversation Starters",
+      "img":babydr
     },
     {
       "id": "30607",
-      "title": "Calcium: Shopping List"
+      "title": "Calcium: Shopping List",
+      "img":babydr2yrs
     },
     {
       "id": "30608",
-      "title": "Healthy Snacks: Quick Tips for Parents"
+      "title": "Healthy Snacks: Quick Tips for Parents",
+      "img":getScr
     },
     {
       "id": "30609",
-      "title": "Testing for Latent Tuberculosis: Questions for the Doctor"
+      "title": "Testing for Latent Tuberculosis: Questions for the Doctor",
+      "img":cervicl
     },
     {
       "id": "30610",
-      "title": "Quit Smoking"
+      "title": "Quit Smoking",
+      "img":smqi
     },
     {
       "id": "30612",
-      "title": "Testing for Syphilis: Questions for the Doctor"
+      "title": "Testing for Syphilis: Questions for the Doctor",
+      "img":abdominal
     },
     {
       "id": "30613",
-      "title": "HIV Testing: Questions for the Doctor"
+      "title": "HIV Testing: Questions for the Doctor",
+      "img":hite
     },
     {
       "id": "30614",
-      "title": "STI Testing: Conversation Starters"
+      "title": "STI Testing: Conversation Starters",
+      "img":bp
     },
     {
       "id": "30615",
-      "title": "Losing Weight: Questions for the Doctor"
+      "title": "Losing Weight: Questions for the Doctor",
+      "img":Teendepress
     },
     {
       "id": "30616",
-      "title": "Stay Active as You Get Older: Quick Tips"
+      "title": "Stay Active as You Get Older: Quick Tips",
+      "img":askdr
     },
     {
       "id": "30617",
-      "title": "Stay Active During Pregnancy: Quick Tips"
+      "title": "Stay Active During Pregnancy: Quick Tips",
+      "img":clacium
     },
     {
       "id": "30618",
-      "title": "Stay Active with a Disability: Quick Tips"
+      "title": "Stay Active with a Disability: Quick Tips",
+      "img":habits
     },
     {
       "id": "30759",
-      "title": "Preventing Falls: Conversation Starters"
+      "title": "Preventing Falls: Conversation Starters",
+      "img":skincan
     },
     {
       "id": "30760",
-      "title": "Support a Loved One at the Doctor: Quick Tips"
+      "title": "Support a Loved One at the Doctor: Quick Tips",
+      "img":sleep
     },
     {
       "id": "33303",
-      "title": "Talk with Your Doctor About Drug Misuse"
+      "title": "Talk with Your Doctor About Drug Misuse",
+      "img":care
     },
     {
       "id": "33304",
-      "title": "Drug Misuse: Conversation Starters"
+      "title": "Drug Misuse: Conversation Starters",
+      "img":nasha
     },
     {
       "id": "34321",
-      "title": "Get Your Child Screened for Anxiety"
+      "title": "Get Your Child Screened for Anxiety",
+      "img":diab
     },
     {
       "id": "34691",
-      "title": "Anxiety: Conversation Starters"
+      "title": "Anxiety: Conversation Starters",
+      "img":inf
     },
     {
       "id": "34692",
-      "title": "Talk with Your Doctor About Anxiety"
+      "title": "Talk with Your Doctor About Anxiety",
+      "img":FolicAcid
     }
   ]
 

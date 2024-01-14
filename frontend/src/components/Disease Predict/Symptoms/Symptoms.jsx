@@ -19,11 +19,11 @@ const Symptoms = () => {
   } 
 
   const handlePredict = async ()=>{
-    // setLoading(true);
-    // console.log("predict called");
-    // const resp = await axios.post("/api/v1/doctor/predict",[features,answer]);
-    // setLoading(false);
-    // setdisease(resp.data.Result)
+    setLoading(true);
+    console.log("predict called");
+    const resp = await axios.post("/api/v1/doctor/predict",[features,answer]);
+    setLoading(false);
+    setdisease(resp.data.Result)
     setvis(true);
 
   }

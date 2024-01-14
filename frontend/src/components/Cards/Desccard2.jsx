@@ -8,7 +8,7 @@ const Desccard2 = () => {
     STAY TUNED: SOMETHING AMAZING IS COMING!
     </p>
     <h1 className="bigHead tealc">
-    <span className='textblue'>YORE Care</span>  app
+    <span className='textblue'>WE Care</span>  app
     </h1>
     <p className="bgPara tealc">
     “The more you empower, more is the value you can create”

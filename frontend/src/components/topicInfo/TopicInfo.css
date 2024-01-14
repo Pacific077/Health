@@ -69,3 +69,25 @@
     font-size: 2.5vh;
     color: black;
 }
+@media screen and (max-width: 1025px) {
+    .TopicInfoPage{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+@media screen and (max-width: 769px) {
+    .topicinfoheaderight{
+        display: none;
+    }
+    .topicInfoHEaderLeft{
+        width: 100%;
+    }
+    .topicInfoHEaderLeft {
+        border: none;
+    }
+}
+@media screen and (max-width: 769px) {
+    .topicInfoheader h1 {
+        font-size: 4.5vh;
+    }
+}

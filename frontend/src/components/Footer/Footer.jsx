@@ -13,7 +13,7 @@ const Footer = () => {
           <img src={logo} alt="" className="footerlogo" />
           <div className="footerdescCont">
             <p className="footerdesc">
-              YORE Care is a Health-tech SUPER APP to create an integrated
+              WE Care is a Health-tech SUPER APP to create an integrated
               Health Web to Digitize, Preserve records & Empower the Care
               Seeker.
             </p>
@@ -26,7 +26,7 @@ const Footer = () => {
           </di>
         </div>
         <div className="foot2">
-          <p className="footehead">YORECARE</p>
+          <p className="footehead">WECARE</p>
           <p>Partner</p>
           <p>Blog</p>
           <p>Contact</p>
@@ -39,7 +39,7 @@ const Footer = () => {
         </div>
         <div className="foot4">
           <p className="footehead">CONTACT</p>
-          <p>hello@yorecare.com</p>
+          <p>hello@wecare.com</p>
           <p>7420994331</p>
           <p>
             B/106-107, Parmanand, Ashok Nagar, Ambadi Rd, Vasai West,
