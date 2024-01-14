@@ -5,10 +5,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 2vh;
 }
 .introScreen{
     display: flex;
-    height: 90%;
+    height: fit-content;
+    
     width: 60%;
 }
 .introPage{
@@ -16,6 +18,7 @@
     height: 100%;
     background-color: white;
     width: 85%;
+    overflow: hidden;padding-bottom: 3vh;
 }
 .introCont{
     width: 100%;
@@ -112,4 +115,60 @@ margin: auto;
 .introbtn:hover{
     background-color: rgb(1, 225, 1);
     cursor: pointer;
+}
+@media screen and (max-width: 1025px) {
+    .introScreen {
+        
+        width: 88%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .introScreen {
+        width: 100%;
+    }
+    .introPage {
+        width: 78%;
+    }
+}
+@media screen and (max-width: 769px) {
+    .introCont {
+        
+        display: block;
+    }
+    .leftintro{
+        width: 100%;
+    }
+    .introScreen{
+        display: block;
+    }
+    .introPage{
+        width: 100%;
+        /* flex-direction: column-reverse; */
+    }
+    .diseasePredicProgress {
+        margin-top: 4vh;
+        margin-bottom: 4vh;
+        height: 5vh;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+    }
+    .intro1,.intro3,.intro5{
+        font-size: 3vh;
+        padding: 1vh;
+    }
+}
+@media screen and (max-width: 481px) {
+    .leftintro {
+        padding-left: 0vh;
+        
+        padding-top: 3vh;
+    }
+}
+@media screen and (max-width: 322px) {
+    .intro1,.intro3,.intro5{
+        font-size: 2vh;
+        
+    }
 }

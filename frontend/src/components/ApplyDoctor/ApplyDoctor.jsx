@@ -64,13 +64,19 @@ const ApplyDoctor = () => {
         <h1>Application Form</h1>
         <div className="frstBlock">
           <div className="nameApp">
+            
+
             <label htmlFor="">Name</label>
             <input type="text" />
+            
           </div>
           <div className="emailApp">
+            
+
             <label htmlFor="">Email</label>
 
             <input type="email" />
+            
           </div>
         </div>
         <div className="secondBlock">

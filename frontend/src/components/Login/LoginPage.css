@@ -103,6 +103,18 @@
     .loginpage {
         width: 84%;
     }
+    .loginform{
+        padding: 1vh;
+    }
+}
+@media screen and (max-width: 427px) {
+    .loginform{
+        width: 100%;
+    }
+    
+.loginform input{
+    width: 85%;
+}
 }
 @media screen and (max-width: 377px) {
     .loginpage {

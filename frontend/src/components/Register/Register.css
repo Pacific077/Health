@@ -103,6 +103,17 @@
     .registerPage {
         width: 84%;
     }
+    .registerform {
+        padding: 1vh;
+    }
+}
+@media screen and (max-width: 427px) {
+    .registerform {
+        width: 100%;
+    }
+    .registerform input{
+        width: 85%;
+    }
 }
 @media screen and (max-width: 377px) {
     .registerPage {

@@ -60,9 +60,9 @@ const Introduction = () => {
         </div>
         <div className="diseasePredicProgress">
           <div className="intro1" style={introStyle} >Introduction</div>
-          <div className="intro2">Patients</div>
+
           <div className="intro3">Symptoms</div>
-          <div className="intro4">Region</div>
+          {/* <div className="intro4">Region</div> */}
           <div className="intro5">Results</div>
         </div>
       </div>
