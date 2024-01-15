@@ -101,4 +101,19 @@ const RejectAppointmentRequest = async (req,res)=>{
        res.send(error.message)
     }
    }
-export {getALlDoctors,acceptAppointmentRequest,RejectAppointmentRequest}
+
+   const DoctorProfile = async (req, res) => {
+    const {id} = req.body
+    console.log("id",id);
+    const user = await Doctor.findById(id);
+    if (user) {
+      res.status(200).json({
+        message: "user profile success",
+        data: user,
+      });
+    } else {
+      res.status(400);
+      throw new Error("User not found");
+    }
+  };   
+export {getALlDoctors,acceptAppointmentRequest,RejectAppointmentRequest,DoctorProfile}

@@ -3,29 +3,36 @@ import { useNavigate  } from "react-router-dom";
 import "./ApplyDoctor.css";
 import { SendDoctorReqApi } from "../../Apis/UserApi";
 import { toast } from "react-toastify";
+import axios from "axios";
 const ApplyDoctor = () => {
   const [Speciality,setSpeciality] = useState("")
     const [fee,setfee] = useState()
+    const [name,setname] = useState()
+    const [email,setemail] = useState()
     const navigate = useNavigate()
 
   const handleSubmit =async () => {
     try {
       const result = await SendDoctorReqApi({
-        name:"anything",
-        email:"abcd@email.com",
+        name:name,
+        email:email,
         password:"random",
-        Speciality:"everyhitng",
-        Fees:100,
-        date:"21:12:12",
-        time:"12:34"
+        Speciality:Speciality,
+        Fees:fee
       });
       console.log("result after applying for dotor form",result);
       if(result.status===200){
         toast.success("Applied for Doctor Role");
         navigate('/home');
       }
-    } catch (error) {
-      
+    } catch (Er) {
+      if (axios.isAxiosError(Er) && Er.response.status === 400) {
+        Er.response.data.err.map((msg) => {
+          toast.error(msg);
+        });
+      }else{
+        toast.error("Something went wrong")
+      }
     }
 
     
@@ -36,7 +43,12 @@ const ApplyDoctor = () => {
   const handleFeeChange = (e)=>{
   setfee(e.target.value)
   }
-
+  const handlenamechange =(e)=>{
+    setname(e.target.value);
+  }
+  const handleEmailChange =(e)=>{
+    setemail(e.target.value);
+  }
   return (
     <div className="ApplyDoctorPage">
       <div className="InfoBeforeApply">
@@ -67,7 +79,7 @@ const ApplyDoctor = () => {
             
 
             <label htmlFor="">Name</label>
-            <input type="text" />
+            <input type="text" value={name} onChange={handlenamechange} />
             
           </div>
           <div className="emailApp">
@@ -75,7 +87,7 @@ const ApplyDoctor = () => {
 
             <label htmlFor="">Email</label>
 
-            <input type="email" />
+            <input type="email" value={email} onChange={handleEmailChange} />
             
           </div>
         </div>

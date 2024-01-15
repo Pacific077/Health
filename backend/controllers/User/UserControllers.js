@@ -154,7 +154,22 @@ const Appointmentreq = async (req, res) => {
 //reject delete dr from database
 
 const SendDoctorReq = async (req, res) => {
-  const { name, email, password, Speciality, Fees, date, time } = req.body;
+  const errs = validationResult(req);
+  if(!errs.isEmpty()){
+    let arr = [];
+    errs.array().forEach((error) => {
+      arr.push(error.msg);
+    });
+    return res.status(400).json({
+      message:"Somethin went wrong",
+      err:arr
+    })
+  }
+  const { name, email, Speciality, Fees } = req.body;
+  const currentDate = new Date();
+
+  const date = currentDate.toISOString().split('T')[0]; 
+  const time = currentDate.toTimeString().split(' ')[0];
 
   const admin = await User.findById(process.env.ADMIN_ID);
   const data = {

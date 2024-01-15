@@ -6,6 +6,9 @@ import cookieParser from "cookie-parser";
 import AdminRoutes from "./Routes/AdminRoutes.js";
 import DoctorRoute from "./Routes/DoctorRoutes.js";
 import cors from "cors";
+import path from 'path'
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 const app = express();
 
 //configurations
@@ -25,7 +28,20 @@ app.use(cors(corsOptions));
 app.use("/api/v1/user", UserRoute);
 app.use("/api/v1/admin", AdminRoutes);
 app.use("/api/v1/doctor", DoctorRoute);
+//deploymemt
+//-------------------------------------------------------------------------
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const buildPath = path.join(__dirname, 'frontend', 'build');
 
+console.log("bpth",buildPath)
+app.use(express.static(buildPath));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html'));
+});
+
+
+//-------------------------------------------------------------------------
 const port = process.env.PORT || 4500;
 
 app.listen(port, () => {

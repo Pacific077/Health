@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import img from "../../images/dp.jpg";
 import { AcceptDrReqApi, RejectDrReqApi } from "../../Apis/AdminApis";
 import { toast } from "react-toastify";
 import { AcceptAppointmentReq, RejectAppointmentReq } from "../../Apis/DoctorAPis";
+import axios from "axios";
 const Requestscard = ({ doctorid, appntID, role }) => {
+
   const handleAccpetClick = async () => {
     console.log("i got clicked");
     // console.log(appntID,doctorid);

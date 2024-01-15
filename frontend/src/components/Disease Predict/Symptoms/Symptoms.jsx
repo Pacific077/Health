@@ -21,9 +21,19 @@ const Symptoms = () => {
   const handlePredict = async ()=>{
     setLoading(true);
     console.log("predict called");
-    const resp = await axios.post("/api/v1/doctor/predict",[features,answer]);
-    setLoading(false);
+    const data = {
+      columns: features,
+      values: answer
+    };
+    const resp = await axios.post("https://diseasepredictor-66m5.onrender.com/api/v1/user/predict",data,{
+      withCredentials: true,
+      headers: {
+        'Content-Type': 'application/json', 
+      },
+    });
     setdisease(resp.data.Result)
+    setLoading(false);
+    console.log("resp",resp);
     setvis(true);
 
   }

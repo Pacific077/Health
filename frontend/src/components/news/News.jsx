@@ -10,12 +10,13 @@ const News = () => {
    const fetchData = async ()=>{
     setLoading(true);
     try {
-      const resp = await axios.get('https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=eb08c603be8841db95c9bcafd3909f70');
+      const resp = await axios.get('https://newsdata.io/api/1/news?apikey=pub_36441255b18cd10ea28a873ed9442aff38776&language=en&category=health');
       console.log("news",resp);
-      setNews(resp.data.articles)
+      // data.results
+      setNews(resp.data.results)
       setLoading(false);
     } catch (error) {
-      
+      console.log("Err",error);
     }
    };
    fetchData(); 
@@ -26,7 +27,7 @@ const News = () => {
       <div className="newscont">
         {laoding && <div className="profileLoading" style={{width:"100%"}}><ReactLoading type="spokes" color="purple" height={120} width={120} /></div>}
         {news.map((ne)=>{
-          return <NewsCard title={ne.title} desc={ne.content} url={ne.url} urlToImage={ne.urlToImage}/>
+          return <NewsCard title={ne.title} desc={ne.content} url={ne.link} urlToImage={ne.image_url}/>
         })}
       </div>
     </div>
