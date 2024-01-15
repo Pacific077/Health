@@ -86,7 +86,7 @@ Section available for reading latest news and tips about maintaining a healthy l
 ### Health Library
 A online library to read about topic related to fitness and health.
 
-![]("../../frontend/src/images/carousel2.jpg")
+![image]("../../frontend/src/images/carousel2.jpg")
 
 ## Made By and Contribution
 Md Faisal Rahman
