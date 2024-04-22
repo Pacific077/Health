@@ -4,21 +4,29 @@ import "./ApplyDoctor.css";
 import { SendDoctorReqApi } from "../../Apis/UserApi";
 import { toast } from "react-toastify";
 import axios from "axios";
+import keysArray from "./keys_array";
 const ApplyDoctor = () => {
   const [Speciality,setSpeciality] = useState("")
     const [fee,setfee] = useState()
     const [name,setname] = useState()
     const [email,setemail] = useState()
+    const [checkedItems, setCheckedItems] = useState([]);
     const navigate = useNavigate()
 
   const handleSubmit =async () => {
+    console.log("diseasea arrya in forntend",checkedItems)
     try {
+      if(checkedItems.length<=0){
+        toast.warning("select disease")
+        return
+      }
       const result = await SendDoctorReqApi({
         name:name,
         email:email,
         password:"random",
         Speciality:Speciality,
-        Fees:fee
+        Fees:fee,
+    diseaseSpecialities:checkedItems,
       });
       console.log("result after applying for dotor form",result);
       if(result.status===200){
@@ -26,6 +34,7 @@ const ApplyDoctor = () => {
         navigate('/home');
       }
     } catch (Er) {
+      
       if (axios.isAxiosError(Er) && Er.response.status === 400) {
         Er.response.data.err.map((msg) => {
           toast.error(msg);
@@ -49,6 +58,14 @@ const ApplyDoctor = () => {
   const handleEmailChange =(e)=>{
     setemail(e.target.value);
   }
+  const handleCheckboxChange = (event) => {
+    const { value, checked } = event.target;
+    if (checked) {
+      setCheckedItems(prevState => [...prevState, value]);
+    } else {
+      setCheckedItems(prevState => prevState.filter(item => item !== value));
+    }
+  };
   return (
     <div className="ApplyDoctorPage">
       <div className="InfoBeforeApply">
@@ -91,6 +108,20 @@ const ApplyDoctor = () => {
             
           </div>
         </div>
+        <div className="frstandhalfblock">
+        <p>Select all disease you can cure</p>
+        <div className="diseaseoptions">
+          {keysArray.map((ele,ind)=>{
+            return(
+              <div className="diseasandcheckbox" key={ind}>
+              <input type="checkbox" value={ele} onChange={handleCheckboxChange} />
+                <label htmlFor="">{ele}</label>
+              </div>
+            )
+          })}
+       
+        </div>
+        </div>
         <div className="secondBlock">
           <p>What is Your Gender ?</p>
           <input type="radio" id="male" name="gender" value="Bike" />
@@ -104,14 +135,26 @@ const ApplyDoctor = () => {
           <br />
         </div>
         <div className="thrdblock">
+          <div className="wdiht50percnet">
+
           <p>What is your Specility ?</p>
           <input type="text" name="" id="" value={Speciality} onChange={handleSpechange}/>
+          </div>
+          <div className="wdiht50percnet">
+
           <p>What is your Fees ?</p>
           <input type="number" name="" id="" value={fee} onChange={handleFeeChange} />
-          <p>What is your Highest Degree ?</p>
+          </div>
+        </div>
+        <div className="frthblock">
+        <div className="wdiht50percnet">
+          <p>Your Highest Degree ?</p>
           <input type="text" name="" id="" />
-          <p>What is your total Experince ?</p>
+          </div>
+          <div className="wdiht50percnet">
+          <p>Your total Experince ?</p>
           <input type="text" name="" id="" />
+          </div>
         </div>
         <div className="applicationBtnCont">
           <button className="applicationSubmitBtn" onClick={handleSubmit}>

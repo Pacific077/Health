@@ -67,12 +67,13 @@ export const LoginApi = async (userData) => {
   };
 
 
-  export const SendDoctorReqApi = async ({name,email,password,Speciality,Fees,date,time}) => {
-
+  export const SendDoctorReqApi = async ({name,email,password,Speciality,Fees,date,time,diseaseSpecialities}) => {
+    console.log("diseasea arrya in api",diseaseSpecialities)
     const response = await axios.post(
       "/api/v1/user/sendreq",
       {
         name,
+        diseaseSpecialities,
         email,
         password,
         Speciality,Fees,date,time

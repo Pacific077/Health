@@ -1,9 +1,10 @@
 import axios from 'axios'
 
-export const GetAllDoctor = async () => {
+export const GetAllDoctor = async ({dieseaseName}) => {
     const response = await axios.get(
-      "/api/v1/doctor/all",
+      `/api/v1/doctor/all/${dieseaseName}`,
       {
+   
         withCredentials: true,
       }
     );

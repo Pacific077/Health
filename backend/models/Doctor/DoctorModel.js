@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const DoctorSchema = mongoose.Schema(
   {
-    userId:{
+    userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
@@ -18,15 +18,16 @@ const DoctorSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    diseaseSpecialities: [{ type: String}],
     Fees: {
       type: Number,
       required: true,
     },
-    status:{
-      type:String,
+    status: {
+      type: String,
       required: true,
-      enum:["pending","approved"]
-    }
+      enum: ["pending", "approved"],
+    },
   },
   {
     timestamps: true,

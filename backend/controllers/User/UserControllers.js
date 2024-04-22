@@ -165,7 +165,7 @@ const SendDoctorReq = async (req, res) => {
       err:arr
     })
   }
-  const { name, email, Speciality, Fees } = req.body;
+  const { name, email, Speciality, Fees,diseaseSpecialities } = req.body;
   const currentDate = new Date();
 
   const date = currentDate.toISOString().split('T')[0]; 
@@ -177,6 +177,7 @@ const SendDoctorReq = async (req, res) => {
     email,
     Speciality,
     Fees,
+    diseaseSpecialities,
     date,
     time,
   };
@@ -187,6 +188,7 @@ const SendDoctorReq = async (req, res) => {
     email,
     status:"pending",
     Speciality,
+    diseaseSpecialities,
     Fees,
   });
   const appointment = await Appointment.create({

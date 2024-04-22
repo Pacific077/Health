@@ -4,7 +4,7 @@ const DescCardArr = [
     head:"Meet Our Dedicated Team of Expert Healthcare Professionals",
     desc:"Discover our doctors, choose your ideal healthcare provider, and book appointments effortlessly for personalized and attentive medical care.",
     btn1:"Book Appointment",
-    navigate:"list"
+    navigate:"list/null"
 },
     {
     greentext:"STREAMLINED HEALTH RECORD MANAGEMENT MADE EFFORTLESS",

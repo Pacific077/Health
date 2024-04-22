@@ -1,6 +1,6 @@
 .ApplyDoctorPage {
   height: 90vh;
-  border: 2ox solid black;
+  /* border: 2px solid black; */
   padding-left: 20vh;
   padding-right: 20vh;
   display: flex;
@@ -14,7 +14,7 @@
 }
 .applictionForm {
   width: 50%;
-  height: 100%;
+  height: fit-content;
   border: 2px solid black;
   padding: 2vh;
   box-sizing: border-box;
@@ -54,7 +54,7 @@
   margin-bottom: 1vh;
 }
 .frstBlock {
-
+  display: flex;
   justify-content: space-between;
 }
 .nameApp,
@@ -79,7 +79,7 @@
 .emailApp input:focus {
   outline: 1px solid #2b00ff;
 }
-.secondBlock p {
+.secondBlock p, .frstandhalfblock p {
   font-size: x-large;
   font-weight: 900;
   color: green;
@@ -108,14 +108,27 @@
   cursor: pointer;
   background-color: rgb(1, 155, 1);
 }
-.thrdblock p {
+.diseaseoptions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vh;
+}
+.diseasandcheckbox{
+  width:fit-content;
+}
+.thrdblock p,.frthblock p {
   font-size: x-large;
   font-weight: 900;
   color: green;
   margin-bottom: 1vh;
 }
-
-.thrdblock input{
+.thrdblock,.frthblock {
+  display: flex;
+}
+.wdiht50percnet{
+  width: 50%;
+}
+.thrdblock input,.frthblock input{
 
     height: 3vh;
     width: 27vh;

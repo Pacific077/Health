@@ -5,7 +5,15 @@ import Notification from "../../models/notifications/NotficationModel.js";
 
 //get all doctors
 const getALlDoctors = async (req,res)=>{
-    const doctorsList =  await Doctor.find({});
+  const {disease} = req.params;
+  console.log("dis",disease)
+  let doctorsList;
+  if(disease==="null"){
+
+     doctorsList =  await Doctor.find({});
+  }else{
+    doctorsList = await Doctor.find({ diseaseSpecialities: disease });
+  }
     const accpetedDrlist = [];
     await doctorsList.map((doctor)=>{
         if(doctor.status==='approved'){
