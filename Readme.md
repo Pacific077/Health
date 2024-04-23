@@ -182,10 +182,7 @@ A online library to read about topic related to fitness and health.
 
 
 
-## Made By and Contribution
+## Made By 
 
 Md Faisal Rahman
 
-Palak Thakur
-
-Ankur Kumar
