@@ -180,7 +180,10 @@ A online library to read about topic related to fitness and health.
 
 ![img](./frontend/src/images/Screenshots/HealthLib.png)
 
+### Doctor recommedation based on Disease (Recently Added)
 
+
+![img](./frontend/src/images/Screenshots/DoctorRec.png)
 
 ## Made By 
 
